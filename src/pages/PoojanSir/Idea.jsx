@@ -42,26 +42,26 @@ function App() {
           <div className={`space-y-12 mb-32 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="text-center">
               <h1 className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
-                leading-tight tracking-tight mb-8 animate-gradient"
+                leading-tight tracking-tight mb-8 animate-gradient mt-28"
               >
                 Innovator's Playbook
               </h1>
               <h2 className="text-4xl md:text-5xl font-bold text-white/90 mb-6">Bold Ideas by Poojan Khamar</h2>
             </div>
-            
+
             <div className="flex justify-center">
               <div className="w-32 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-300 rounded-full"></div>
             </div>
-            
+
             <div className="max-w-3xl mx-auto space-y-8 text-center">
               <p className="text-2xl text-gray-300 leading-relaxed">
                 Ideas are not bound by rules. They don't come from comfort zones; they are born where imagination collides with
                 courage. In a world that rewards followers, I choose to think ahead – questioning, disrupting, and rewriting what's
                 possible.
               </p>
-              
+
               <p className="text-2xl leading-relaxed">
-                Every idea here carries a simple belief: 
+                Every idea here carries a simple belief:
                 <span className="font-semibold text-[#ffff33] ml-2 relative">
                   "The world changes when someone dares to think differently."
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#ffff33]/30"></div>
@@ -80,7 +80,7 @@ function App() {
                 Have a bold idea that could reshape the future? Let's hear it.
               </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-zinc-800 
                 hover:border-[#ffff33]/30 transition-all duration-500 shadow-2xl hover:shadow-[#ffff33]/10
@@ -178,7 +178,7 @@ function App() {
                     >
                       <span className="relative z-10 inline-flex items-center">
                         Share Your Idea
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
                           fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>

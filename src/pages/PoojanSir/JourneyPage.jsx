@@ -47,7 +47,7 @@ const JourneyPage = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] via-yellow-200 to-yellow-300 mb-16 tracking-tight"
+          className="text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] via-yellow-200 to-yellow-300 mb-30 tracking-tight"
         >
           Explore My Journey
         </motion.h1>

@@ -5,7 +5,7 @@ function ProjectCard({ title, description, features }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="mb-32 transform transition-all duration-500 hover:translate-x-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -30,8 +30,8 @@ function ProjectCard({ title, description, features }) {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {features.map((feature, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="bg-zinc-900/60 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 
               transform transition-all duration-300 hover:border-[#ffff33] hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/20"
           >
@@ -47,7 +47,7 @@ function ProjectCard({ title, description, features }) {
         ))}
       </div>
       <div className="mt-12 flex justify-center">
-        <button className="group relative bg-[#ffff33] text-black px-8 py-4 rounded-full font-semibold 
+        <button className="group relative bg-[#ffff33] text-black px-8 py-5 rounded-full font-semibold 
           transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/30"
         >
           <span className="relative z-10">Explore Project</span>
@@ -66,13 +66,13 @@ function App() {
       <div className="max-w-6xl mx-auto">
         <div className="space-y-8 mb-16 animate-fade-in">
           <h1 className="text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
-            leading-tight tracking-tight"
+            leading-tight tracking-tight mt-32"
           >
             Innovations that Reimagine Boundaries
           </h1>
-          
+
           <div className="w-24 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-400"></div>
-          
+
           <p className="text-2xl text-gray-300 max-w-4xl leading-relaxed">
             Innovation isn't just about new ideas; it's about fearless execution. I believe in creating solutions that challenge
             the norm, disrupt industries, and redefine the way we think. Every project here is a reflection of bold thinking,

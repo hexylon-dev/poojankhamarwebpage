@@ -8,10 +8,14 @@ import Idea from './pages/PoojanSir/Idea'
 import Collabrate from './pages/PoojanSir/Collaborate'
 import Blogs from './pages/PoojanSir/blogs'
 import BlogPost from './pages/PoojanSir/blog-post'
-function App() {
+
+function AppContent() {
+  const loc = useLocation();
   return (
-    <Router>
+    <>
+      {loc.pathname !== "/" && <Headers />}
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/innovations" element={<Innovation />} />
@@ -20,8 +24,17 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogPost />} />
       </Routes>
-    </Router>
-  )
+      <FooterWithTransition />
+    </>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+export default App;
