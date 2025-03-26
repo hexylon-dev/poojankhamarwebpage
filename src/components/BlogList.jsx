@@ -19,6 +19,7 @@ function BlogList() {
         <div key={blog.id}>
           <Link to={`/blogs/${blog.id}`}>
             <Blog blog={blog} />
+           
           </Link>
         </div>
       ))}
