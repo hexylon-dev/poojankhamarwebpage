@@ -11,7 +11,7 @@ const navItems = [
     { icon: Home, path: "/", label: "Home" },
     { icon: Info, path: "/about", label: "About" },
     { icon: Flame, path: "/innovations", label: "Innovations" },
-    { icon: FileText, path: "/blog", label: "Idea" },
+    { icon: FileText, path: "/blogs", label: "Idea" },
     { icon: Lightbulb, path: "/idea", label: "Target" },
     { icon: Phone, path: "/contact", label: "Contact" },
 ];
