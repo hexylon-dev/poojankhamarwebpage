@@ -6,6 +6,8 @@ import About from './pages/PoojanSir/About'
 import Innovation from './pages/PoojanSir/Innovation'
 import Idea from './pages/PoojanSir/Idea'
 import Collabrate from './pages/PoojanSir/Collaborate'
+import Blogs from './pages/PoojanSir/blogs'
+import BlogPost from './pages/PoojanSir/blog-post'
 function App() {
   return (
     <Router>
@@ -15,6 +17,8 @@ function App() {
         <Route path="/innovations" element={<Innovation />} />
         <Route path="/idea" element={<Idea />} />
         <Route path="/contact" element={<Collabrate />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:id" element={<BlogPost />} />
       </Routes>
     </Router>
   )
