@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+
+  .Darker-Grotesque {
+    font-family: 'Darker Grotesque', serif;
+  }
+
+/* Hero section */
+.herosection {
+  background:  linear-gradient(0deg, rgba(255, 102, 0, 0.357) 0%, rgba(255,255,255,1) 36%);;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* for Internet Explorer 10+ */
+  scrollbar-width: none;  /* for Firefox */
+}
+@layer utilities {
+  .perspective {
+    perspective: 1000px;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+
+@keyframes draw-width-line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes draw-width-line-99-99 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 99.99%;
+  }
+}
+
+.animate-draw-width-line {
+  animation: draw-width-line-99-99 2s ease-in-out forwards;
+}
+
+.animate-draw-width-line-99-99 {
+  animation: draw-width-line-99-99 2s ease-in-out forwards;
+}
+
+
+@keyframes draw-height-line {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+
+.animate-draw-height-line {
+  animation: draw-height-line 2s ease-in-out forwards;
+}
+
+
+@keyframes draw-height-5rem-line-bottom-to-top {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 5rem;
+  }
+}
+
+
+@keyframes draw-height-5-04rem-line-bottom-to-top {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 5.04rem;
+  }
+}
+
+@keyframes draw-height-5rem-line-top-to-bottom {
+  0% {
+    height: 5rem;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes draw-height-line-animated {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 19.2rem;
+  }
+}
+
+.animate-draw-height-line {
+  animation: draw-height-animated 2s ease-in-out forwards;
+}
+
+.animate-draw-height-5-04rem--line-bottom-to-top {
+  animation: draw-height-5-04rem-line-bottom-to-top 2s ease-in-out forwards;
+}
+
+.animate-draw-height-5rem-line-bottom-to-top {
+  animation: draw-height-5rem-line-bottom-to-top 2s ease-in-out forwards;
+}
+
+.animate-draw-height-5rem-line-top-to-bottom {
+  animation: draw-height-5rem-line-top-to-bottom 2s ease-in-out forwards;
+}
+@keyframes drawHeightLineCrossLine {
+  0% {
+    height: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    height: 19.2rem;
+    transform: rotate(0deg);
+  }
+  100% {
+    height: 19.2rem;
+    transform: rotate(19deg);
+  }
+}
+.animate-draw-height-line-cross-line {
+  animation: drawHeightLineCrossLine 1s ease-in-out forwards;
+}
