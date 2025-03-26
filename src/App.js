@@ -1,10 +1,10 @@
-import './styles/ShimmerButton.css'
-import './styles/animations.css'
+// import './styles/ShimmerButton.css'
+// import './styles/animations.css'
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
 import Blogs from './pages/PoojanSir/blogs'
 import BlogPost from './pages/PoojanSir/blog-post'
 import {Headers} from './components/Headers'
-import FooterWithTransition from './components/Footer'
+// import FooterWithTransition from './components/'
 import HomePage from "./pages/home/index";
 import AboutPage from "./pages/about/index";
 import InnovationPage from "./pages/innovation/index";
@@ -13,6 +13,14 @@ import IdeaPage from "./pages/ideas/index";
 
 
 function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
   const loc = useLocation();
 
   return (
