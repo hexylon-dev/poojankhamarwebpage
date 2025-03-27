@@ -79,19 +79,19 @@ export function Headers() {
 
     return (
         <header className="fixed left-1/2 -translate-x-1/2 z-50 w-full  py-2">
-            <div className="max-w-[1000px] mx-auto">
+            <div className="max-w-[720px] mx-auto">
 
                 <div className="flex items-center justify-between px-4">
                     {/* Profile picture on the left - now clickable */}
                     <div
                         onClick={handleProfileClick}
-                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#ffff33] to-yellow-500 overflow-hidden hover-scale relative group cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,51,0.5)]"
+                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-[#ffff33] to-yellow-500 overflow-hidden hover-scale relative group cursor-pointer transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,51,0.5)]"
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/50 to-yellow-500/50 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                         <img
                             src={pic || "/placeholder.svg"}
                             alt="Profile"
-                            className="object-cover w-full h-full relative z-10 transform group-hover:scale-110 transition-transform duration-500 mt-1"
+                            className="object-cover w-full h-58 relative z-10 transform group-hover:scale-110 transition-transform duration-500 mt-1"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -116,7 +116,7 @@ export function Headers() {
                     {!isMobile && (
                       
                         <nav className="mx-4 flex-1 max-w-2xl flex items-center justify-center">
-                            <div className="flex items-center gap-1 sm:gap-2 bg-[#ffff33] backdrop-blur-xl rounded-full px-2 sm:px-4 py-1 sm:py-2 md:px-8 md:py-3 border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
+                            <div className="flex items-center gap-1 sm:gap-2 bg-[#ffff33] backdrop-blur-xl rounded-full px-2  py-2  border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
                                 {navItems.map((item, index) => {
                                     const Icon = item.icon
                                     const isActive = pathname === item.path
@@ -126,7 +126,7 @@ export function Headers() {
                                             key={index}
                                             to={item.path}
                                             className={cn(
-                                                "p-1 sm:p-2 md:p-3 bg-black rounded-full transition-all duration-300 nav-icon group relative overflow-hidden hover:shadow-[0_0_10px_rgba(255,255,51,0.5)]",
+                                                "p-1 sm:p-2 md:p-2 bg-black rounded-full transition-all duration-300 nav-icon group relative overflow-hidden hover:shadow-[0_0_10px_rgba(255,255,51,0.5)]",
                                                 isActive ? "ring-2 ring-white/20 shadow-[0_0_10px_rgba(255,255,51,0.8)]" : "",
                                             )}
                                             aria-label={item.label}
@@ -145,10 +145,10 @@ export function Headers() {
                     {!isMobile && (
                           <a href="#journey">
                         <button
-                            // onClick={handleExploreClick}
-                            className="flex items-center justify-center bg-[#ffff33] text-black px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]"
+                            onClick={handleExploreClick}
+                            className="flex items-center justify-center bg-[#ffff33] text-black px-1 py-2 rounded-full hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]"
                         >
-                            <span className="relative z-10 text-xs sm:text-sm md:text-base lg:text-lg whitespace-nowrap">
+                            <span className="relative z-10 text-xs sm:text-sm md:text-base lg:text-sm whitespace-nowrap px-2">
                                 {isTablet ? "Journey" : "Explore My Journey"}
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -183,7 +183,7 @@ export function Headers() {
                             <X className="w-5 h-5" />
                         </button>
 
-                        <div className="flex flex-col items-start space-y-4 pt-16 bg-black">
+                        <div className="flex flex-col items-start space-y-4 pt-16 bg-black pb-12 ">
                             {navItems.map((item, index) => {
                                 const Icon = item.icon
                                 const isActive = pathname === item.path
