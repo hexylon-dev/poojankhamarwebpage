@@ -1,52 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const ReadyShapeFuture = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const rect = e.currentTarget.getBoundingClientRect();
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
       setMousePosition({ x, y });
     };
 
-    const container = document.querySelector('.interactive-bg');
-    if (container) {
-      container.addEventListener('mousemove', handleMouseMove);
-      return () => container.removeEventListener('mousemove', handleMouseMove);
-    }
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Animated background grid */}
-      <div className="absolute inset-0 grid grid-cols-[repeat(40,1fr)] grid-rows-[repeat(40,1fr)] opacity-20">
-        {Array.from({ length: 41 }).map((_, i) => (
-          <div
-            key={`v-${i}`}
-            className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/30 to-transparent"
-            style={{ top: `${(i / 40) * 100}%` }}
-          />
-        ))}
-        {Array.from({ length: 41 }).map((_, i) => (
-          <div
-            key={`h-${i}`}
-            className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent"
-            style={{ left: `${(i / 40) * 100}%` }}
-          />
-        ))}
-      </div>
+    <div id="futureSection" className="min-h-screen bg-black flex items-center justify-center py-24 relative overflow-hidden">
+      
+      {/* Background Grid */}
+      <div className="absolute inset-0 opacity-10 grid-lines"></div>
 
-      {/* Main content container */}
+      {/* Main Content */}
       <motion.div 
+        ref={containerRef}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         className="relative w-full max-w-6xl aspect-[2/1] rounded-[2rem] overflow-hidden interactive-bg"
       >
-        {/* Dynamic gradient background */}
+        {/* Dynamic Background Effect */}
         <div 
           className="absolute inset-0 bg-[#111111]"
           style={{
@@ -54,13 +40,10 @@ const ReadyShapeFuture = () => {
           }}
         ></div>
 
-        {/* Animated gradient circles */}
+        {/* Animated Floating Circle */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] aspect-square">
           <motion.div 
-            animate={{ 
-              scale: [1, 1.1, 1],
-              rotate: [0, 360]
-            }}
+            animate={{ scale: [1, 1.1, 1], rotate: [0, 360] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0"
           >
@@ -72,7 +55,7 @@ const ReadyShapeFuture = () => {
           </motion.div>
         </div>
 
-        {/* Floating particles */}
+        {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 20 }).map((_, i) => (
             <motion.div
@@ -83,20 +66,13 @@ const ReadyShapeFuture = () => {
                 y: Math.random() * 100 + '%',
                 opacity: Math.random() * 0.5 + 0.3
               }}
-              animate={{ 
-                y: [null, '-20%'],
-                opacity: [null, 0]
-              }}
-              transition={{ 
-                duration: Math.random() * 2 + 3,
-                repeat: Infinity,
-                ease: "linear"
-              }}
+              animate={{ y: [null, '-20%'], opacity: [null, 0] }}
+              transition={{ duration: Math.random() * 2 + 3, repeat: Infinity, ease: "linear" }}
             />
           ))}
         </div>
 
-        {/* Content */}
+        {/* Content Section */}
         <div className="relative h-full flex flex-col justify-center px-12 z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -121,7 +97,7 @@ const ReadyShapeFuture = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(255, 255, 51, 0.5)" }}
             whileTap={{ scale: 0.95 }}
             className="group relative px-8 py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden"
           >
