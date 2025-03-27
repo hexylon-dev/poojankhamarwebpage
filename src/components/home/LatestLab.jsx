@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const LatestLab = () => {
   return (
-    <section id="latest-lab" className="bg-black text-white p-16 relative overflow-hidden">
+    <section id="latest-lab" className="bg-black text-white py-8 md:py-16 px-4 sm:px-8 lg:px-16 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,51,0.05),transparent_70%)]"></div>
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ffff33]/20 to-transparent"></div>
@@ -13,43 +13,46 @@ const LatestLab = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-6xl font-bold text-center mb-16 leading-tight"
+        viewport={{ once: true }}
+        className="text-center mb-8 md:mb-16"
       >
-        <span className="relative inline-block text-4xl  md:text-7xl lg:text-7xl font-semibold">
+        <span className="relative inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
           Latest from
           <span className="text-[#ffff33]"> My Lab</span>
           <motion.div
-            className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-400"
+            className="absolute -bottom-1 md:-bottom-2 left-0 h-0.5 md:h-1 bg-gradient-to-r from-[#ffff33] to-yellow-400"
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
           />
         </span>
       </motion.h2>
 
       {/* Content Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-24">
         {/* First Card */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative group cursor-pointer overflow-hidden rounded-3xl"
+          viewport={{ once: true }}
+          className="relative group cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl"
         >
-          <div className="absolute inset-0 bg-[#ffff33]/20 rounded-3xl blur-3xl group-hover:bg-[#ffff33]/30 transition-all duration-500"></div>
-          <div className="relative z-10 bg-black/40 rounded-3xl p-1">
+          <div className="absolute inset-0 bg-[#ffff33]/20 rounded-2xl md:rounded-3xl blur-xl md:blur-2xl group-hover:bg-[#ffff33]/30 transition-all duration-500"></div>
+          <div className="relative z-10 bg-black/40 rounded-2xl md:rounded-3xl p-1">
             <img
               src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt="AI Robot"
-              className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl"
+              className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl md:rounded-2xl"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 rounded-2xl"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-              <p className="text-[#ffff33] font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">ARTIFICIAL INTELLIGENCE</p>
-              <h3 className="text-2xl font-bold">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 rounded-xl md:rounded-2xl"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 transform translate-y-4 sm:translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+              <p className="text-[#ffff33] text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">ARTIFICIAL INTELLIGENCE</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
                 The Technological Path to Artificial General Intelligence (AGI): A Comprehensive Deep Dive
               </h3>
-              <p className="mt-4 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore the cutting-edge advancements and challenges in AGI development...</p>
+              <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore the cutting-edge advancements and challenges in AGI development...</p>
             </div>
           </div>
         </motion.div>
@@ -59,22 +62,23 @@ const LatestLab = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative group cursor-pointer overflow-hidden rounded-3xl"
+          viewport={{ once: true }}
+          className="relative group cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl"
         >
-          <div className="absolute inset-0 bg-[#ffff33]/20 rounded-3xl blur-3xl group-hover:bg-[#ffff33]/30 transition-all duration-500"></div>
-          <div className="relative z-10 bg-black/40 rounded-3xl p-1">
+          <div className="absolute inset-0 bg-[#ffff33]/20 rounded-2xl md:rounded-3xl blur-xl md:blur-2xl group-hover:bg-[#ffff33]/30 transition-all duration-500"></div>
+          <div className="relative z-10 bg-black/40 rounded-2xl md:rounded-3xl p-1">
             <img
               src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
               alt="Neural Network"
-              className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl"
+              className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl md:rounded-2xl"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 rounded-2xl"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-              <p className="text-[#ffff33] font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">NEURAL NETWORKS</p>
-              <h3 className="text-2xl font-bold">
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 rounded-xl md:rounded-2xl"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 transform translate-y-4 sm:translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+              <p className="text-[#ffff33] text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">NEURAL NETWORKS</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
                 The Future of Neural Networks: Breaking Through Traditional Boundaries
               </h3>
-              <p className="mt-4 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Discover how neural networks are evolving beyond conventional limitations...</p>
+              <p className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Discover how neural networks are evolving beyond conventional limitations...</p>
             </div>
           </div>
         </motion.div>
@@ -85,13 +89,14 @@ const LatestLab = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mt-16"
+        viewport={{ once: true }}
+        className="text-center mt-8 sm:mt-12 md:mt-16"
       >
-        <button className="group relative px-8 py-4 overflow-hidden rounded-xl bg-[#ffff33] hover:bg-[#ffff33]/90 transition-colors duration-300">
+        <button className="group relative px-6 py-3 sm:px-8 sm:py-4 overflow-hidden rounded-lg sm:rounded-xl bg-[#ffff33] hover:bg-[#ffff33]/90 transition-colors duration-300">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-          <span className="relative inline-flex items-center font-semibold text-black">
+          <span className="relative inline-flex items-center text-sm sm:text-base font-semibold text-black">
             Read More
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </span>
