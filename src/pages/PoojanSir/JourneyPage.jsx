@@ -49,7 +49,7 @@ const JourneyPage = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] via-yellow-200 to-yellow-300 mb-30 tracking-tight"
         >
-          Explore My Journey
+          Explore My Jouey
         </motion.h1>
 
         <div className="flex flex-col md:flex-row gap-16 items-start">
