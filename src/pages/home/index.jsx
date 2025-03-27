@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import HeroSection from "../../components/home/HeroSection";
 import JourneyPage from "../../components/home/Journey";
 import LatestLab from "../../components/home/LatestLab";
@@ -7,10 +7,20 @@ import ReimagineBoundary from "../../components/home/ReimagineBoundary";
 import IdeasCard from "../../components/home/IdeasCard";
 import Testimonials from "../../components/home/Testimonials";
 import { motion } from "framer-motion";
+import "../../styles/ShimmerButton.css"
+import "../../styles/animations.css"
 
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const journeyRef = useRef(null);
+
+
+  const scrollToJourney = () => {
+    if (journeyRef.current) {
+      journeyRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {

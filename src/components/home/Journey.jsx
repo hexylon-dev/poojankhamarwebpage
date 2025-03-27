@@ -192,10 +192,10 @@ const JourneyPage = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
+  
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-black text-white py-16 px-8 md:px-16 overflow-hidden">
-      
-      {/* Background Elements */}
+    <div ref={containerRef}  id="journey" className="min-h-screen bg-black text-white py-16 px-8 md:px-16 relative overflow-hidden">
+      {/* Enhanced background elements */}
       <div className="fixed inset-0 z-0">
         <motion.div style={{ y: backgroundY }} className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] rounded-full bg-yellow-300/[0.02] blur-[100px]" />
         <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-yellow-300/[0.03] blur-[80px]" />
@@ -203,10 +203,19 @@ const JourneyPage = () => {
 
       {/* Page Content */}
       <div className="max-w-7xl mx-auto relative z-10">
-        
-        {/* Title */}
-        <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: "easeOut" }} 
-          className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] via-yellow-200 to-yellow-300 mb-16 tracking-tight">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute top-[5%] left-[2%] w-32 h-[1px] bg-gradient-to-r from-yellow-300/50 to-transparent"
+        ></motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] via-yellow-200 to-yellow-300 mb-16 tracking-tight md:text-center"
+        >
           Explore My Journey
         </motion.h1>
 

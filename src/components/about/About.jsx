@@ -40,7 +40,7 @@ export default function About() {
       <div className="w-full max-w-7xl mx-auto px-4 py-16">
         {/* Header Section */}
         <div className="mt-32">
-          <h1 className="text-6xl font-bold text-[#ffff33] mb-8 leading-tight animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#ffff33] mb-8 leading-tight animate-fade-in">
             About Poojan Khamar – The Bold Innovator
           </h1>
           <div className="w-24 h-1 bg-[#ffff33] mx-auto mb-8"></div>

@@ -4,11 +4,11 @@ function InnovationHighlight() {
   return (
     <div className="space-y-8 mt-32 animate-fade-in">
       <h1
-        className="text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
-      leading-tight tracking-tight"
+        className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent leading-tight tracking-tight"
       >
         Innovations that Reimagine Boundaries
       </h1>
+
 
       <div className="w-24 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-400"></div>
 
@@ -23,7 +23,7 @@ function InnovationHighlight() {
       <div className="flex justify-start">
         <button
           className="group relative bg-[#ffff33] text-black px-8 py-4 rounded-full font-semibold 
-        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/30"
+        transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/30 mb-4 md:mb-0"
         >
           <span className="relative z-10">Contact Me Directly</span>
           <div

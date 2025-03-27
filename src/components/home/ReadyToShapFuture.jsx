@@ -30,13 +30,13 @@ const ReadyShapeFuture = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full max-w-6xl aspect-[2/1] rounded-[2rem] overflow-hidden interactive-bg"
+        className="relative w-full max-w-6xl md:aspect-[2/1] aspect-[3/4] rounded-[2rem] sm:rounded-[1.5rem] overflow-hidden interactive-bg"
       >
         {/* Dynamic Background Effect */}
         <div 
           className="absolute inset-0 bg-[#111111]"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(255, 255, 51, 0.15), rgba(17, 17, 17, 1) 50%)`
+            background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(255, 255, 51, 0.15), rgba(17, 17, 17, 1) 50%)`,
           }}
         ></div>
 
@@ -61,10 +61,10 @@ const ReadyShapeFuture = () => {
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-[#ffff33] rounded-full"
-              initial={{ 
-                x: Math.random() * 100 + '%',
-                y: Math.random() * 100 + '%',
-                opacity: Math.random() * 0.5 + 0.3
+              initial={{
+                x: Math.random() * 100 + "%",
+                y: Math.random() * 100 + "%",
+                opacity: Math.random() * 0.5 + 0.3,
               }}
               animate={{ y: [null, '-20%'], opacity: [null, 0] }}
               transition={{ duration: Math.random() * 2 + 3, repeat: Infinity, ease: "linear" }}
@@ -78,32 +78,38 @@ const ReadyShapeFuture = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-[#ffff33] text-6xl font-bold mb-8 max-w-[600px] leading-tight"
+            className="text-[#ffff33] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 max-w-[600px] leading-tight"
           >
-            Ready to shape 
+            Ready to shape
             <span className="relative inline-block mx-2">
               the future
-              <motion.div 
-                className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#ffff33] to-[#ffff33]/50"
+              <motion.div
+                className="absolute -bottom-1 sm:-bottom-2 left-0 h-[2px] sm:h-1 bg-gradient-to-r from-[#ffff33] to-[#ffff33]/50"
                 initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
+                whileInView={{ width: "100%" }}
                 transition={{ duration: 1, delay: 0.5 }}
               />
             </span>
             with me?
           </motion.h1>
 
-          <motion.button 
+          <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(255, 255, 51, 0.5)" }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden"
+            className="group relative px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden text-sm sm:text-base"
           >
             <span className="relative z-10 inline-flex items-center">
               Contact Me Directly
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 sm:h-5 sm:w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
@@ -112,7 +118,8 @@ const ReadyShapeFuture = () => {
         </div>
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default ReadyShapeFuture;
+export default ReadyShapeFuture
+

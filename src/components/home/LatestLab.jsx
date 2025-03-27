@@ -15,10 +15,10 @@ const LatestLab = () => {
         transition={{ duration: 0.8 }}
         className="text-6xl font-bold text-center mb-16 leading-tight"
       >
-        <span className="relative inline-block">
-          Latest from 
+        <span className="relative inline-block text-4xl  md:text-7xl lg:text-7xl font-semibold">
+          Latest from
           <span className="text-[#ffff33]"> My Lab</span>
-          <motion.div 
+          <motion.div
             className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-400"
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
@@ -30,7 +30,7 @@ const LatestLab = () => {
       {/* Content Grid */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
         {/* First Card */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -38,7 +38,7 @@ const LatestLab = () => {
         >
           <div className="absolute inset-0 bg-[#ffff33]/20 rounded-3xl blur-3xl group-hover:bg-[#ffff33]/30 transition-all duration-500"></div>
           <div className="relative z-10 bg-black/40 rounded-3xl p-1">
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt="AI Robot"
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl"
@@ -55,7 +55,7 @@ const LatestLab = () => {
         </motion.div>
 
         {/* Second Card */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -63,7 +63,7 @@ const LatestLab = () => {
         >
           <div className="absolute inset-0 bg-[#ffff33]/20 rounded-3xl blur-3xl group-hover:bg-[#ffff33]/30 transition-all duration-500"></div>
           <div className="relative z-10 bg-black/40 rounded-3xl p-1">
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
               alt="Neural Network"
               className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl"
