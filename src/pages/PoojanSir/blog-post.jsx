@@ -251,7 +251,7 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen bg-black mx-auto">
   
-      <div className="min-h-screen bg-black text-gray-200 p-2 md:p-2 max-w-4xl mx-auto">
+      <div className="min-h-screen bg-black text-gray-200 pt-32 p-2  max-w-4xl mx-auto">
       <Helmet>
         <title>{blogData?.title ? `${blogData.title} | Your Site Name` : "Blog | Your Site Name"}</title>
         <meta name="description" content={blogData?.description || "Read the latest blog post."} />

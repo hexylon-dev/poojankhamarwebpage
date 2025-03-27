@@ -241,7 +241,7 @@ export default function Blog() {
           })}
         </script>
       </Helmet>
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 pt-32 max-w-4xl">
         <div className="mb-6">
           <span className="text-[#CCFF00] text-sm">List</span>
         </div>

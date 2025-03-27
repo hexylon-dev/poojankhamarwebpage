@@ -65,9 +65,9 @@ function Home() {
       {/* <div className="h-32 bg-gradient-to-b from-black to-gray-900"></div> */}
 
       {/* Highlighted Sections */}
-      <section id="highlighted-sections" className="relative min-h-screen bg-black text-white py-16 px-8 md:px-16">
-        <div className="w-full max-w-7xl mx-auto px-4 py-16">
-          <h2 className="text-6xl font-bold text-[#ffff33] text-center mb-8 leading-tight">
+      <section id="highlighted-sections" className="relative min-h-screen bg-black text-white py-4 md:py-16 px-8 md:px-16">
+        <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#ffff33] text-center mb-4 md:mb-8 leading-tight">
             Highlighted Sections
           </h2>
         </div>

@@ -32,7 +32,8 @@ const ReadyShapeFuture = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full max-w-6xl md:aspect-[2/1] aspect-[3/4] rounded-[2rem] sm:rounded-[1.5rem] overflow-hidden interactive-bg"
+        viewport={{ once: true, margin: "-100px" }}
+        className="relative w-full max-w-6xl aspect-[16/13] sm:aspect-[16/11] md:aspect-[2/1] rounded-xl sm:rounded-2xl md:rounded-[2rem] overflow-hidden interactive-bg"
       >
         {/* Dynamic Background Effect */}
         <div
@@ -59,7 +60,7 @@ const ReadyShapeFuture = () => {
 
         {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden">
-          {Array.from({ length: 20 }).map((_, i) => (
+          {Array.from({ length: 10 }).map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-[#ffff33] rounded-full"
@@ -79,8 +80,9 @@ const ReadyShapeFuture = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8 }}
-            className="text-[#ffff33] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 max-w-[600px] leading-tight"
+            className="text-[#ffff33] text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-5 md:mb-8 max-w-[600px] leading-tight"
           >
             Ready to shape
             <span className="relative inline-block mx-2">
@@ -89,6 +91,7 @@ const ReadyShapeFuture = () => {
                 className="absolute -bottom-1 sm:-bottom-2 left-0 h-[2px] sm:h-1 bg-gradient-to-r from-[#ffff33] to-[#ffff33]/50"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
               />
             </span>
@@ -98,10 +101,11 @@ const ReadyShapeFuture = () => {
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
             whileHover={{ scale: 1.05, boxShadow: "0px 4px 10px rgba(255, 255, 51, 0.5)" }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden text-sm sm:text-base"
+            className="group relative px-4 sm:px-5 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden text-xs sm:text-sm md:text-base"
             onClick={() => {
               navigate("/contact")
             }}
@@ -110,7 +114,7 @@ const ReadyShapeFuture = () => {
               Contact Me Directly
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 sm:h-5 sm:w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+                className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 ml-1 sm:ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

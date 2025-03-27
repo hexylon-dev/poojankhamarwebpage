@@ -26,10 +26,7 @@ const Page1 = () => {
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Animated gradient background with moving effect */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black animate-gradient">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,0,0.1),transparent_50%)] animate-pulse"></div>
-        </div> */}
+
 
       {/* SEO Optimized Meta Tags */}
       <Helmet>
@@ -64,16 +61,9 @@ const Page1 = () => {
         ))}
       </div>
 
-      {/* Main content with 3D perspective */}
-      <div className="relative z-10 container mx-auto px-6 py-32 perspective-1000">
-        {/* Top navigation with enhanced effects */}
-
-
-
-      </div>
 
       {/* Main content area with enhanced animations */}
-      <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
+      <div className="flex flex-col md:flex-row items-center mt-10 md:mt-36 max-w-8xl mx-auto px-4 md:px-40">
         {/* Left side - Text content with advanced typography and animations */}
         <div className="w-full md:w-1/2 space-y-2">
           <h1 className="text-4xl lg:text-6xl md:text-5xl font-bold text-white leading-tight font-orbitron">
@@ -122,13 +112,13 @@ const Page1 = () => {
         </div>
 
         {/* Right side - Image with hover effects */}
-        <div className="w-full md:w-1/2 relative floating group">
+        <div className="w-full md:w-1/2 relative floating group mt-8 md:mt-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/20 to-transparent rounded-lg blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,51,0.2),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <img
             src={PoojanSir || "/placeholder.svg"}
             alt="Poojan Sir"
-            className="w-full h-auto rounded-lg shadow-[0_0_30px_rgba(255,255,51,0.2)] relative z-10 transform group-hover:scale-[1.02] transition-transform duration-500"
+            className="w-full h-auto rounded-lg shadow-[0_0_30px rgba(255,255,51,0.2)] relative z-10 transform group-hover:scale-[1.02] transition-transform duration-500"
           />
         </div>
       </div>
