@@ -16,7 +16,8 @@ const navItems = [
     { icon: FileText, path: "/blogs", label: "Blogs" },
     { icon: Lightbulb, path: "/ideas", label: "Ideas" },
     { icon: Phone, path: "/contact", label: "Contact" },
-]
+    { icon: Phone, path: "/team", label: "Team" },
+];
 
 export function Headers() {
     const location = useLocation()
