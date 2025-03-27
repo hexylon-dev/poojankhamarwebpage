@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import logo from "../assets/logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
-import { OnlyMailSendToContactUs } from "../service/api";
+// import { OnlyMailSendToContactUs } from "../service/api";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,31 +51,57 @@ const FooterWithTransition = () => {
     return () => ctx.revert();
   }, []);
 
+  const handleNavigation = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <footer className="bg-[#19191A] text-gray-300 py-12 px-4 md:px-6 relative z-5">
+    <footer className="bg-[#19191A] text-gray-300 py-8 px-4 md:px-6 relative z-5">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start">
           {/* Left side - Navigation options */}
-          <div className="flex flex-wrap gap-8 mb-8 md:mb-0">
-            <div className="text-white hover:text-gray-400 cursor-pointer transition-colors">
+          <div className="flex flex-wrap gap-4 mb-8 md:mb-0">
+            <div
+              className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
+              onClick={() => handleNavigation("/")}
+            >
+              Home
+            </div>
+            <div
+              className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
+              onClick={() => handleNavigation("/about-poojan-khamar")}
+            >
               About
             </div>
-            <div className="text-white hover:text-gray-400 cursor-pointer transition-colors">
+            <div
+              className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
+              onClick={() => handleNavigation("/innovations")}
+            >
               Innovation
             </div>
-            <div className="text-white hover:text-gray-400 cursor-pointer transition-colors">
+            <div
+              className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
+              onClick={() => handleNavigation("/blogs")}
+            >
               Blogs
             </div>
-            <div className="text-white hover:text-gray-400 cursor-pointer transition-colors">
+            <div
+              className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
+              onClick={() => handleNavigation("/ideas")}
+            >
               Ideas
             </div>
-            <div className="text-white hover:text-gray-400 cursor-pointer transition-colors">
+            <div
+              className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
+              onClick={() => handleNavigation("/contact")}
+            >
               Contact
             </div>
           </div>
 
           {/* Right side - Social media icons */}
-          <div className="flex flex-col md:flex-row md:items-center gap-6">
+          <div className="flex flex-row md:items-center gap-4 md:gap-6 mx-auto">
             <a
               href="https://www.linkedin.com/in/poojan-khamar-30a560126/"
               className="p-3 bg-[#ffff33] rounded-full hover:bg-yellow-400 transition-all duration-300 social-icon group shadow-[0_0_15px_rgba(255,255,51,0.3)]"
@@ -95,7 +121,8 @@ const FooterWithTransition = () => {
           </div>
         </div>
 
-        {/* Fixed social icons (removed as we have them in the footer now) */}
+        {/* Additional footer content can be added here */}
+
       </div>
     </footer>
   );
