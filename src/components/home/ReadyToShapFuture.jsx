@@ -1,4 +1,4 @@
-import { useEffect, useState , useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 
@@ -22,12 +22,12 @@ const ReadyShapeFuture = () => {
   const navigate = useNavigate();
   return (
     <div id="futureSection" className="min-h-screen bg-black flex items-center justify-center py-24 relative overflow-hidden">
-      
+
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-10 grid-lines"></div>
 
       {/* Main Content */}
-      <motion.div 
+      <motion.div
         ref={containerRef}
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -35,7 +35,7 @@ const ReadyShapeFuture = () => {
         className="relative w-full max-w-6xl md:aspect-[2/1] aspect-[3/4] rounded-[2rem] sm:rounded-[1.5rem] overflow-hidden interactive-bg"
       >
         {/* Dynamic Background Effect */}
-        <div 
+        <div
           className="absolute inset-0 bg-[#111111]"
           style={{
             background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(255, 255, 51, 0.15), rgba(17, 17, 17, 1) 50%)`,
@@ -44,7 +44,7 @@ const ReadyShapeFuture = () => {
 
         {/* Animated Floating Circle */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] aspect-square">
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.1, 1], rotate: [0, 360] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0"
@@ -76,7 +76,7 @@ const ReadyShapeFuture = () => {
 
         {/* Content Section */}
         <div className="relative h-full flex flex-col justify-center px-12 z-10">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -117,11 +117,11 @@ const ReadyShapeFuture = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </span> */}
+            </span>
             {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"> */}
-          
 
-              Contact Me Directly
+
+            Contact Me Directly
 
             {/* </div> */}
           </motion.button>

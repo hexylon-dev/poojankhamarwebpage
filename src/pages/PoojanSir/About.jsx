@@ -71,10 +71,10 @@ export default function About() {
 
       <main className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white font-sans">
         <div className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20">
-          
+
           {/* Header Section */}
-          <div className="mt-16 sm:mt-24 md:mt-32 text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-[#ffff33] mb-4 sm:mb-6 md:mb-8 leading-tight">
+          <div className="mt-10 sm:mt-24 md:mt-18 text-center">
+            <h1 className="text-4xl  md:text-5xl lg:text-5xl font-bold text-[#ffff33] mb-4 sm:mb-6 md:mb-8 leading-tight">
               Poojan Khamar: Bold Ideas, Fearless Innovations & Leadership
             </h1>
             <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#ffff33] mx-auto mb-6 sm:mb-8"></div>
