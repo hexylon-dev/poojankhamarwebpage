@@ -35,7 +35,7 @@ function AppContent() {
         <Route path="/about-poojan-khamar" element={<AboutPage />} />
         <Route path="/innovations" element={<InnovationPage />} />
         <Route path="/ideas" element={<IdeaPage />} />
-        <Route path="/team" element={<Team />} />
+        {/* <Route path="/team" element={<Team />} /> */}
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogPost />} />
