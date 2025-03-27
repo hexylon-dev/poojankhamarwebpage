@@ -40,11 +40,11 @@ function Contact() {
         {/* Hero Section */}
         <div className={`space-y-12 mb-20 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center ">
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
+            {/* <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
               leading-tight tracking-tight mt-32"
             >
               Let's Collaborate.<br />Connect. Create.
-            </h1>
+            </h1> */}
             <div className="w-32 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-300 mx-auto rounded-full mb-12"></div>
           </div>
 

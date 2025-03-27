@@ -105,7 +105,7 @@ const Page1 = () => {
         <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
           {/* Left side - Text content with advanced typography and animations */}
           <div className="w-full md:w-1/2 space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight font-['Orbitron']">
+            <h1 className="sm:text-4xl md:text-7xl font-bold text-white leading-tight font-['Orbitron']">
               <span className="inline-block animate-fade-in-up">Bold Ideas.</span>{" "}
               <span
                 className="text-white bg-clip-text inline-block animate-fade-in-up"
@@ -117,7 +117,10 @@ const Page1 = () => {
               <span className="inline-block animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
                 Innovations.
               </span>{" "}
-              <span className="text-[#ffff33] block mt-2 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+              <span
+                className="text-[#ffff33] block mt-2 animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
                 Future-Driven <br />
                 Leadership.
               </span>

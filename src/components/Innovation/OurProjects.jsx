@@ -4,17 +4,18 @@ function OurProjects({ title, description, features }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="mb-32 transform transition-all duration-500 hover:translate-x-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="overflow-hidden">
-        <h2 className="text-[150px] font-bold mb-4 bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#000011] bg-clip-text text-transparent
-          transform transition-transform duration-500 hover:scale-105"
+        <h2
+          className="text-4xl md:text-6xl lg:text-[150px] font-bold mb-4 bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#000011] bg-clip-text text-transparent transform transition-transform duration-500 hover:scale-105 mt-10"
         >
           {title}
         </h2>
+
       </div>
       <div className="relative">
         <h3 className="text-white text-3xl font-semibold mb-6 transform transition-all duration-300">
@@ -29,8 +30,8 @@ function OurProjects({ title, description, features }) {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {features.map((feature, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="bg-zinc-900/60 backdrop-blur-sm rounded-xl p-8 border border-zinc-800 
               transform transition-all duration-300 hover:border-[#ffff33] hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/20"
           >

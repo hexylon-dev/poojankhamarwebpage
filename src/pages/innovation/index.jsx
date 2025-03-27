@@ -10,7 +10,7 @@ function index() {
         <InnovationHighlight />
         <div className="space-y-32">
           <OurProjects
-            title="VIDHYARTHI AI"
+            title="VIDHYARTHI AI "
             description="Empowering Students with Personalized AI Learning Paths"
             features={[
               "Psychological Profiling-Based Learning",

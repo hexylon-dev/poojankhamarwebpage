@@ -39,7 +39,7 @@ function Index() {
         {/* Hero Section */}
         <div className={`space-y-12 mb-20 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center">
-            <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
+            <h1 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
               leading-tight tracking-tight mt-32"
             >
               Let's Collaborate.<br />Connect. Create.
@@ -61,7 +61,7 @@ function Index() {
             <div className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-zinc-800 
               hover:border-[#ffff33]/30 transition-all duration-500 shadow-2xl hover:shadow-[#ffff33]/10"
             >
-              <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
                 Let's Build Something Exceptional
               </h2>
 
