@@ -7,15 +7,19 @@ import HomePage from "./pages/home/index";
 import AboutPage from "./pages/about/index";
 import InnovationPage from "./pages/innovation/index";
 import ContactPage from "./pages/contact/index";
+import { HelmetProvider } from "react-helmet-async";
+
 import IdeaPage from "./components/idea";
 import Footer from './components/Footer';
-// You'll need to create this page
+
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <AppContent />
-    </Router>
+      </Router>
+      </HelmetProvider>
   );
 }
 
