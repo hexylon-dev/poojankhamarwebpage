@@ -6,6 +6,8 @@ import ReadyShapeFuture from "../../components/home/ReadyToShapFuture";
 import ReimagineBoundary from "../../components/home/ReimagineBoundary";
 import IdeasCard from "../../components/home/IdeasCard";
 import Testimonials from "../../components/home/Testimonials";
+import "../../styles/ShimmerButton.css"
+import "../../styles/animations.css"
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
