@@ -145,7 +145,7 @@ const ReadyShapeFuture = () => {
             whileTap={{ scale: 0.95 }}
             className="group relative px-5 sm:px-6 md:px-8 py-3 md:py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden text-sm sm:text-base"
           >
-            {/* <span className="relative z-10 inline-flex items-center">
+            <span className="relative z-10 inline-flex items-center">
               Contact Me Directly
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ const ReadyShapeFuture = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </span> */}
+            </span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           </motion.button>
         </div>

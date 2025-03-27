@@ -50,7 +50,7 @@ function Home() {
 
       <div className="min-h-screen bg-black">
         <div className="w-full max-w-7xl mx-auto px-4 py-16 ">
-          <h1 className="text-4xl font-bold text-[#ffff33] text-center mb-8 leading-tight ">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#ffff33] text-center mb-8 leading-tight ">
             Highlighted Sections
           </h1>
         </div>
