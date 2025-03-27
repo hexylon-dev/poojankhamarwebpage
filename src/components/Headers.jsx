@@ -78,7 +78,7 @@ export function Headers() {
 
     return (
         <header className="fixed left-1/2 -translate-x-1/2 z-50 w-full  py-2">
-            <div className="max-w-[1800px] mx-auto">
+            <div className="max-w-[1000px] mx-auto">
 
                 <div className="flex items-center justify-between px-4">
                     {/* Profile picture on the left - now clickable */}
@@ -113,6 +113,7 @@ export function Headers() {
 
                     {/* Navigation menu in center with background - visible on tablet and desktop */}
                     {!isMobile && (
+                      
                         <nav className="mx-4 flex-1 max-w-2xl flex items-center justify-center">
                             <div className="flex items-center gap-1 sm:gap-2 bg-[#ffff33] backdrop-blur-xl rounded-full px-2 sm:px-4 py-1 sm:py-2 md:px-8 md:py-3 border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
                                 {navItems.map((item, index) => {
@@ -141,15 +142,17 @@ export function Headers() {
 
                     {/* Button on the right - hidden on mobile, shown on tablet and desktop */}
                     {!isMobile && (
+                          <a href="#journey">
                         <button
-                            onClick={handleExploreClick}
+                            // onClick={handleExploreClick}
                             className="flex items-center justify-center bg-[#ffff33] text-black px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]"
                         >
                             <span className="relative z-10 text-xs sm:text-sm md:text-base lg:text-lg whitespace-nowrap">
                                 {isTablet ? "Journey" : "Explore My Journey"}
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                        </button>
+                            </button>
+                            </a>
                     )}
                 </div>
             </div>
@@ -202,13 +205,15 @@ export function Headers() {
                             })}
 
                             {/* Mobile version of the explore button */}
+                            <a href="#journey">
                             <button
-                                onClick={handleExploreClick}
+                                // onClick={handleExploreClick}
                                 className="w-full flex items-center justify-center bg-[#ffff33] text-black p-3 rounded-lg hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)] mt-2"
                             >
                                 <span className="relative z-10 text-base">Explore My Journey</span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                            </button>
+                                </button>
+                                </a>
                         </div>
                     </div>
                 </div>

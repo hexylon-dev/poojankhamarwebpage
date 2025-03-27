@@ -113,6 +113,7 @@ const Page1 = () => {
             – where creativity meets courage, and every idea is designed to shape tomorrow.
           </p>
 
+          <a href="#journey">
           <button
             className="shimmer-button flex items-center gap-4 hover-scale group animate-fade-in-up"
             style={{ animationDelay: "1s" }}
@@ -120,9 +121,10 @@ const Page1 = () => {
             <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
             <span className="relative">
               Explore My Journey
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"> </span>
             </span>
           </button>
+          </a>
         </div>
 
         {/* Right side - Image with hover effects */}
