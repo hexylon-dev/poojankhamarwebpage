@@ -12,7 +12,7 @@ const cn = (...classes) => {
 
 const navItems = [
   { icon: Home, path: "/", label: "Home" },
-  { icon: Disc, path: "/about", label: "About" },
+  { icon: Disc, path: "/about-poojan-khamar", label: "About" },
   { icon: Flame, path: "/innovations", label: "Innovations" },
   { icon: FileText, path: "/idea", label: "Idea" },
   { icon: Target, path: "/idea", label: "Target" }, // You might want to update this path
@@ -69,43 +69,60 @@ const Page1 = () => {
         {/* Top navigation with enhanced effects */}
    
 
-        <Helmet>
-        <title>Bold Ideas | Fearless Innovations | Future-Driven Leadership</title>
-        <meta name="description" content="Explore bold ideas, fearless innovations, and future-driven leadership for a better tomorrow." />
-        <meta name="keywords" content="Bold Ideas, Fearless Innovations, Future Leadership, Future Technology" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://poojankhamar.in/" />
-      </Helmet>
+          {/* CTA Button with advanced hover effects */}
+          <button className="bg-[#ffff33] text-black font-medium px-8 py-3.5 rounded-full hover:from-[#ffff33] hover:to-yellow-600 transition-all hover:scale-105 font-orbitron relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]">
+            <span className="relative z-10">Explore My Journey</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
+        </div>
 
         {/* Main content area with enhanced animations */}
         <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
           {/* Left side - Text content with advanced typography and animations */}
           <div className="w-full md:w-1/2 space-y-8">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight font-['Orbitron']">
-              <span className="inline-block animate-fade-in-up">Bold Ideas.</span>{" "}
-              <span className="text-white bg-clip-text inline-block animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                Fearless Innovations.
-              </span>
-              <span className="text-[#ffff33] block mt-2 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-                Future-Driven Leadership.
+            <h1 className="sm:text-4xl md:text-7xl font-bold text-white leading-tight font-orbitron">
+              <span className="inline-block animate-fade-in-up">Bold Idea.</span>{" "}
+              <span
+                className="text-white bg-clip-text inline-block animate-fade-in-up"
+                style={{ animationDelay: "0.2s" }}
+              >
+                Fearless
+              </span>{" "}
+              <br />
+              <span className="inline-block animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                Innovations.
+              </span>{" "}
+              <span
+                className="text-[#ffff33] block mt-2 animate-fade-in-up"
+                style={{ animationDelay: "0.6s" }}
+              >
+                Future-Driven <br />
+                Leadership.
               </span>
             </h1>
 
-            <p className="text-gray-300 max-w-lg text-lg leading-relaxed mt-6 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-              Welcome to <strong className="text-[#ffff33]">Poojan Khamar's Innovation Lab</strong> – where <em>bold ideas</em> meet <em>fearless innovations</em>. Join me in shaping the <strong>future of leadership and technology.</strong>
+            <p
+              className="text-gray-300 max-w-lg text-lg leading-relaxed animate-fade-in-up"
+              style={{ animationDelay: "0.8s" }}
+            >
+              Welcome to{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] to-yellow-500">
+                Poojan Khamar's Innovation Lab
+              </span>{" "}
+              – where creativity meets courage, and every idea is designed to shape tomorrow.
             </p>
-            <a href="#journey">
-              <button
-                className="shimmer-button flex items-center gap-4 font-['Orbitron'] hover-scale group animate-fade-in-up"
-                style={{ animationDelay: "1s" }}
-              >
-                <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
-                <span className="relative">
-                  Explore My Journey
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-                </span>
-              </button>
-            </a>
+
+            <button
+              className="shimmer-button flex items-center gap-4 hover-scale group animate-fade-in-up"
+              style={{ animationDelay: "1s" }}
+            >
+              <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
+              <span className="relative">
+                Explore My Journey
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+              </span>
+            </button>
           </div>
 
           {/* Right side - Image with hover effects */}
@@ -138,7 +155,7 @@ const Page1 = () => {
       </div>
 
       {/* Follow me text with enhanced gradient and glow */}
-      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 font-['Orbitron'] md:block hidden">
+      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 ">
         FOLLOW ME ON
       </div>
     </div>

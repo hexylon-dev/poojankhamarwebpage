@@ -7,7 +7,7 @@ import HomePage from "./pages/home/index";
 import AboutPage from "./pages/about/index";
 import InnovationPage from "./pages/innovation/index";
 import ContactPage from "./pages/contact/index";
-import IdeaPage from "./pages/ideas/index";
+import IdeaPage from "./components/idea";
 import Footer from './components/Footer';
 // You'll need to create this page
 
@@ -27,7 +27,7 @@ function AppContent() {
       <Headers />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about-poojan-khamar" element={<AboutPage />} />
         <Route path="/innovations" element={<InnovationPage />} />
         <Route path="/ideas" element={<IdeaPage />} />
         <Route path="/contact" element={<ContactPage />} />

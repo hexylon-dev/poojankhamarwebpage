@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
-function Index() {
+function ContriForm() {
   const [formData, setFormData] = useState({
     name: '',
-    subject: '',
+    title: '',
     email: '',
     phone: '',
-    message: ''
+    description: ''
   });
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,144 +30,118 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white relative overflow-hidden">
+      {/* SEO Improvements */}
+      <Helmet>
+        <title>Innovator's Playbook - Share Your Idea</title>
+        <meta name="description" content="Share your bold and innovative ideas with Poojan Khamar's Innovator's Playbook." />
+        <meta name="keywords" content="Innovation, Bold Ideas, Creativity, Entrepreneurship, Future Thinking" />
+        <meta name="author" content="Poojan Khamar" />
+      </Helmet>
+
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ffff33]/5 rounded-full blur-3xl transform -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl transform translate-y-1/2"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ffff33]/10 rounded-full blur-3xl transform -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl transform translate-y-1/2"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className={`space-y-12 mb-20 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="text-center">
-            <h1 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
-              leading-tight tracking-tight mt-32"
-            >
-              Let's Collaborate.<br />Connect. Create.
+      {/* Main Content */}
+      <div className="relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
+          {/* Hero Section */}
+          <div className={`space-y-12 mb-24 text-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent leading-tight tracking-tight">
+              Innovator's Playbook
             </h1>
-            <div className="w-32 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-300 mx-auto rounded-full mb-12"></div>
-          </div>
-
-          <div className=" mx-auto text-center">
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Every great idea, collaboration, or conversation starts with a simple connection. Whether you have a bold project
-              in mind, want to share an idea, or just wish to connect – I'm always open to hearing from forward-thinkers.
+            <h2 className="text-3xl sm:text-4xl font-bold text-white/90">Bold Ideas by Poojan Khamar</h2>
+            <div className="flex justify-center">
+              <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-300 rounded-full"></div>
+            </div>
+            <p className="text-lg sm:text-xl text-gray-300 px-4">
+              Ideas are not bound by rules. They come from where imagination collides with courage. The world changes when someone dares to think differently.
             </p>
           </div>
-        </div>
 
-        {/* Contact Form Section */}
-        <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className=" mx-auto">
-            <div className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-zinc-800 
-              hover:border-[#ffff33]/30 transition-all duration-500 shadow-2xl hover:shadow-[#ffff33]/10"
-            >
-              <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
-                Let's Build Something Exceptional
-              </h2>
+          {/* Contribution Form Section */}
+          <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
+              Share Your Vision
+            </h2>
+            <p className="text-lg text-gray-300 text-center">Have a bold idea that could reshape the future? Let's hear it.</p>
 
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2 group">
-                    <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                      Your Name
-                    </label>
+            {/* Form */}
+            <div className="max-w-3xl mx-auto mt-10">
+              <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Name */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Your Name</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your name"
-                      className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                        border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                        transition-all duration-300 transform hover:scale-[1.02]"
+                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
                     />
                   </div>
 
-                  <div className="space-y-2 group">
-                    <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                      Subject
-                    </label>
-                    <select
-                      name="subject"
-                      value={formData.subject}
+                  {/* Title */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Your Idea Title</label>
+                    <input
+                      type="text"
+                      name="title"
+                      value={formData.title}
                       onChange={handleChange}
-                      className="w-full bg-zinc-800/50 rounded-xl p-4 text-white
-                        border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                        transition-all duration-300 transform hover:scale-[1.02] appearance-none cursor-pointer"
-                    >
-                      <option value="" className="bg-zinc-800">Select a subject</option>
-                      <option value="collaboration" className="bg-zinc-800">Collaboration</option>
-                      <option value="project" className="bg-zinc-800">Project Discussion</option>
-                      <option value="other" className="bg-zinc-800">Other</option>
-                    </select>
+                      placeholder="Give your idea a name"
+                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
+                    />
                   </div>
 
-                  <div className="space-y-2 group">
-                    <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                      Email
-                    </label>
+                  {/* Email */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@example.com"
-                      className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                        border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                        transition-all duration-300 transform hover:scale-[1.02]"
+                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
                     />
                   </div>
 
-                  <div className="space-y-2 group">
-                    <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                      Phone
-                    </label>
+                  {/* Phone */}
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Phone</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 your number"
-                      className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                        border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                        transition-all duration-300 transform hover:scale-[1.02]"
+                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2 group">
-                  <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                    Your Message
-                  </label>
+                {/* Description */}
+                <div className="mt-6">
+                  <label className="block text-lg font-medium text-gray-200">Brief Description</label>
                   <textarea
-                    name="message"
-                    value={formData.message}
+                    name="description"
+                    value={formData.description}
                     onChange={handleChange}
-                    placeholder="Share your thoughts or ideas..."
+                    placeholder="Share your innovative idea..."
                     rows="4"
-                    className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                      border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                      transition-all duration-300 resize-none transform hover:scale-[1.01]"
+                    className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none"
                   ></textarea>
                 </div>
 
-                <div className="pt-6">
-                  <button
-                    type="submit"
-                    className="group relative w-full bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] 
-                      text-black py-5 rounded-xl font-semibold text-lg overflow-hidden
-                      transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#ffff33]/20"
-                  >
-                    <span className="relative z-10 inline-flex items-center justify-center">
-                      Send Message
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </button>
-                </div>
+                {/* Submit Button */}
+                <button type="submit" className="w-full bg-[#ffff33] text-black py-3 rounded-lg font-semibold text-lg mt-6 hover:bg-yellow-400 transition-all">
+                  Share Your Idea
+                </button>
               </form>
             </div>
           </div>
@@ -176,4 +151,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default ContriForm;

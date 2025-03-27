@@ -13,7 +13,7 @@ const cn = (...classes) => {
 
 const navItems = [
   { icon: Home, path: "/", label: "Home" },
-  { icon: Disc, path: "/about", label: "About" },
+  { icon: Disc, path: "/about-poojan-khamar", label: "About" },
   { icon: Flame, path: "/innovations", label: "Innovations" },
   { icon: FileText, path: "/idea", label: "Idea" },
   { icon: Target, path: "/idea", label: "Target" }, // You might want to update this path
