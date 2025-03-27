@@ -37,7 +37,7 @@ const IdeasCard = () => {
               {/* Button */}
               <a
                 href="./ideas"
-                className="inline-flex justify-center items-center self-start bg-[#ffff33] border border-[rgba(255,255,255,0.15)] rounded-[37px] px-6 py-3 shadow-[inset0-1px_0_0_rgba(47,43,67,0.1),0_1px_3px_0_rgba(47,43,67,0.1)] hover:opacity-90 transition-opacity mt-4"
+                className="inline-flex justify-center items-center self-start bg-[#ffff33] border border-[rgba(255,255,255,0.15)] rounded-[37px] px-6 py-3 shadow-[inset0-1px_0_0_rgba(47,43,67,0.1),0_1px_3px_0_rgba(47,43,67,0.1)] hover:opacity-90 transition-opacity  mb-4"
               >
                 <span className="text-black  tracking-[-0.16px] leading-[24px]">
                   View Ideas

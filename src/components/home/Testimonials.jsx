@@ -4,12 +4,12 @@ export default function Testimonials() {
   return (
     <div className="relative w-full min-h-[500px] bg-[#19191A] rounded-3xl overflow-hidden flex items-center px-12 py-16 max-w-6xl mx-auto">
       {/* Content container */}
-      <div className="relative z-10 max-w-xl">
+      <div className="relative max-w-xl mx-auto">
         <h1 className="text-[#f0f050] text-5xl md:text-6xl font-bold leading-tight mb-12">
           Ready to shape the future with me?
         </h1>
         <button
-          className="bg-[#f0f050] text-black font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors"
+          className="bg-[#f0f050] text-black font-semibold px-8 py-3 rounded-full hover:bg-opacity-90 transition-colors block w-full sm:w-auto"
           onClick={() => console.log("Contact button clicked")}
         >
           Contact Me Directly

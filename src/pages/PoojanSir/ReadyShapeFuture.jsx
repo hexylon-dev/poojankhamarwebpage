@@ -40,14 +40,14 @@ const ReadyShapeFuture = () => {
       </div>
 
       {/* Main content container */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         className="relative w-full max-w-6xl aspect-[2/1] rounded-[2rem] overflow-hidden interactive-bg"
       >
         {/* Dynamic gradient background */}
-        <div 
+        <div
           className="absolute inset-0 bg-[#111111]"
           style={{
             background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(255, 255, 51, 0.15), rgba(17, 17, 17, 1) 50%)`
@@ -56,8 +56,8 @@ const ReadyShapeFuture = () => {
 
         {/* Animated gradient circles */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] aspect-square">
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               scale: [1, 1.1, 1],
               rotate: [0, 360]
             }}
@@ -78,16 +78,16 @@ const ReadyShapeFuture = () => {
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-[#ffff33] rounded-full"
-              initial={{ 
+              initial={{
                 x: Math.random() * 100 + '%',
                 y: Math.random() * 100 + '%',
                 opacity: Math.random() * 0.5 + 0.3
               }}
-              animate={{ 
+              animate={{
                 y: [null, '-20%'],
                 opacity: [null, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: Math.random() * 2 + 3,
                 repeat: Infinity,
                 ease: "linear"
@@ -97,17 +97,18 @@ const ReadyShapeFuture = () => {
         </div>
 
         {/* Content */}
+        {/* Content */}
         <div className="relative h-full flex flex-col justify-center px-12 z-10">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-[#ffff33] text-6xl font-bold mb-8 max-w-[600px] leading-tight"
           >
-            Ready to shape 
+            Ready to shape
             <span className="relative inline-block mx-2">
               the future
-              <motion.div 
+              <motion.div
                 className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-[#ffff33] to-[#ffff33]/50"
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
@@ -117,7 +118,7 @@ const ReadyShapeFuture = () => {
             with me?
           </motion.h1>
 
-          <motion.button 
+          <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
