@@ -65,7 +65,7 @@ const Page1 = () => {
       </div>
 
       {/* Main content with 3D perspective */}
-      <div className="relative z-10 container mx-auto px-6 py-32 perspective-1000">
+      {/* <div className="relative z-10 container mx-auto px-6 py-32 perspective-1000"> */}
         {/* Top navigation with enhanced effects */}
 
 
@@ -75,10 +75,10 @@ const Page1 = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </button> */}
-      </div>
+      {/* </div> */}
 
       {/* Main content area with enhanced animations */}
-      <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
+      <div className="flex flex-col md:flex-row items-center mt-36 max-w-8xl px-40 ">
         {/* Left side - Text content with advanced typography and animations */}
         <div className="w-full md:w-1/2 space-y-8">
           <h1 className="sm:text-4xl md:text-7xl font-bold text-white leading-tight font-orbitron">
