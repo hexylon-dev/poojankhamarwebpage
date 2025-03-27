@@ -1,18 +1,9 @@
-"use client";
-import { useNavigate, useLocation } from "react-router-dom"; // Changed to React Router
-import {
-  Home,
-  Disc,
-  Flame,
-  FileText,
-  Target,
-  Phone,
-  Linkedin,
-  Instagram,
-} from "lucide-react";
-import PoojanSir from "../../assets/Group 51 (9).png";
-import pic from "../../assets/Link.png";
-
+"use client"
+import { useNavigate, useLocation } from "react-router-dom" // Changed to React Router
+import { Home, Disc, Flame, FileText, Target, Phone, Linkedin, Instagram } from "lucide-react"
+import PoojanSir from "../../assets/Group 51 (9).png"
+import pic from "../../assets/Link.png"
+import { Helmet } from 'react-helmet';
 
 // Add the missing cn utility function
 const cn = (...classes) => {
@@ -39,6 +30,15 @@ const Page1 = () => {
       {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black animate-gradient">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,0,0.1),transparent_50%)] animate-pulse"></div>
         </div> */}
+
+         {/* SEO Optimized Meta Tags */}
+      <Helmet>
+        <title>Innovative Ideas | Fearless Creations | Future Leadership</title>
+        <meta name="description" content="Discover groundbreaking innovations, fearless creations, and the future of leadership with Poojan Khamar." />
+        <meta name="keywords" content="Innovations, Future Leadership, Creative Ideas, Poojan Khamar" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://poojankhamar.in/" />
+      </Helmet>
 
       {/* Enhanced grid background with dynamic glow */}
       <div className="absolute inset-0 grid grid-cols-[repeat(30,1fr)] grid-rows-[repeat(30,1fr)] z-0">
@@ -69,44 +69,30 @@ const Page1 = () => {
         {/* Top navigation with enhanced effects */}
    
 
+        <Helmet>
+        <title>Bold Ideas | Fearless Innovations | Future-Driven Leadership</title>
+        <meta name="description" content="Explore bold ideas, fearless innovations, and future-driven leadership for a better tomorrow." />
+        <meta name="keywords" content="Bold Ideas, Fearless Innovations, Future Leadership, Future Technology" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://poojankhamar.in/" />
+      </Helmet>
+
         {/* Main content area with enhanced animations */}
         <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
           {/* Left side - Text content with advanced typography and animations */}
           <div className="w-full md:w-1/2 space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight font-['Orbitron']">
               <span className="inline-block animate-fade-in-up">Bold Ideas.</span>{" "}
-              <span
-                className="text-white bg-clip-text inline-block animate-fade-in-up"
-                style={{ animationDelay: "0.2s" }}
-              >
-                Fearless
-              </span>{" "}
-              <br />
-              <span
-                className="inline-block animate-fade-in-up"
-                style={{ animationDelay: "0.4s" }}
-              >
-                Innovations.
-              </span>{" "}
-              <span
-                className="text-[#ffff33] block mt-2 animae-fade-in-up"
-                style={{ animationDelay: "0.6s" }}
-              >
-                Future-Driven <br />
-                Leadership.
+              <span className="text-white bg-clip-text inline-block animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+                Fearless Innovations.
+              </span>
+              <span className="text-[#ffff33] block mt-2 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                Future-Driven Leadership.
               </span>
             </h1>
 
-            <p
-              className="text-gray-300 max-w-lg text-lg font-['Orbitron'] leading-relaxed animate-fade-in-up"
-              style={{ animationDelay: "0.8s" }}
-            >
-              Welcome to{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] to-yellow-500">
-                Poojan Khamar's Innovation Lab
-              </span>{" "}
-              – where creativity meets courage, and every idea is designed to
-              shape tomorrow.
+            <p className="text-gray-300 max-w-lg text-lg leading-relaxed mt-6 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+              Welcome to <strong className="text-[#ffff33]">Poojan Khamar's Innovation Lab</strong> – where <em>bold ideas</em> meet <em>fearless innovations</em>. Join me in shaping the <strong>future of leadership and technology.</strong>
             </p>
             <a href="#journey">
               <button
@@ -159,4 +145,5 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default Page1
+

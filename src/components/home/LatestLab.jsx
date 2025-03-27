@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 
 const LatestLab = () => {
   return (
-    <div className="bg-black text-white p-8 relative overflow-hidden">
+    <section id="latest-lab" className="bg-black text-white p-16 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,51,0.05),transparent_70%)]"></div>
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ffff33]/20 to-transparent"></div>
 
       {/* Title Section */}
-      <motion.h1
+      <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-6xl font-bold text-center mb-16"
+        className="text-6xl font-bold text-center mb-16 leading-tight"
       >
         <span className="relative inline-block text-4xl  md:text-7xl lg:text-7xl font-semibold">
           Latest from
@@ -25,9 +25,9 @@ const LatestLab = () => {
             transition={{ duration: 1, delay: 0.5 }}
           />
         </span>
+      </motion.h2>
 
-      </motion.h1>
-
+      {/* Content Grid */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
         {/* First Card */}
         <motion.div
@@ -46,9 +46,9 @@ const LatestLab = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 rounded-2xl"></div>
             <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
               <p className="text-[#ffff33] font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">ARTIFICIAL INTELLIGENCE</p>
-              <h2 className="text-2xl font-bold">
+              <h3 className="text-2xl font-bold">
                 The Technological Path to Artificial General Intelligence (AGI): A Comprehensive Deep Dive
-              </h2>
+              </h3>
               <p className="mt-4 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore the cutting-edge advancements and challenges in AGI development...</p>
             </div>
           </div>
@@ -71,16 +71,17 @@ const LatestLab = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 rounded-2xl"></div>
             <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
               <p className="text-[#ffff33] font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">NEURAL NETWORKS</p>
-              <h2 className="text-2xl font-bold">
+              <h3 className="text-2xl font-bold">
                 The Future of Neural Networks: Breaking Through Traditional Boundaries
-              </h2>
+              </h3>
               <p className="mt-4 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Discover how neural networks are evolving beyond conventional limitations...</p>
             </div>
           </div>
         </motion.div>
       </div>
 
-      <motion.div
+      {/* CTA Button */}
+      <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -96,7 +97,7 @@ const LatestLab = () => {
           </span>
         </button>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

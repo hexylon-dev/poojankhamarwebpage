@@ -6,6 +6,7 @@ import ReadyShapeFuture from "../../components/home/ReadyToShapFuture";
 import ReimagineBoundary from "../../components/home/ReimagineBoundary";
 import IdeasCard from "../../components/home/IdeasCard";
 import Testimonials from "../../components/home/Testimonials";
+import { motion } from "framer-motion";
 import "../../styles/ShimmerButton.css"
 import "../../styles/animations.css"
 
@@ -53,28 +54,51 @@ function Home() {
 
   return (
     <>
-     <HeroSection />
-     <JourneyPage />
+      <HeroSection />
+      {/* <JourneyPage /> */}
+      {/* Journey Section */}
+      <section id="journey">
+        <JourneyPage />
+      </section>
 
-      <div className="min-h-screen bg-black">
-        <div className="w-full max-w-7xl mx-auto px-4 py-16 ">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#ffff33] text-center mb-8 leading-tight ">
+      {/* Background Transition for Smooth Flow */}
+      {/* <div className="h-32 bg-gradient-to-b from-black to-gray-900"></div> */}
+
+      {/* Highlighted Sections */}
+      <section id="highlighted-sections" className="relative min-h-screen bg-black text-white py-16 px-8 md:px-16">
+        <div className="w-full max-w-7xl mx-auto px-4 py-16">
+          <h2 className="text-6xl font-bold text-[#ffff33] text-center mb-8 leading-tight">
             Highlighted Sections
-          </h1>
+          </h2>
         </div>
-        <div className="sticky top-20 z-10">
-          <ReimagineBoundary />
+
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,51,0.1),transparent_70%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,255,51,0.05),transparent_70%)]"></div>
+          <motion.div
+            className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] rounded-full bg-yellow-300/[0.02] blur-[100px]"
+          ></motion.div>
+          <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-yellow-300/[0.03] blur-[80px]"></div>
+          <div className="absolute bottom-[10%] left-[20%] w-[30%] h-[30%] rounded-full bg-yellow-300/[0.02] blur-[60px]"></div>
         </div>
-        <div
-          className="sticky top-20 z-20 transition-transform duration-300"
-          style={{
-            transform: `translateY(${secondCardOffset}px)`,
-          }}
-        >
-          <IdeasCard />
+
+        {/* Sticky Components */}
+        <div className="relative z-10">
+          <div className="sticky top-20 z-10">
+            <ReimagineBoundary />
+          </div>
+          <div
+            className="sticky top-20 z-20 transition-transform duration-300"
+            style={{ transform: `translateY(${secondCardOffset}px)` }}
+          >
+            <IdeasCard />
+          </div>
         </div>
+
+        {/* Spacer for Sticky Effect */}
         <div className="h-[40vh]"></div>
-      </div>
+      </section>
       <LatestLab />
 
       <ReadyShapeFuture />
