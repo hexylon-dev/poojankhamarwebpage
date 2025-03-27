@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 function ContriFrom() {
   const [formData, setFormData] = useState({
     name: '',
-    title: '',
+    subject: '',
     email: '',
-    phone: '',
-    description: ''
+    description: '',
+    company_name: 'none',
+    phone_number: '',
+    address: 'none',
+    industry: 'idea'
   });
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,9 +27,38 @@ function ContriFrom() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://192.168.1.50:4000/v1/contactus_responses",
+        {
+          ...formData,
+          workspace_id: "7eea1f02-35ab-4074-97d2-251eaa754ac6" // Default workspace_id
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Response:", response.data);
+      setFormData({
+        name: '',
+        subject: '',
+        email: '',
+        description: '',
+        company_name: '',
+        phone_number: '',
+        address: '',
+        industry: ''
+      });
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit form.");
+    }
   };
 
   return (
@@ -48,20 +82,20 @@ function ContriFrom() {
               </h1>
               <h2 className="text-4xl md:text-5xl font-bold text-white/90 mb-6">Bold Ideas by Poojan Khamar</h2>
             </div>
-            
+
             <div className="flex justify-center">
               <div className="w-32 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-300 rounded-full"></div>
             </div>
-            
+
             <div className="max-w-3xl mx-auto space-y-8 text-center">
               <p className="text-2xl text-gray-300 leading-relaxed">
                 Ideas are not bound by rules. They don't come from comfort zones; they are born where imagination collides with
                 courage. In a world that rewards followers, I choose to think ahead – questioning, disrupting, and rewriting what's
                 possible.
               </p>
-              
+
               <p className="text-2xl leading-relaxed">
-                Every idea here carries a simple belief: 
+                Every idea here carries a simple belief:
                 <span className="font-semibold text-[#ffff33] ml-2 relative">
                   "The world changes when someone dares to think differently."
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#ffff33]/30"></div>
@@ -80,111 +114,50 @@ function ContriFrom() {
                 Have a bold idea that could reshape the future? Let's hear it.
               </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-zinc-800 
                 hover:border-[#ffff33]/30 transition-all duration-500 shadow-2xl hover:shadow-[#ffff33]/10
                 transform hover:-translate-y-1"
               >
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2 group">
-                      <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Enter your name"
-                        className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                          border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                          transition-all duration-300 transform hover:scale-[1.02]"
-                      />
+                <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-lg font-medium text-gray-200">Your Name</label>
+                      <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                     </div>
-
-                    <div className="space-y-2 group">
-                      <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                        Your Idea Title
-                      </label>
-                      <input
-                        type="text"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleChange}
-                        placeholder="Give your idea a name"
-                        className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                          border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                          transition-all duration-300 transform hover:scale-[1.02]"
-                      />
+                    <div>
+                      <label className="block text-lg font-medium text-gray-200">Subject</label>
+                      <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Enter subject" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                     </div>
-
-                    <div className="space-y-2 group">
-                      <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="name@example.com"
-                        className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                          border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                          transition-all duration-300 transform hover:scale-[1.02]"
-                      />
+                    <div>
+                      <label className="block text-lg font-medium text-gray-200">Email</label>
+                      <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@example.com" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                     </div>
-
-                    <div className="space-y-2 group">
-                      <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+91 your number"
-                        className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                          border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                          transition-all duration-300 transform hover:scale-[1.02]"
-                      />
+                    <div>
+                      <label className="block text-lg font-medium text-gray-200">Phone Number</label>
+                      <input type="tel" name="phone_number" value={formData.phone_number} onChange={handleChange} placeholder="Enter your phone number" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                     </div>
+                    {/* <div>
+                      <label className="block text-lg font-medium text-gray-200">Company Name</label>
+                      <input type="text" name="company_name" value={formData.company_name} onChange={handleChange} placeholder="Enter your company name" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                    </div> */}
+                    {/* <div>
+                      <label className="block text-lg font-medium text-gray-200">Address</label>
+                      <input type="text" name="address" value={formData.address} onChange={handleChange} placeholder="Enter your address" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                    </div> */}
+                    {/* <div>
+                      <label className="block text-lg font-medium text-gray-200">Industry</label>
+                      <input type="text" name="industry" value={formData.industry} onChange={handleChange} placeholder="Enter your industry" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                    </div> */}
                   </div>
-
-                  <div className="space-y-2 group">
-                    <label className="block text-lg font-medium text-gray-200 group-hover:text-[#ffff33] transition-colors">
-                      Brief Description of Your Idea
-                    </label>
-                    <textarea
-                      name="description"
-                      value={formData.description}
-                      onChange={handleChange}
-                      placeholder="Share your innovative idea here..."
-                      rows="4"
-                      className="w-full bg-zinc-800/50 rounded-xl p-4 text-white placeholder-gray-400
-                        border border-zinc-700 focus:border-[#ffff33] focus:outline-none focus:ring-2 focus:ring-[#ffff33]/20
-                        transition-all duration-300 resize-none transform hover:scale-[1.01]"
-                    ></textarea>
+                  <div className="mt-6">
+                    <label className="block text-lg font-medium text-gray-200">Brief Description</label>
+                    <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Share your innovative idea..." rows="4" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none"></textarea>
                   </div>
-
-                  <div className="pt-6">
-                    <button
-                      type="submit"
-                      className="group relative w-full bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] 
-                        text-black py-5 rounded-xl font-semibold text-lg overflow-hidden
-                        transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#ffff33]/20"
-                    >
-                      <span className="relative z-10 inline-flex items-center">
-                        Share Your Idea
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
-                          fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
+                  <button type="submit" className="w-full bg-[#ffff33] text-black py-3 rounded-lg font-semibold text-lg mt-6 hover:bg-yellow-400 transition-all">
+                    Share Your Idea
+                  </button>
                 </form>
               </div>
             </div>

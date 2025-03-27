@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet'; // SEO Optimization
+import axios from "axios";
 
 function Index() {
   const [formData, setFormData] = useState({
     name: '',
     subject: '',
     email: '',
-    phone: '',
-    message: ''
+    description: '',
+    company_name: '',
+    phone_number: '',
+    address: '',
+    industry: ''
   });
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,14 +27,41 @@ function Index() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      const response = await axios.post(
+        "http://192.168.1.50:4000/v1/contactus_responses",
+        {
+          ...formData,
+          workspace_id: "7eea1f02-35ab-4074-97d2-251eaa754ac6" // Default workspace_id
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Response:", response.data);
+      setFormData({
+        name: '',
+        subject: '',
+        email: '',
+        description: '',
+        company_name: '',
+        phone_number: '',
+        address: '',
+        industry: ''
+      });
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit form.");
+    }
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white relative overflow-hidden">
-      
+
       {/* 🔹 SEO Meta Tags */}
       <Helmet>
         <title>Let's Collaborate - Share Your Idea | My Website</title>
@@ -47,7 +78,7 @@ function Index() {
       </div>
 
       <div className="relative max-w-10xl mx-auto px-6 sm:px-8 py-12 sm:py-16 mt-20">
-        
+
         {/* 🔹 Hero Section */}
         <section className={`space-y-12 mb-16 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center">
@@ -72,74 +103,17 @@ function Index() {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  
-                  {/* Name Field */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300">Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Enter your name"
-                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                    />
-                  </div>
-
-                  {/* Email Field */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="name@example.com"
-                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Subject Dropdown */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-300">Subject</label>
-                  <select
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none cursor-pointer"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="collaboration">Collaboration</option>
-                    <option value="project">Project Discussion</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                {/* Message Field */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-300">Your Message</label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Share your thoughts..."
-                    rows="4"
-                    className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none"
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="w-full sm:w-auto px-6 py-3 bg-[#ffff33] text-black font-semibold rounded-lg transition-transform duration-300 transform hover:scale-105"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" required />
+                <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" required />
+                <input type="text" name="company_name" placeholder="Company Name" value={formData.company_name} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                <input type="text" name="phone_number" placeholder="Phone Number" value={formData.phone_number} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                <input type="text" name="industry" placeholder="Industry" value={formData.industry} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+              </div>
+              <textarea name="description" placeholder="Your Message" value={formData.description} onChange={handleChange} className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none" rows="4"></textarea>
+              <button type="submit" className="w-full bg-yellow-400 text-black font-semibold p-2 rounded">Send Message</button>
+            </form>
             </div>
           </div>
         </section>
