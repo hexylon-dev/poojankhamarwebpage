@@ -67,39 +67,7 @@ const Page1 = () => {
       {/* Main content with 3D perspective */}
       <div className="relative z-10 container mx-auto px-6 py-32 perspective-1000">
         {/* Top navigation with enhanced effects */}
-        <div className="flex justify-between items-center mb-40">
-
-
-          {/* Navigation icons with glass morphism effect - FIXED SECTION */}
-          <div className="flex items-center gap-4 bg-[#ffff33] backdrop-blur-xl rounded-full px-8 py-4 border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
-            {navItems.map((item, index) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.path;
-
-              return (
-                <button
-                  key={index}
-                  onClick={() => navigate(item.path)}
-                  className={cn(
-                    "p-3 bg-black rounded-full transition-all duration-300 nav-icon group relative overflow-hidden",
-                    isActive && "ring-2 ring-white/20"
-                  )}
-                  aria-label={item.label}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/0 to-[#ffff33]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Icon className="w-5 h-5 text-[#ffff33] group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* CTA Button with advanced hover effects */}
-          <button className="bg-[#ffff33] text-black font-medium px-8 py-3.5 rounded-full hover:from-[#ffff33] hover:to-yellow-600 transition-all hover:scale-105 font-['Orbitron'] relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]">
-            <span className="relative z-10">Explore My Journey</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
-        </div>
+   
 
         {/* Main content area with enhanced animations */}
         <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
