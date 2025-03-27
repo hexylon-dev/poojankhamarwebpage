@@ -1,10 +1,11 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef,forwardRef } from "react"
 import PoojanSir from "../../assets/PoojanSir.avif"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
 
-const JourneyPage = () => {
+const JourneyPage = ({ journeyRef }) => {
+
   const containerRef = useRef(null)
   const imageRef = useRef(null)
   const imageInView = useInView(imageRef, { once: false, amount: 0.3 })
@@ -16,8 +17,9 @@ const JourneyPage = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
 
+  
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white py-16 px-8 md:px-16 relative overflow-hidden">
+    <div ref={containerRef}  id="journey" className="min-h-screen bg-black text-white py-16 px-8 md:px-16 relative overflow-hidden">
       {/* Enhanced background elements */}
       <div className="fixed inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,51,0.1),transparent_70%)]"></div>
