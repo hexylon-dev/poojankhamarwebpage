@@ -37,7 +37,7 @@ function ContriFrom() {
 
       {/* Main Content */}
       <div className="relative">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="max-w-10xl mx-auto px-4 py-16 mt-20">
           {/* Hero Section */}
           <div className={`space-y-12 mb-32 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="text-center">

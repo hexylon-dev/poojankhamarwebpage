@@ -8,7 +8,7 @@ const cn = (...args) => args.filter(Boolean).join(" ");
 // Navigation items
 const navItems = [
     { icon: Home, path: "/", label: "Home" },
-    { icon: Info, path: "/about", label: "About" },
+    { icon: Info, path: "/about-poojan-khamar", label: "About" },
     { icon: Flame, path: "/innovations", label: "Innovations" },
     { icon: FileText, path: "/blogs", label: "Blogs" },
     { icon: Lightbulb, path: "/ideas", label: "Ideas" },

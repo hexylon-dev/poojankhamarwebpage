@@ -1,4 +1,3 @@
-
 "use client"
 import { useNavigate, useLocation } from "react-router-dom" // Changed to React Router
 import { Home, Disc, Flame, FileText, Target, Phone, Linkedin, Instagram } from "lucide-react"
@@ -12,7 +11,7 @@ const cn = (...classes) => {
 
 const navItems = [
   { icon: Home, path: "/", label: "Home" },
-  { icon: Disc, path: "/about", label: "About" },
+  { icon: Disc, path: "/about-poojan-khamar", label: "About" },
   { icon: Flame, path: "/innovations", label: "Innovations" },
   { icon: FileText, path: "/idea", label: "Idea" },
   { icon: Target, path: "/idea", label: "Target" }, // You might want to update this path
@@ -94,7 +93,7 @@ const Page1 = () => {
           </div>
 
           {/* CTA Button with advanced hover effects */}
-          <button className="bg-[#ffff33] text-black font-medium px-8 py-3.5 rounded-full hover:from-[#ffff33] hover:to-yellow-600 transition-all hover:scale-105 font-['Orbitron'] relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]">
+          <button className="bg-[#ffff33] text-black font-medium px-8 py-3.5 rounded-full hover:from-[#ffff33] hover:to-yellow-600 transition-all hover:scale-105 font-orbitron relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]">
             <span className="relative z-10">Explore My Journey</span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -105,8 +104,8 @@ const Page1 = () => {
         <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
           {/* Left side - Text content with advanced typography and animations */}
           <div className="w-full md:w-1/2 space-y-8">
-            <h1 className="sm:text-4xl md:text-7xl font-bold text-white leading-tight font-['Orbitron']">
-              <span className="inline-block animate-fade-in-up">Bold Ideas.</span>{" "}
+            <h1 className="sm:text-4xl md:text-7xl font-bold text-white leading-tight font-orbitron">
+              <span className="inline-block animate-fade-in-up">Bold Idea.</span>{" "}
               <span
                 className="text-white bg-clip-text inline-block animate-fade-in-up"
                 style={{ animationDelay: "0.2s" }}
@@ -127,7 +126,7 @@ const Page1 = () => {
             </h1>
 
             <p
-              className="text-gray-300 max-w-lg text-lg font-['Orbitron'] leading-relaxed animate-fade-in-up"
+              className="text-gray-300 max-w-lg text-lg leading-relaxed animate-fade-in-up"
               style={{ animationDelay: "0.8s" }}
             >
               Welcome to{" "}
@@ -138,7 +137,7 @@ const Page1 = () => {
             </p>
 
             <button
-              className="shimmer-button flex items-center gap-4 font-['Orbitron'] hover-scale group animate-fade-in-up"
+              className="shimmer-button flex items-center gap-4 hover-scale group animate-fade-in-up"
               style={{ animationDelay: "1s" }}
             >
               <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
@@ -179,7 +178,7 @@ const Page1 = () => {
       </div>
 
       {/* Follow me text with enhanced gradient and glow */}
-      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 font-['Orbitron'] ">
+      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 ">
         FOLLOW ME ON
       </div>
     </div>
