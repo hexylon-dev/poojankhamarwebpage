@@ -1,15 +1,23 @@
-
-"use client"
-import { useNavigate, useLocation } from "react-router-dom" // Changed to React Router
-import { Home, Disc, Flame, FileText, Target, Phone, Linkedin, Instagram } from "lucide-react"
-import PoojanSir from "../../assets/Group 51 (9).png"
-import pic from "../../assets/Link.png"
+"use client";
+import { useNavigate, useLocation } from "react-router-dom"; // Changed to React Router
+import {
+  Home,
+  Disc,
+  Flame,
+  FileText,
+  Target,
+  Phone,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
+import PoojanSir from "../../assets/Group 51 (9).png";
+import pic from "../../assets/Link.png";
 
 
 // Add the missing cn utility function
 const cn = (...classes) => {
-  return classes.filter(Boolean).join(" ")
-}
+  return classes.filter(Boolean).join(" ");
+};
 
 const navItems = [
   { icon: Home, path: "/", label: "Home" },
@@ -18,12 +26,12 @@ const navItems = [
   { icon: FileText, path: "/idea", label: "Idea" },
   { icon: Target, path: "/idea", label: "Target" }, // You might want to update this path
   { icon: Phone, path: "/contact", label: "Contact" },
-]
+];
 
 const Page1 = () => {
   // Add React Router hooks
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
@@ -62,6 +70,35 @@ const Page1 = () => {
         <div className="flex justify-between items-center mb-40">
 
 
+          {/* Navigation icons with glass morphism effect - FIXED SECTION */}
+          <div className="flex items-center gap-4 bg-[#ffff33] backdrop-blur-xl rounded-full px-8 py-4 border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
+            {navItems.map((item, index) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => navigate(item.path)}
+                  className={cn(
+                    "p-3 bg-black rounded-full transition-all duration-300 nav-icon group relative overflow-hidden",
+                    isActive && "ring-2 ring-white/20"
+                  )}
+                  aria-label={item.label}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/0 to-[#ffff33]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Icon className="w-5 h-5 text-[#ffff33] group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* CTA Button with advanced hover effects */}
+          <button className="bg-[#ffff33] text-black font-medium px-8 py-3.5 rounded-full hover:from-[#ffff33] hover:to-yellow-600 transition-all hover:scale-105 font-['Orbitron'] relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]">
+            <span className="relative z-10">Explore My Journey</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </button>
         </div>
 
         {/* Main content area with enhanced animations */}
@@ -77,11 +114,14 @@ const Page1 = () => {
                 Fearless
               </span>{" "}
               <br />
-              <span className="inline-block animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <span
+                className="inline-block animate-fade-in-up"
+                style={{ animationDelay: "0.4s" }}
+              >
                 Innovations.
               </span>{" "}
               <span
-                className="text-[#ffff33] block mt-2 animate-fade-in-up"
+                className="text-[#ffff33] block mt-2 animae-fade-in-up"
                 style={{ animationDelay: "0.6s" }}
               >
                 Future-Driven <br />
@@ -97,19 +137,21 @@ const Page1 = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] to-yellow-500">
                 Poojan Khamar's Innovation Lab
               </span>{" "}
-              – where creativity meets courage, and every idea is designed to shape tomorrow.
+              – where creativity meets courage, and every idea is designed to
+              shape tomorrow.
             </p>
-
-            <button
-              className="shimmer-button flex items-center gap-4 font-['Orbitron'] hover-scale group animate-fade-in-up"
-              style={{ animationDelay: "1s" }}
-            >
-              <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
-              <span className="relative">
-                Explore My Journey
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-              </span>
-            </button>
+            <a href="#journey">
+              <button
+                className="shimmer-button flex items-center gap-4 font-['Orbitron'] hover-scale group animate-fade-in-up"
+                style={{ animationDelay: "1s" }}
+              >
+                <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
+                <span className="relative">
+                  Explore My Journey
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+                </span>
+              </button>
+            </a>
           </div>
 
           {/* Right side - Image with hover effects */}
@@ -146,7 +188,7 @@ const Page1 = () => {
         FOLLOW ME ON
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page1
+export default Page1;

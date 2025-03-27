@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import HeroSection from "../../components/home/HeroSection";
 import JourneyPage from "../../components/home/Journey";
 import LatestLab from "../../components/home/LatestLab";
@@ -12,6 +12,14 @@ import "../../styles/animations.css"
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const journeyRef = useRef(null);
+
+
+  const scrollToJourney = () => {
+    if (journeyRef.current) {
+      journeyRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +53,8 @@ function Home() {
 
   return (
     <>
-      <HeroSection />
-      <JourneyPage />
+     <HeroSection />
+     <JourneyPage />
 
       <div className="min-h-screen bg-black">
         <div className="w-full max-w-7xl mx-auto px-4 py-16 ">
