@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 function ContriForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    title: '',
-    email: '',
-    phone: '',
-    description: ''
-  });
+   const [formData, setFormData] = useState({
+      name: '',
+      subject: '',
+      email: '',
+      description: '',
+      company_name: 'none',
+      phone_number: '',
+      address: 'none',
+      industry: 'idea'
+    });
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -26,6 +29,7 @@ function ContriForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+
   };
 
   return (
@@ -70,75 +74,41 @@ function ContriForm() {
 
             {/* Form */}
             <div className="max-w-3xl mx-auto mt-10">
-              <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
+            <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {/* Name */}
                   <div>
                     <label className="block text-lg font-medium text-gray-200">Your Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Enter your name"
-                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                    />
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                   </div>
-
-                  {/* Title */}
                   <div>
-                    <label className="block text-lg font-medium text-gray-200">Your Idea Title</label>
-                    <input
-                      type="text"
-                      name="title"
-                      value={formData.title}
-                      onChange={handleChange}
-                      placeholder="Give your idea a name"
-                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                    />
+                    <label className="block text-lg font-medium text-gray-200">Subject</label>
+                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Enter subject" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                   </div>
-
-                  {/* Email */}
                   <div>
                     <label className="block text-lg font-medium text-gray-200">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="name@example.com"
-                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                    />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="name@example.com" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                   </div>
-
-                  {/* Phone */}
                   <div>
-                    <label className="block text-lg font-medium text-gray-200">Phone</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 your number"
-                      className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                    />
+                    <label className="block text-lg font-medium text-gray-200">Phone Number</label>
+                    <input type="tel" name="phone_number" value={formData.phone_number} onChange={handleChange} placeholder="Enter your phone number" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Company Name</label>
+                    <input type="text" name="company_name" value={formData.company_name} onChange={handleChange} placeholder="Enter your company name" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Address</label>
+                    <input type="text" name="address" value={formData.address} onChange={handleChange} placeholder="Enter your address" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-medium text-gray-200">Industry</label>
+                    <input type="text" name="industry" value={formData.industry} onChange={handleChange} placeholder="Enter your industry" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none" />
                   </div>
                 </div>
-
-                {/* Description */}
                 <div className="mt-6">
                   <label className="block text-lg font-medium text-gray-200">Brief Description</label>
-                  <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    placeholder="Share your innovative idea..."
-                    rows="4"
-                    className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none"
-                  ></textarea>
+                  <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Share your innovative idea..." rows="4" className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none"></textarea>
                 </div>
-
-                {/* Submit Button */}
                 <button type="submit" className="w-full bg-[#ffff33] text-black py-3 rounded-lg font-semibold text-lg mt-6 hover:bg-yellow-400 transition-all">
                   Share Your Idea
                 </button>
