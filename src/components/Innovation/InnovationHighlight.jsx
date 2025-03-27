@@ -2,7 +2,7 @@ import React from "react";
 
 function InnovationHighlight() {
   return (
-    <div className="space-y-8 mb-16 animate-fade-in">
+    <div className="space-y-8 mt-32 animate-fade-in">
       <h1
         className="text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
       leading-tight tracking-tight"

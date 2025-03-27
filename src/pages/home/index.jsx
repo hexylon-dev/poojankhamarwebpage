@@ -9,6 +9,7 @@ import Testimonials from "../../components/home/Testimonials";
 import "../../styles/ShimmerButton.css"
 import "../../styles/animations.css"
 
+
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -69,7 +70,7 @@ function Home() {
       <LatestLab />
 
       <ReadyShapeFuture />
-          {/* <div className="w-full bg-black">
+      {/* <div className="w-full bg-black">
       <Testimonials />
       </div> */}
 
