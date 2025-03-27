@@ -40,13 +40,13 @@ function Index() {
         <div className={`space-y-12 mb-20 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center">
             <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
-              leading-tight tracking-tight mb-8"
+              leading-tight tracking-tight mt-32"
             >
               Let's Collaborate.<br />Connect. Create.
             </h1>
             <div className="w-32 h-1 bg-gradient-to-r from-[#ffff33] to-yellow-300 mx-auto rounded-full mb-12"></div>
           </div>
-          
+
           <div className=" mx-auto text-center">
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
               Every great idea, collaboration, or conversation starts with a simple connection. Whether you have a bold project
@@ -64,7 +64,7 @@ function Index() {
               <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
                 Let's Build Something Exceptional
               </h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2 group">
@@ -160,7 +160,7 @@ function Index() {
                   >
                     <span className="relative z-10 inline-flex items-center justify-center">
                       Send Message
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" 
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>

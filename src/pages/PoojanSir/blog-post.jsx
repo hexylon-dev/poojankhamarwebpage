@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
-import rehypeRaw from "rehype-raw" 
+import rehypeRaw from "rehype-raw"
 
 export default function BlogPost() {
   // Sample markdown content
@@ -10,7 +10,7 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  console.log("blogData",blogData)
+  console.log("blogData", blogData)
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -49,12 +49,12 @@ export default function BlogPost() {
         {/* Date and Read Time */}
         <div className="flex items-center space-x-2 text-sm text-gray-400 mb-8">
           <span> {new Date(blogData.created_at).toLocaleString("en-US", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })|| "Unknown Date"}</span>
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          }) || "Unknown Date"}</span>
           <span>•</span>
           <span>{blogData.readTime || "N/A"} min read</span>
         </div>
@@ -72,7 +72,7 @@ export default function BlogPost() {
 
         {/* Article Content */}
         <div className="prose prose-invert max-w-none">
-        <ReactMarkdown
+          <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]} // Enables rendering raw HTML
             components={{

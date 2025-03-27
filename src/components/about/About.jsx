@@ -39,7 +39,7 @@ export default function About() {
     <main className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white font-sans">
       <div className="w-full max-w-7xl mx-auto px-4 py-16">
         {/* Header Section */}
-        <div className=" mb-20">
+        <div className="mt-32">
           <h1 className="text-6xl font-bold text-[#ffff33] mb-8 leading-tight animate-fade-in">
             About Poojan Khamar – The Bold Innovator
           </h1>
@@ -72,7 +72,7 @@ export default function About() {
             ref={imageContainerRef}
             className={`w-full ${isLargeScreen ? 'lg:w-1/2' : ''}`}
           >
-            <div className={`${isSticky && isLargeScreen ? 'sticky top-8' : ''} transform transition-transform duration-300 hover:scale-[1.02]`}>
+            <div className={`${isSticky && isLargeScreen ? 'sticky top-48' : ''} transform transition-transform duration-300 hover:scale-[1.02]`}>
               <img
                 src={Poojansir}
                 alt="Portrait photo"
@@ -110,7 +110,7 @@ export default function About() {
               experience became a stepping stone towards thinking differently and acting boldly.
             </p>
 
-            <h2 className="text-4xl font-bold mb-12 leading-tight text-[#ffff33]">Adventures in Innovation</h2>
+            <h2 className="text-4xl font-bold mb-12 leading-tight text-[#ffff33] mt-80">Adventures in Innovation</h2>
             <div className="flex flex-col gap-8">
               <div className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-xl border border-zinc-800 hover:border-[#ffff33]/30 transition-colors duration-300">
                 <div className="flex items-center gap-4 mb-4">
@@ -137,7 +137,7 @@ export default function About() {
                 Innovation, for me, is not theory—it's action. Whether leading AI-driven platforms like Vidhyarthi AI, transforming industries through automation at Lom AI, or building cutting-edge digital ecosystems, each project I undertake focuses on solving real-world problems creatively. It's about turning impossible ideas into reality.
               </p>
 
-              <h2 className="text-4xl font-bold mb-12 leading-tight text-[#ffff33]">Lessons from Ups & Downs</h2>
+              <h2 className="text-4xl font-bold mb-12 leading-tight text-[#ffff33] mt-80">Lessons from Ups & Downs</h2>
 
               <div className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-xl mb-6 border border-zinc-800 hover:border-[#ffff33]/30 transition-colors duration-300">
                 <div className="flex items-center gap-4 mb-4">
@@ -164,7 +164,7 @@ export default function About() {
                 My journey wasn't a straight path. Legal challenges, financial hurdles, and personal losses taught me more than any success ever could. Each downfall taught me strategy, control, and resilience. Each comeback reinforced the alpha mindset – never settle, always rebuild stronger.
               </p>
 
-              <h2 className="text-4xl font-bold mb-12 leading-tight text-[#ffff33]">The Futuristic Vision</h2>
+              <h2 className="text-4xl font-bold mb-12 leading-tight text-[#ffff33] mt-80">The Futuristic Vision</h2>
 
               <div className="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-xl mb-6 border border-zinc-800 hover:border-[#ffff33]/30 transition-colors duration-300">
                 <div className="flex items-center gap-4 mb-4">
@@ -192,7 +192,7 @@ export default function About() {
               </p>
 
               {/* Spacer to ensure scrolling */}
-              <div className="h-96"></div>
+              {/* <div className="h-96"></div> */}
             </div>
           </div>
         </div>

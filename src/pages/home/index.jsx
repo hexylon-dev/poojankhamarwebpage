@@ -7,6 +7,7 @@ import ReimagineBoundary from "../../components/home/ReimagineBoundary";
 import IdeasCard from "../../components/home/IdeasCard";
 import Testimonials from "../../components/home/Testimonials";
 
+
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -67,7 +68,7 @@ function Home() {
       <LatestLab />
 
       <ReadyShapeFuture />
-          {/* <div className="w-full bg-black">
+      {/* <div className="w-full bg-black">
       <Testimonials />
       </div> */}
 
