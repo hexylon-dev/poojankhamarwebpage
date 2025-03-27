@@ -223,7 +223,7 @@ export default function BlogPost() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch("htt://192.168.1.50:4000/v1/blogs/48271009-bcbf-4cc2-867c-e7858802c09e")
+        const response = await fetch("http://192.168.1.50:4000/v1/blogs/48271009-bcbf-4cc2-867c-e7858802c09e")
         if (!response.ok) {
           throw new Error("Failed to fetch blog data")
         }

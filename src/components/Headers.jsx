@@ -1,7 +1,7 @@
 "use client"
 
 import { Link, useLocation, useNavigate } from "react-router-dom"
-import { Home, Flame, FileText, Phone, Lightbulb, Info, Menu, X } from "lucide-react"
+import { Home, Flame, FileText, Phone, Lightbulb, Info, Menu, X , Component  } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import pic from "../assets/Link.png"
 
@@ -16,7 +16,7 @@ const navItems = [
     { icon: FileText, path: "/blogs", label: "Blogs" },
     { icon: Lightbulb, path: "/ideas", label: "Ideas" },
     { icon: Phone, path: "/contact", label: "Contact" },
-    { icon: Phone, path: "/team", label: "Team" },
+    { icon: Component , path: "/team", label: "Team" },
 ];
 
 export function Headers() {
