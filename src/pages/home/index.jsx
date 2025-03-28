@@ -68,7 +68,7 @@ function Home() {
       <section id="highlighted-sections" className="relative min-h-screen bg-black text-white py-4 md:py-16 px-8 md:px-16">
         <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#ffff33] text-center mb-4 md:mb-8 leading-tight">
-            Highlighted Sections
+            Blog Sections
           </h2>
         </div>
 
@@ -92,14 +92,14 @@ function Home() {
             className="sticky top-20 z-20 transition-transform duration-300"
             style={{ transform: `translateY(${secondCardOffset}px)` }}
           >
-            <IdeasCard />
+            {/* <IdeasCard /> */}
           </div>
         </div>
 
         {/* Spacer for Sticky Effect */}
         <div className="h-[40vh]"></div>
       </section>
-      <LatestLab />
+      {/* <LatestLab /> */}
 
       <ReadyShapeFuture />
       {/* <div className="w-full bg-black">
@@ -109,5 +109,7 @@ function Home() {
     </>
   );
 }
+
+
 
 export default Home;

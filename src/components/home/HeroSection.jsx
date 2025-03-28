@@ -116,24 +116,19 @@ const Page1 = () => {
             </span>{" "}
             – where creativity meets courage, and every idea is designed to shape tomorrow.
           </p>
-          <a href="#journey">
+          {/* <a href="#journey"> */}
             <button
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('journey')?.scrollIntoView({
-                  behavior: 'smooth'
-                });
-              }}
-              className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4"
+              onClick={(e) => navigate("/about-poojan-khamar")}
+              className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4 z-50"
               style={{ animationDelay: "1s" }}
             >
               <span className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
               <span className="relative text-sm md:text-base">
-                Explore My Journey
+                Explore My Evolution
                 <span className="absolute-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
               </span>
             </button>
-          </a>
+          {/* </a> */}
         </div>
 
         {/* Right side - Image with hover effects */}
@@ -165,7 +160,7 @@ const Page1 = () => {
       </div>
 
       {/* Follow me text with enhanced gradient and glow */}
-      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 md:flex hidden">
+      <div className="absolute right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 md:flex hidden">
         FOLLOW ME ON
       </div>
     </div >

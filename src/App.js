@@ -12,6 +12,7 @@ import { HelmetProvider } from "react-helmet-async";
 import IdeaPage from "./components/idea";
 import Team from './pages/team/index';
 import Footer from './components/Footer';
+import BlogsGrid from "./pages/PoojanSir/blogs-grid";
 
 
 function App() {
@@ -39,6 +40,8 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogPost />} />
+        <Route path="/blogs/grid" element={<BlogsGrid />} />
+        
       </Routes>
       <Footer />
     </>
