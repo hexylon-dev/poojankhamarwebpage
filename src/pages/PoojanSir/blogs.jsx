@@ -135,7 +135,7 @@ export default function Blog() {
 
 
 
-  const apiUrl = "http://192.168.1.50:4000/v1/blogs/search/7eea1f02-35ab-4074-97d2-251eaa754ac6";
+  const apiUrl = "htt://192.168.1.50:4000/v1/blogs/search/7eea1f02-35ab-4074-97d2-251eaa754ac6";
 
   useEffect(() => {
     const fetchData = async () => {
