@@ -1,7 +1,7 @@
 "use client"
 
 import { Link, useLocation, useNavigate } from "react-router-dom"
-import { Home, Flame, FileText, Phone, Lightbulb, Info, Menu, X , Component  } from "lucide-react"
+import { Home, Flame, FileText, Phone, Lightbulb, Info, Menu, X, Component } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import pic from "../assets/Link.png"
 
@@ -35,7 +35,7 @@ export function Headers() {
     }
 
     const handleExploreClick = () => {
-        navigate("/journey")
+        // navigate("/journey")
         if (isMobile) setIsMenuOpen(false)
     }
 
@@ -114,7 +114,7 @@ export function Headers() {
 
                     {/* Navigation menu in center with background - visible on tablet and desktop */}
                     {!isMobile && (
-                      
+
                         <nav className="mx-4 flex-1 max-w-2xl flex items-center justify-center">
                             <div className="flex items-center gap-1 sm:gap-2 bg-[#ffff33] backdrop-blur-xl rounded-full px-2  py-2  border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
                                 {navItems.map((item, index) => {
@@ -143,17 +143,17 @@ export function Headers() {
 
                     {/* Button on the right - hidden on mobile, shown on tablet and desktop */}
                     {!isMobile && (
-                          <a href="#journey">
-                        <button
-                            onClick={handleExploreClick}
-                            className="flex items-center justify-center bg-[#ffff33] text-black px-1 py-2 rounded-full hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]"
-                        >
-                            <span className="relative z-10 text-xs sm:text-sm md:text-base lg:text-sm whitespace-nowrap px-2">
-                                {isTablet ? "Journey" : "Explore My Journey"}
-                            </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                        <a href="#journey">
+                            <button
+                                onClick={handleExploreClick}
+                                className="flex items-center justify-center bg-[#ffff33] text-black px-1 py-2 rounded-full hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]"
+                            >
+                                <span className="relative z-10 text-xs sm:text-sm md:text-base lg:text-sm whitespace-nowrap px-2">
+                                    {isTablet ? "Journey" : "Explore My Journey"}
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                             </button>
-                            </a>
+                        </a>
                     )}
                 </div>
             </div>
@@ -206,20 +206,21 @@ export function Headers() {
                             })}
 
                             {/* Mobile version of the explore button */}
-                            <a href="#journey">
+                            {/* <a href="#journey"> */}
                             <button
                                 // onClick={handleExploreClick}
                                 className="w-full flex items-center justify-center bg-[#ffff33] text-black p-3 rounded-lg hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)] mt-2"
                             >
                                 <span className="relative z-10 text-base">Explore My Journey</span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                                </button>
-                                </a>
+                            </button>
+                            {/* </a> */}
                         </div>
                     </div>
                 </div>
-            )}
-        </header>
+            )
+            }
+        </header >
 
     )
 }

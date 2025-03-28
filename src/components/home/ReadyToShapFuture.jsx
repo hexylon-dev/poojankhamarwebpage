@@ -122,12 +122,6 @@ const ReadyShapeFuture = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
-            {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"> */}
-
-
-            Contact Me Directly
-
-            {/* </div> */}
           </motion.button>
         </div>
       </motion.div>
