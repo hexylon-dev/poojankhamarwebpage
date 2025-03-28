@@ -30,7 +30,7 @@ const ReimagineBoundary = () => {
       textColor: 'text-white',
       size: {
         mobile: { cols: 4, rows: 2 },
-        desktop: { cols: 1, rows: 2, position: 'col-start-1 row-start-4' }
+        desktop: { cols: 1, rows: 2, position: 'col-start-1 ' }
       }
     },
     {
@@ -44,7 +44,7 @@ const ReimagineBoundary = () => {
       textColor: 'text-white',
       size: {
         mobile: { cols: 4, rows: 2 },
-        desktop: { cols: 1, rows: 2, position: 'col-start-2 row-start-4' }
+        desktop: { cols: 1, rows: 2, position: 'col-start-2' }
       }
     },
     {
@@ -110,7 +110,7 @@ const ReimagineBoundary = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid grid-cols-5 grid-rows-5 gap-4 p-4 h-screen">
+        <div className="hidden md:grid  gap-4 p-4 h-screen">
           {blogs.map((blog) => (
             <div
               key={blog.id}
