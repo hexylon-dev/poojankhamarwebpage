@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const InovativeIdea = () => {
   const navigate = useNavigate();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -14,117 +13,181 @@ const InovativeIdea = () => {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const rect = e.currentTarget.getBoundingClientRect();
-      setMousePosition({ 
-        x: (e.clientX - rect.left) / rect.width, 
-        y: (e.clientY - rect.top) / rect.height 
-      });
-    };
-
-    const container = document.querySelector('.interactive-bg');
-    if (container && !isMobile) {
-      container.addEventListener('mousemove', handleMouseMove);
-      return () => container.removeEventListener('mousemove', handleMouseMove);
-    }
-  }, [isMobile]);
+  const particles = Array.from({ length: 15 });
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 grid grid-cols-[repeat(20,1fr)] grid-rows-[repeat(20,1fr)] opacity-20 md:grid-cols-[repeat(40,1fr)] md:grid-rows-[repeat(40,1fr)]">
-        {Array.from({ length: isMobile ? 21 : 41 }).map((_, i) => (
-          <div key={`v-${i}`} className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/30 to-transparent" style={{ top: `${(i / (isMobile ? 20 : 40)) * 100}%` }} />
-        ))}
-        {Array.from({ length: isMobile ? 21 : 41 }).map((_, i) => (
-          <div key={`h-${i}`} className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent" style={{ left: `${(i / (isMobile ? 20 : 40)) * 100}%` }} />
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[#111111] relative overflow-hidden">
+      {/* Geometric background pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Abstract geometric shapes */}
+        <div className="absolute -top-10 -left-10 w-40 h-40 md:w-80 md:h-80 bg-[#ffff33]/5 rotate-45 rounded-3xl"></div>
+        <div className="absolute top-1/3 -right-20 w-60 h-60 md:w-96 md:h-96 bg-[#ffff33]/3 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-10 left-10 w-20 h-20 md:w-40 md:h-40 bg-[#ffff33]/8 rotate-12 rounded-xl"></div>
+        
+        {/* Floating particles */}
+        {particles.map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 md:w-2 md:h-2 rounded-full bg-[#ffff33]/30"
+            initial={{
+              x: Math.random() * 100 + "%",
+              y: Math.random() * 100 + "%",
+              opacity: Math.random() * 0.5 + 0.2
+            }}
+            animate={{
+              y: [Math.random() * 100 + "%", Math.random() * 100 + "%"],
+              x: [Math.random() * 100 + "%", Math.random() * 100 + "%"],
+              opacity: [Math.random() * 0.3 + 0.2, Math.random() * 0.5 + 0.3]
+            }}
+            transition={{
+              duration: Math.random() * 20 + 15,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}
+          />
         ))}
       </div>
 
-      {/* Main CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative w-full max-w-6xl mx-4 aspect-auto min-h-[500px] sm:aspect-[1/1] md:aspect-[2/1] rounded-xl md:rounded-[2rem] overflow-hidden interactive-bg"
-      >
-        {/* Dynamic Background */}
-        <div className="absolute inset-0 bg-[#111111]"
-          style={!isMobile ? {
-            background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(255, 255, 51, 0.15), rgba(17, 17, 17, 1) 50%)`
-          } : {
-            background: `radial-gradient(circle at center, rgba(255, 255, 51, 0.1), rgba(17, 17, 17, 1) 70%)`
-          }}
-        ></div>
-
-        {/* Animated Decorative Elements */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[30%] sm:w-[40%] aspect-square hidden sm:block">
+      {/* Main Content */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        >
+          {/* Left side: Content */}
           <motion.div
-            animate={{ scale: [1, 1.1, 1], rotate: isMobile ? [0, 180] : [0, 360] }}
-            transition={{ duration: isMobile ? 30 : 20, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0"
-          >
-            <div className="absolute inset-0 bg-[#4b4b23] rounded-full opacity-20 blur-xl"></div>
-            <div className="absolute inset-[15%] bg-[#5c5c2b] rounded-full opacity-30 blur-lg"></div>
-            {!isMobile && (
-              <>
-                <div className="absolute inset-[30%] bg-[#6d6d33] rounded-full opacity-40 blur-md"></div>
-                <div className="absolute inset-[45%] bg-[#7e7e3b] rounded-full opacity-50 blur-sm"></div>
-              </>
-            )}
-          </motion.div>
-        </div>
-
-        {/* CTA Content */}
-        <div className="relative h-full flex flex-col justify-center p-4 sm:p-8 md:px-12 z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-[#ffff33] text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 max-w-full leading-tight"
-          >
-            Got an Innovative Idea or
-            <br className="block sm:hidden" />
-            <span className="relative inline-block mx-1 md:mx-2">Collaboration in Mind?</span>
-            <br className="block sm:hidden" />
-            Let's Make It Happen.
-          </motion.h1>
-
-          <motion.p
-            className="text-[#ffff33]/80 text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-6 max-w-full sm:max-w-[80%] md:max-w-[600px]"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-6"
           >
-            Have a project in mind or want to discuss potential opportunities? Get in touch and let's create something amazing together.
-          </motion.p>
-
-          {/* Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            whileHover={{ scale: !isMobile ? 1.05 : 1 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-[#ffff33] text-black rounded-full w-fit font-semibold overflow-hidden text-xs sm:text-sm md:text-base"
-            onClick={() => navigate('/contact')}
-          >
-            <span className="relative z-10 inline-flex items-center">
-              Contact Me Directly
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 ml-1 sm:ml-2 transform group-hover:translate-x-1 transition-transform duration-300" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
+            <div className="inline-block px-4 py-1.5 bg-[#ffff33]/10 rounded-full">
+              <span className="text-[#ffff33] text-sm font-medium">Innovation & Collaboration</span>
+            </div>
+            
+            <motion.h1
+              className="text-[#ffff33] text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Got an <span className="relative">
+                Innovative Idea
+                <motion.div 
+                  className="absolute -bottom-1 left-0 h-1 bg-[#ffff33]/40 w-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                />
+              </span> or collaboration in mind?
+            </motion.h1>
+            
+            <motion.p
+              className="text-[#ffff33]/80 text-base md:text-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Have a project in mind or want to discuss potential opportunities? Get in touch and let's create something amazing together.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-wrap gap-4"
+            >
+              <motion.button
+                whileHover={{ scale: !isMobile ? 1.05 : 1 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-[#ffff33] text-black rounded-lg font-medium flex items-center gap-2 transition-colors duration-300 hover:bg-[#ffff33]/90"
+                onClick={() => navigate('/contact')}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-          </motion.button>
-        </div>
-      </motion.div>
+                Contact Me
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: !isMobile ? 1.05 : 1 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-transparent text-[#ffff33] border border-[#ffff33]/30 rounded-lg font-medium transition-colors duration-300 hover:bg-[#ffff33]/10"
+                onClick={() => navigate('/projects')}
+              >
+                See My Work
+              </motion.button>
+            </motion.div>
+          </motion.div>
+          
+          {/* Right side: Decorative element */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hidden md:block relative"
+          >
+            <div className="relative aspect-square w-full max-w-md mx-auto">
+              {/* Abstract geometric composition */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <div className="w-full h-full border-4 border-[#ffff33]/20 rounded-full"></div>
+              </motion.div>
+              
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-[15%] flex items-center justify-center"
+              >
+                <div className="w-full h-full border-4 border-[#ffff33]/30 rounded-full"></div>
+              </motion.div>
+              
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-[30%] flex items-center justify-center"
+              >
+                <div className="w-full h-full border-4 border-[#ffff33]/40 rounded-full"></div>
+              </motion.div>
+              
+              <div className="absolute inset-[45%] bg-[#ffff33] rounded-full glow-yellow"></div>
+              
+              {/* Floating elements */}
+              <motion.div 
+                className="absolute top-[10%] right-[20%] w-10 h-10 bg-[#ffff33]/50 rounded-lg"
+                animate={{ y: [-10, 10], rotate: [0, 90] }}
+                transition={{ duration: 5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+              />
+              
+              <motion.div 
+                className="absolute bottom-[20%] left-[15%] w-14 h-14 bg-[#ffff33]/30 rounded-full"
+                animate={{ y: [15, -15], x: [5, -5] }}
+                transition={{ duration: 7, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+              />
+              
+              <motion.div 
+                className="absolute top-[30%] left-[10%] w-8 h-8 border-2 border-[#ffff33]/60 rounded-md"
+                animate={{ rotate: [0, 180], scale: [0.9, 1.1] }}
+                transition={{ duration: 9, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+      
+      {/* Bottom decorative line */}
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ffff33]/5 via-[#ffff33]/40 to-[#ffff33]/5"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.5, delay: 1 }}
+      />
     </div>
   );
 };
