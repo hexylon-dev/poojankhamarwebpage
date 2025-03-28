@@ -5,7 +5,7 @@ import BlogPost from './pages/PoojanSir/blog-post';
 import { Headers } from './components/Headers';
 import HomePage from "./pages/home/index";
 import AboutPage from "./pages/about/index";
-import InnovationPage from "./pages/innovation/index";
+import InnovationPage from "./pages/innovation/index2";
 import ContactPage from "./pages/contact/index";
 import { HelmetProvider } from "react-helmet-async";
 
