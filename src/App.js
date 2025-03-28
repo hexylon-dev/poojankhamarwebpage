@@ -33,7 +33,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-poojan-khamar" element={<AboutPage />} />
-        <Route path="/innovations" element={<InnovationPage />} />
+        <Route path="/innovation-hub" element={<InnovationPage />} />
         <Route path="/ideas" element={<IdeaPage />} />
         <Route path="/creative-team" element={<Team />} />
         <Route path="/contact" element={<ContactPage />} />

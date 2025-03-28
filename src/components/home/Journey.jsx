@@ -179,6 +179,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import PoojanSir from "../../assets/PoojanSir.avif";
 
+
 const JourneyPage = () => {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
@@ -269,46 +270,46 @@ const JourneyPage = () => {
         </div>
 
         {/* Quotes Section */}
-        <div className="mt-16 md:mt-40 space-y-16 md:space-y-48">
+        {/* <div className="mt-16 md:mt-40 space-y-16 md:space-y-48">
           <QuoteBlock delay={0.7} direction="left" quote="A fearless mind builds what others fear to imagine." />
           <QuoteBlock delay={0.9} direction="right" quote="Innovation isn't about comfort. It's about courage." className="md:ml-auto max-w-lg" />
           <QuoteBlock delay={1.1} direction="left" quote="Failures taught me strategy. Success taught me responsibility." className="max-w-3xl" />
-        </div>
+        </div> */}
 
         {/* Footer Line */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0, width: 0 }} 
           whileInView={{ opacity: 1, width: "100%" }} 
           transition={{ duration: 1.5, delay: 0.2 }} 
           viewport={{ once: false, amount: 0.3 }} 
           className="h-[1px] bg-gradient-to-r from-transparent via-yellow-300/40 to-transparent mt-16 md:mt-32"
-        ></motion.div>
+        ></motion.div> */}
       </div>
     </div>
   );
 };
 
-const QuoteBlock = ({ quote, delay, direction, className = "" }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+// const QuoteBlock = ({ quote, delay, direction, className = "" }) => {
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
-  return (
-    <motion.div 
-      ref={ref} 
-      initial={{ opacity: 0, x: direction === "left" ? -50 : 50 }} 
-      animate={{ 
-        opacity: isInView ? 1 : 0, 
-        x: isInView ? 0 : direction === "left" ? -50 : 50 
-      }} 
-      transition={{ duration: 0.9, delay: isInView ? 0.2 : 0 }} 
-      className={`flex flex-col group relative text-center md:text-left ${className}`}
-    >
-      <div className="absolute -inset-6 bg-gradient-to-tr from-yellow-300/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-md"></div>
-      <div className="text-yellow-300 text-5xl md:text-7xl font-serif self-center md:self-start">"</div>
-      <div className="text-xl md:text-2xl lg:text-3xl italic my-4 mx-auto md:mx-0 md:ml-6 text-yellow-100 max-w-xl">{quote}</div>
-      <div className="text-yellow-300 text-5xl md:text-7xl font-serif self-center md:self-end">"</div>
-    </motion.div>
-  );
-};
+//   return (
+//     <motion.div 
+//       ref={ref} 
+//       initial={{ opacity: 0, x: direction === "left" ? -50 : 50 }} 
+//       animate={{ 
+//         opacity: isInView ? 1 : 0, 
+//         x: isInView ? 0 : direction === "left" ? -50 : 50 
+//       }} 
+//       transition={{ duration: 0.9, delay: isInView ? 0.2 : 0 }} 
+//       className={`flex flex-col group relative text-center md:text-left ${className}`}
+//     >
+//       <div className="absolute -inset-6 bg-gradient-to-tr from-yellow-300/5 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-md"></div>
+//       <div className="text-yellow-300 text-5xl md:text-7xl font-serif self-center md:self-start">"</div>
+//       <div className="text-xl md:text-2xl lg:text-3xl italic my-4 mx-auto md:mx-0 md:ml-6 text-yellow-100 max-w-xl">{quote}</div>
+//       <div className="text-yellow-300 text-5xl md:text-7xl font-serif self-center md:self-end">"</div>
+//     </motion.div>
+//   );
+// };
 
 export default JourneyPage;
