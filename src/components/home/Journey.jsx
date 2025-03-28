@@ -2,8 +2,10 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import PoojanSir from "../../assets/PoojanSir.avif";
+import { useNavigate } from "react-router-dom";
 
 const JourneyPage = () => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const imageInView = useInView(imageRef, { once: false, amount: 0.3 });
@@ -83,21 +85,35 @@ const JourneyPage = () => {
               Here, you'll find not just concepts, but real transformations – whether it's tech, leadership, or life lessons, everything is born from experience and designed to inspire.
             </motion.div>
 
+            <button
+              onClick={(e) => navigate("/about-poojan-khamar")}
+              className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4 z-50"
+              style={{ animationDelay: "1s" }}
+            >
+              <span className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
+              <span className="relative text-sm md:text-base">
+                Explore My About
+                <span className="absolute-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+              </span>
+            </button>
+
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: "70%" }}
               transition={{ duration: 1.2, delay: 0.7 }}
               className="h-[1px] bg-gradient-to-r from-yellow-300/50 to-transparent mx-auto md:mx-0"
             ></motion.div>
+
+
           </div>
         </div>
 
         {/* Quotes Section */}
-        <div className="mt-16 md:mt-40 space-y-16 md:space-y-48">
+        {/* <div className="mt-16 md:mt-40 space-y-16 md:space-y-48">
           <QuoteBlock delay={0.7} direction="left" quote="A fearless mind builds what others fear to imagine." />
           <QuoteBlock delay={0.9} direction="right" quote="Innovation isn't about comfort. It's about courage." className="md:ml-auto max-w-lg" />
           <QuoteBlock delay={1.1} direction="left" quote="Failures taught me strategy. Success taught me responsibility." className="max-w-3xl" />
-        </div>
+        </div> */}
 
         {/* Footer Line */}
         <motion.div
