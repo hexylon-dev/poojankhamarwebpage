@@ -16,7 +16,7 @@ const navItems = [
     { icon: FileText, path: "/blogs", label: "Blogs" },
     { icon: Lightbulb, path: "/ideas", label: "Ideas" },
     { icon: Phone, path: "/contact", label: "Contact" },
-    { icon: Component , path: "/team", label: "Team" },
+    { icon: Component , path: "/creative-team", label: "Team" },
 ];
 
 export function Headers() {
