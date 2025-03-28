@@ -38,35 +38,51 @@ const Page1 = () => {
       </Helmet>
 
       {/* Enhanced grid background with dynamic glow */}
-      <div className="absolute inset-0 grid grid-cols-[repeat(30,1fr)] grid-rows-[repeat(30,1fr)] z-0">
-        {Array.from({ length: 31 }).map((_, i) => (
-          <div
-            key={`v-${i}`}
-            className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/30 to-transparent"
-            style={{
-              top: `${(i / 30) * 100}%`,
-              boxShadow: "0 0 10px rgba(255,255,51,0.1)",
-            }}
-          />
-        ))}
-        {Array.from({ length: 31 }).map((_, i) => (
-          <div
-            key={`h-${i}`}
-            className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent"
-            style={{
-              left: `${(i / 30) * 100}%`,
-              boxShadow: "0 0 10px rgba(255,255,51,0.1)",
-            }}
-          />
-        ))}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Mobile: 15x15 grid */}
+        <div className="md:hidden grid grid-cols-[repeat(10,1fr)] grid-rows-[repeat(10,1fr)] h-full w-full">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <>
+              <div
+                key={`v-sm-${i}`}
+                className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/10 to-transparent"
+                style={{ top: `${(i / 10) * 100}%` }}
+              />
+              <div
+                key={`h-sm-${i}`}
+                className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/10 to-transparent"
+                style={{ left: `${(i / 10) * 100}%` }}
+              />
+            </>
+          ))}
+        </div>
+
+        {/* Desktop: 30x30 grid */}
+        <div className="hidden md:grid grid-cols-[repeat(30,1fr)] grid-rows-[repeat(30,1fr)] h-full w-full">
+          {Array.from({ length: 31 }).map((_, i) => (
+            <>
+              <div
+                key={`v-lg-${i}`}
+                className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/30 to-transparent"
+                style={{ top: `${(i / 30) * 100}%` }}
+              />
+              <div
+                key={`h-lg-${i}`}
+                className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent"
+                style={{ left: `${(i / 30) * 100}%` }}
+              />
+            </>
+          ))}
+        </div>
       </div>
 
 
       {/* Main content area with enhanced animations */}
-      <div className="flex flex-col md:flex-row items-center mt-10 md:mt-36 max-w-8xl mx-auto px-4 md:px-40">
+      <div className="flex flex-col md:flex-row items-center mt-20 sm:mt-12 md:mt-52 max-w-8xl mx-auto px-4 md:px-40 sm:pt-5">
+
         {/* Left side - Text content with advanced typography and animations */}
-        <div className="w-full md:w-1/2 space-y-2">
-          <h1 className="text-4xl lg:text-6xl md:text-5xl font-bold text-white leading-tight font-orbitron">
+        <div className="w-full md:w-1/2 space-y-1 md:space-y-2">
+          <h1 className="text-4xl lg:text-6xl md:text-5xl font-bold text-white font-orbitron leading-tight md:leading-relaxed">
             <span className="inline-block animate-fade-in-up">Bold Idea.</span>{" "}
             <span
               className="text-white bg-clip-text inline-block animate-fade-in-up"
@@ -75,20 +91,23 @@ const Page1 = () => {
               Fearless
             </span>{" "}
             <br />
-            <span className="inline-block animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <span
+              className="inline-block animate-fade-in-up leading-tight md:leading-relaxed"
+              style={{ animationDelay: "0.4s" }}
+            >
               Innovations.
             </span>{" "}
             <span
-              className="text-[#ffff33] block mt-2 animate-fade-in-up"
+              className="text-[#ffff33] block mt-1 sm:mt-0 py-2 md:py-4 animate-fade-in-up tracking-wider"
               style={{ animationDelay: "0.6s" }}
             >
-              Future-Driven <br />
+              <p className="mb-1 md:mb-3">Future-Driven <br /></p>
               Leadership.
             </span>
           </h1>
 
           <p
-            className="text-gray-300 max-w-lg text-lg leading-relaxed animate-fade-in-up"
+            className="text-gray-300 max-w-lg text-base md:text-lg leading-snug md:leading-relaxed animate-fade-in-up"
             style={{ animationDelay: "0.8s" }}
           >
             Welcome to{" "}
@@ -99,11 +118,17 @@ const Page1 = () => {
           </p>
           <a href="#journey">
             <button
-              className="shimmer-button flex items-center gap-4 hover-scale group animate-fade-in-up"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('journey')?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}
+              className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4"
               style={{ animationDelay: "1s" }}
             >
-              <span className="w-3 h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
-              <span className="relative">
+              <span className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
+              <span className="relative text-sm md:text-base">
                 Explore My Journey
                 <span className="absolute-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
               </span>
@@ -112,7 +137,7 @@ const Page1 = () => {
         </div>
 
         {/* Right side - Image with hover effects */}
-        <div className="w-full md:w-1/2 relative floating group mt-8 md:mt-0">
+        <div className="w-[100%]  md:w-[35%] sm:w-[80%] xs:w-[90%] relative floating group mt-8 md:mt-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/20 to-transparent rounded-lg blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,51,0.2),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <img

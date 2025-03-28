@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 function ContriForm() {
-   const [formData, setFormData] = useState({
-      name: '',
-      subject: '',
-      email: '',
-      description: '',
-      company_name: 'none',
-      phone_number: '',
-      address: 'none',
-      industry: 'idea'
-    });
+  const [formData, setFormData] = useState({
+    name: '',
+    subject: '',
+    email: '',
+    description: '',
+    company_name: 'none',
+    phone_number: '',
+    address: 'none',
+    industry: 'idea'
+  });
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function ContriForm() {
 
             {/* Form */}
             <div className="max-w-3xl mx-auto mt-10">
-            <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
+              <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10  border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-lg font-medium text-gray-200">Your Name</label>

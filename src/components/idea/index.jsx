@@ -75,7 +75,7 @@ function ContriFrom() {
           {/* Hero Section */}
           <div className={`space-y-12 mb-32 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="text-center">
-              <h1 className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
+              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
                 leading-tight tracking-tight mb-8 animate-gradient"
               >
                 Innovator's Playbook
@@ -120,7 +120,7 @@ function ContriFrom() {
                 hover:border-[#ffff33]/30 transition-all duration-500 shadow-2xl hover:shadow-[#ffff33]/10
                 transform hover:-translate-y-1"
               >
-                <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
+                <form onSubmit={handleSubmit} className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10  border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-lg font-medium text-gray-200">Your Name</label>
