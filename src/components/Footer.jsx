@@ -98,12 +98,12 @@ const FooterWithTransition = () => {
             >
               Contact
             </div>
-            {/* <div
+            <div
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
               onClick={() => handleNavigation("/team")}
             >
               Team
-            </div> */}
+            </div>
           </div>
 
           {/* Right side - Social media icons */}
