@@ -47,11 +47,6 @@ function App() {
               image: Rushik
             },
             {
-              name: "Uday Patel",
-              role: "Co-Director",
-              image: Uday
-            },
-            {
               name: "Nrupansh Dalwadi",
               role: "Co-Director",
               image: Nrupansh
@@ -227,7 +222,7 @@ function App() {
                   </div>
                 </div>
                 <p className="text-gray-300 text-lg mb-12 leading-relaxed max-w-4xl">{dept.description}</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
                   {dept.members.map((member, memberIndex) => (
                     <div 
                       key={memberIndex} 
