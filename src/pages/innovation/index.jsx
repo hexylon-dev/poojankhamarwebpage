@@ -3,7 +3,9 @@ import { Helmet } from "react-helmet";  // ✅ React Helmet for SEO
 import InnovationHighlight from "../../components/Innovation/InnovationHighlight";
 import OurProjects from "../../components/Innovation/OurProjects";
 import InovativeIdea from "../../components/Innovation/InovativeIdea/InovativeIdea";
-
+import ThirdSection from "../../components/Innovation/InovativeIdea/ThirdSection";
+import SecondSection from "../../components/Innovation/InovativeIdea/SecondSection"
+import CTA from "../../components/Innovation/InovativeIdea/CTA";
 function Index() {
   return (
     <>
@@ -18,13 +20,14 @@ function Index() {
         <meta name="author" content="Poojan Khamar" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white p-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen bg-black text-white p-8">
+        <div className=" mx-auto">
           {/* <h1 className="text-4xl font-bold text-yellow-400 text-center mt-20 mb-8">
             Cutting-Edge AI Innovations
           </h1> */}
           <InnovationHighlight />
-
+          <SecondSection />
+          <ThirdSection />
           <div className="space-y-32">
             <OurProjects
               title="VIDHYARTHI AI"
@@ -45,9 +48,8 @@ function Index() {
                 "Intelligent Automation Implementation",
               ]}
             />
-
-            <InovativeIdea />
           </div>
+          <CTA />
         </div>
       </div>
     </>
