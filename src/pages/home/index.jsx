@@ -7,16 +7,14 @@ import ReimagineBoundary from "../../components/home/ReimagineBoundary";
 import IdeasCard from "../../components/home/IdeasCard";
 import Testimonials from "../../components/home/Testimonials";
 import { motion } from "framer-motion";
-import "../../styles/ShimmerButton.css"
-import "../../styles/animations.css"
+import "../../styles/ShimmerButton.css";
+import "../../styles/animations.css";
 import ThoughtMarquee from "../../components/home/ThoughtMarquee";
 import InovationSection from "../../components/home/InovationSection";
-
 
 function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const journeyRef = useRef(null);
-
 
   const scrollToJourney = () => {
     if (journeyRef.current) {
@@ -68,15 +66,54 @@ function Home() {
       {/* <div className="h-32 bg-gradient-to-b from-black to-gray-900"></div> */}
 
       {/* Highlighted Sections */}
-      <section id="highlighted-sections" className="relative min-h-screen bg-black text-white py-4 md:py-16 px-8 md:px-16">
+      <section
+        id="highlighted-sections"
+        className="relative min-h-screen bg-black text-white py-4 md:py-16 px-8 md:px-16"
+      >
         <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#ffff33] text-center mb-4 md:mb-8 leading-tight">
-            Blog Sections
+            AI & Innovation Blog Sections
           </h2>
+          <p className="text-center text-gray-300 max-w-3xl mx-auto">
+            Discover the latest insights on Artificial Intelligence, AGI
+            research, and future technology trends. Stay informed with expert
+            analyses and innovations.
+          </p>
         </div>
 
+        {/* Schema Markup for SEO (to be added in the main page <head> section) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "AI & Innovation Blog Sections",
+            description:
+              "Explore expert blogs on AI, AGI, and emerging technologies. Get insights into the latest research, applications, and trends in artificial intelligence.",
+            mainEntity: {
+              "@type": "Blog",
+              name: "AI & Innovation Insights",
+              blogPost: [
+                {
+                  "@type": "BlogPosting",
+                  headline:
+                    "The Foundations of Artificial General Intelligence (AGI)",
+                  author: { "@type": "Person", name: "AI Expert" },
+                  datePublished: "2025-03-29",
+                  image: "/path-to-image.png",
+                },
+                {
+                  "@type": "BlogPosting",
+                  headline: "Applications and Future Prospects of AGI",
+                  author: { "@type": "Person", name: "Tech Analyst" },
+                  datePublished: "2025-03-29",
+                  image: "/path-to-image.png",
+                },
+              ],
+            },
+          })}
+        </script>
+
         {/* Background Effects */}
-       
 
         {/* Sticky Components */}
         <div className="relative z-10">
@@ -95,18 +132,15 @@ function Home() {
         <div className="h-[10vh]"></div>
       </section>
       <ThoughtMarquee />
-    
+
       {/* <LatestLab /> */}
 
       <ReadyShapeFuture />
       {/* <div className="w-full bg-black">
       <Testimonials />
       </div> */}
-
     </>
   );
 }
-
-
 
 export default Home;
