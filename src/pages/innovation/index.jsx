@@ -27,10 +27,20 @@ function Index() {
           <InnovationHighlight />
           <SecondSection />
           <ThirdSection />
+          <div class="flex justify-center px-4">
+            <h2 class="relative font-bold text-2xl md:text-3xl lg:text-4xl mb-4 mt-10 text-center">
+              <span class="relative z-10 px-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300">
+                The Big Leap: Transformative Ideas for the Future
+              </span>
+              <span class="absolute top-full left-1/2 w-[80%] h-1 bg-gradient-to-r from-transparent via-[#ffff33] to-transparent transform -translate-x-1/2"></span>
+            </h2>
+          </div>
+         
           <div className="space-y-32">
+
             <OurProjects
               title="VIDHYARTHI AI"
-              description="Empowering Students with Personalized AI Learning Paths"
+              description="Vidhyarthi AI is an AI-powered education platform that personalizes learning based on students’ psychological profiles, creating custom paths to success. From psychological profiling to exam strategies, it transforms the way students learn, prepare, and grow."
               features={[
                 "Psychological Profiling-Based Learning",
                 "AI-Driven Exam Preparation & Career Guidance",
@@ -39,7 +49,7 @@ function Index() {
             />
             <OurProjects
               title="LOM AI"
-              description="Automating Industrial Workflows with Intelligence"
+              description="Lom AI is designed to automate the Line-O-Matic ecosystem, identifying inefficiencies and transforming manual processes through AI & IoT integration. It streamlines operations and enhances business efficiency at every level."
               features={[
                 "Workflow Analysis & Optimization",
                 "Real-Time Analytics & Reporting",
