@@ -112,7 +112,7 @@ const Page1 = () => {
           >
             Welcome to{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] to-yellow-500">
-              Poojan Khamar's Innovation Lab
+              Poojan Khamar's Innovation Hub
             </span>{" "}
             – where creativity meets courage, and every idea is designed to shape tomorrow.
           </p>
