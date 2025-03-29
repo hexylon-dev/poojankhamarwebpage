@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { Home, Flame, FileText, Phone, Lightbulb, Info, Menu, X, Component } from "lucide-react"
@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react"
 import pic from "../assets/Link.png"
 
 // Function to join class names
-const cn = (...args) => args.filter(Boolean).join(" ");
+const cn = (...args) => args.filter(Boolean).join(" ")
 
 // Navigation items
 const navItems = [
@@ -87,28 +87,10 @@ export function Headers() {
         }
     }
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target)
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMenuOpen]);
-
-  // Close menu when clicking on nav items
-  const handleNavItemClick = () => {
-    if (isMobile) {
-      setIsMenuOpen(false);
+    // Toggle menu function
+    const toggleMenu = () => {
+        setIsMenuOpen((prev) => !prev)
     }
-  };
 
     return (
         <header className={`fixed left-1/2 -translate-x-1/2 z-50 w-full py-2 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-black/30' : ''}`}>
@@ -186,21 +168,13 @@ export function Headers() {
                             </button>
                         </a>
                     )}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/0 to-[#ffff33]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <Icon className="w-5 h-5 text-[#ffff33] mr-3" />
-                    <span className="text-white text-base font-medium">
-                      {item.label}
-                    </span>
-                  </Link>
-                );
-              })}
+                </div>
+            </div>
 
-              {/* Mobile version of the explore button */}
-              <a href="#journey">
-                <button
-                  // onClick={handleExploreClick}
-                  className="w-full flex items-center justify-center bg-[#ffff33] text-black p-3 rounded-lg hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)] mt-2"
+            {/* Mobile menu overlay - appears when isMenuOpen is true */}
+            {isMobile && (
+                <div
+                    className={`fixed inset-0 z-10 transition-all duration-300 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
                 >
                     {/* Blurred background */}
                     <div

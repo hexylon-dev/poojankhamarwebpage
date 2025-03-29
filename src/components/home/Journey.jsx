@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import PoojanSir from "../../assets/PoojanSir.avif";
 import { useNavigate } from "react-router-dom";
 
-
 const JourneyPage = () => {
   const navigate = useNavigate();
   const containerRef = useRef(null);
@@ -123,15 +122,15 @@ const JourneyPage = () => {
           transition={{ duration: 1.5, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
           className="h-[1px] bg-gradient-to-r from-transparent via-yellow-300/40 to-transparent mt-16 md:mt-32"
-        ></motion.div> */}
+        ></motion.div>
       </div>
     </div>
   );
 };
 
-// const QuoteBlock = ({ quote, delay, direction, className = "" }) => {
-//   const ref = useRef(null);
-//   const isInView = useInView(ref, { once: false, amount: 0.3 });
+const QuoteBlock = ({ quote, delay, direction, className = "" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
 
   return (
     <motion.div
