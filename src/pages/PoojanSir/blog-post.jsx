@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw"
@@ -217,13 +217,16 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const { id } = useParams();
+  const contentRef = useRef(null)
+  const [toc, setToc] = useState([])
+  const [activeHeading, setActiveHeading] = useState("")
 
   console.log("blogData", blogData)
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch("http://192.168.1.50:4000/v1/blogs/48271009-bcbf-4cc2-867c-e7858802c09e")
+        const response = await fetch("htt://192.168.1.50:4000/v1/blogs/48271009-bcbf-4cc2-867c-e7858802c09e")
         if (!response.ok) {
           throw new Error("Failed to fetch blog data")
         }
@@ -234,10 +237,13 @@ export default function BlogPost() {
         if (staticPost) {
           console.log("staticPost", staticPost)
           setBlogData(staticPost);
+          setToc(extractHeadings(staticPost.content))
         } else {
           setBlogData(staticPost);
+          setToc(extractHeadings(staticPost.content))
         }
         setBlogData(staticPost);
+        setToc(extractHeadings(staticPost.content))
       } finally {
         setLoading(false)
       }
@@ -245,105 +251,211 @@ export default function BlogPost() {
 
     fetchBlog()
   }, [])
+
+  const scrollToHeading = (headingId) => {
+    const element = document.getElementById(headingId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      setActiveHeading(headingId)
+    }
+  }
+
+  const extractHeadings = (content) => {
+    if (!content) return []
+
+    const headingRegex = /^(#{1,3})\s+(.+)$/gm
+    const headings = []
+    let match
+
+    while ((match = headingRegex.exec(content)) !== null) {
+      const level = match[1].length
+      const text = match[2].trim()
+      const id = slugify(text, { lower: true, strict: true })
+
+      headings.push({ id, text, level })
+    }
+
+    return headings
+  }
+
+  // Set up intersection observer to highlight active heading
+  useEffect(() => {
+    if (!contentRef.current || toc.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveHeading(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: "-100px 0px -80% 0px" },
+    )
+
+    // Observe all heading elements
+    toc.forEach((item) => {
+      const element = document.getElementById(item.id)
+      if (element) observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [toc, blogData])
   if (loading) return <p className="text-center text-gray-400">Loading...</p>
   if (error) return <p className="text-center text-red-500">Error: {error}</p>
 
   return (
-    <div className="min-h-screen bg-black mx-auto">
-  
-      <div className="min-h-screen bg-black text-gray-200 pt-32 p-2  max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black">
       <Helmet>
-        <title>{blogData?.title ? `${blogData.title} | Your Site Name` : "Blog | Your Site Name"}</title>
-        <meta name="description" content={blogData?.description || "Read the latest blog post."} />
-        <meta name="keywords" content={`blog, ${blogData?.category || "tech"}, articles, SEO, tutorials`} />
+        <title>{blogData?.title ? `${blogData.title} | AI Insights` : "Blog | AI Insights"}</title>
+        <meta name="description" content={blogData?.description || "Read the latest blog post on AI technology."} />
+        <meta name="keywords" content={`blog, ${blogData?.category || "tech"}, AI, artificial intelligence, AGI`} />
 
         {/* Open Graph / Facebook Meta Tags */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={blogData?.title || "Blog"} />
         <meta property="og:description" content={blogData?.description || "Read the latest blog post."} />
         <meta property="og:image" content={blogData?.thumbnail || "/placeholder.svg"} />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={typeof window !== "undefined" ? window.location.href : ""} />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blogData?.title || "Blog"} />
         <meta name="twitter:description" content={blogData?.description || "Read the latest blog post."} />
         <meta name="twitter:image" content={blogData?.thumbnail || "/placeholder.svg"} />
-
-        {/* Structured Data (Schema.org) for SEO */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": blogData?.title || "Blog",
-            "description": blogData?.description || "Latest blog post",
-            "image": blogData?.thumbnail || "/placeholder.svg",
-            "author": {
-              "@type": "Person",
-              "name": "Your Site Name"
-            },
-            "datePublished": blogData?.created_at || "",
-            "dateModified": blogData?.updated_at || "",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": window.location.href
-            }
-          })}
-        </script>
       </Helmet>
-        {/* Category Tag */}
-        <div className="mb-4 text-sm">
-          <span className="text-gray-400">{blogData.category || "Uncategorized"}</span>
-        </div>
 
-        {/* Title */}
-        <h1 className="text-3xl md:text-5xl font-bold text-yellow-300 mb-2 leading-tight">
-          {blogData.title || "Blog Title"}
-        </h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-16 relative">
+        {/* Decorative Gradient Overlay */}
+       
 
-        {/* Date and Read Time */}
-        <div className="flex items-center space-x-2 text-sm text-gray-400 mb-8">
-          <span> {new Date(blogData.created_at).toLocaleString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-          }) || "Unknown Date"}</span>
-          <span>•</span>
-          <span>{blogData.readTime || "N/A"} min read</span>
-        </div>
+        <div className="flex flex-col lg:flex-row relative z-10">
+          {/* Main Content */}
+          <div className="lg:w-3/4 lg:pr-8">
+            {/* Category Tag with Unique Effect */}
+            <div className="mb-4 transform transition-all duration-300 hover:scale-105">
+              <span className="inline-block bg-yellow-300/20 text-yellow-300 px-4 py-2 text-sm font-medium rounded-full shadow-lg hover:shadow-yellow-300/50">
+                {blogData.category || "Uncategorized"}
+              </span>
+            </div>
 
-        {/* Featured Image */}
-        {blogData.thumbnail && (
-          <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
-            <img
-              src={blogData.thumbnail}
-              alt={blogData.title}
-              className="object-cover w-full h-full"
-            />
+            {/* Title with Animated Underline */}
+            <h1 className="text-3xl md:text-5xl font-bold text-yellow-300 mb-4 leading-tight relative">
+              {blogData.title || "Blog Title"}
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-300 to-transparent animate-pulse"></span>
+            </h1>
+
+            {/* Date and Read Time with Hover Effect */}
+            <div className="flex items-center space-x-2 text-sm text-gray-400 mb-8 group">
+              <span className="transition-all duration-300 group-hover:text-yellow-300">{blogData.created_at || "Unknown Date"}</span>
+              <span>•</span>
+              <span className="transition-all duration-300 group-hover:text-yellow-300">{blogData.readTime || "N/A"}</span>
+            </div>
+
+            {/* Featured Image with Parallax-like Effect */}
+            {blogData.thumbnail && (
+              <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden perspective-1000 hover:scale-[1.02] transition-transform duration-500">
+                <img
+                  src={blogData.thumbnail || "/placeholder.svg"}
+                  alt={blogData.title}
+                  className="object-cover w-full h-full transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            )}
+
+            {/* Article Content */}
+            <div ref={contentRef} className="prose prose-invert prose-yellow max-w-none">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
+                components={{
+                  p: ({ children }) => <p className="text-lg text-gray-300 my-4 leading-relaxed">{children}</p>,
+                  strong: ({ children }) => <strong className="font-bold text-white bg-yellow-300/20 px-1 rounded">{children}</strong>,
+                  h1: ({ node, children, ...props }) => {
+                    const id = slugify(children, { lower: true, strict: true })
+                    return (
+                      <h1 id={id} className="text-yellow-300 font-bold text-3xl mt-8 mb-4 border-b-2 border-yellow-300/30 pb-2" {...props}>
+                        {children}
+                      </h1>
+                    )
+                  },
+                  h2: ({ node, children, ...props }) => {
+                    const id = slugify(children, { lower: true, strict: true })
+                    return (
+                      <h2 id={id} className="text-yellow-300 font-bold text-2xl mt-6 mb-3 relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-yellow-300 before:rounded-full" {...props}>
+                        {children}
+                      </h2>
+                    )
+                  },
+                  h3: ({ node, children, ...props }) => {
+                    const id = slugify(children, { lower: true, strict: true })
+                    return (
+                      <h3 id={id} className="text-yellow-300 font-bold text-xl mt-5 mb-2 italic" {...props}>
+                        {children}
+                      </h3>
+                    )
+                  },
+                  ul: ({ children }) => <ul className="list-disc pl-6 my-4 text-gray-300 space-y-2">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal pl-6 my-4 text-gray-300 space-y-2">{children}</ol>,
+                  li: ({ children }) => <li className="text-gray-300 hover:text-yellow-300 transition-colors duration-300">{children}</li>,
+                  blockquote: ({ children }) => (
+                    <blockquote className="border-l-4 border-yellow-300 pl-4 italic my-4 text-gray-400 bg-yellow-300/5 py-2 rounded-r-lg">
+                      {children}
+                    </blockquote>
+                  ),
+                }}
+              >
+                {blogData.content || "No content available."}
+              </ReactMarkdown>
+            </div>
+
+            {/* Highlighted Section with Glowing Effect */}
+            {blogData.highlight && (
+              <div className="my-8 py-6 px-6 border-l-4 border-yellow-300 bg-yellow-300/10 rounded-r-lg relative overflow-hidden">
+                <div className="absolute inset-0 bg-yellow-300/10 animate-pulse"></div>
+                <p className="text-xl font-medium text-yellow-300 relative z-10">{blogData.highlight}</p>
+              </div>
+            )}
+
+            {/* Share and Navigation Placeholder */}
+            <div className="mt-12 pt-6 border-t border-gray-800 flex justify-between items-center"></div>
           </div>
-        )}
 
-        {/* Article Content */}
-        <div className="prose prose-invert max-w-none">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]} // Enables rendering raw HTML
-            components={{
-              p: ({ children }) => <p className="text-lg text-gray-300">{children}</p>,
-            }}
-          >
-            {blogData.content || "No content available."}
-          </ReactMarkdown>
-        </div>
-
-        {/* Highlighted Section */}
-        {blogData.highlight && (
-          <div className="my-8 py-4 border-l-4 border-yellow-300 pl-4">
-            <p className="text-xl font-medium text-yellow-300">{blogData.highlight}</p>
+          {/* Table of Contents Sidebar with Unique Design */}
+          <div className="lg:w-1/3 mt-8 lg:mt-0">
+            <div className="sticky top-32">
+              <div className="rounded-lg p-5 backdrop-blur-lg border border-yellow-300/30 shadow-2xl">
+                <h3 className="text-yellow-300 font-bold text-lg mb-4 flex items-center">
+                  <span className="mr-2 w-3 h-3 bg-yellow-300 rounded-full animate-pulse"></span>
+                  Table of Contents
+                </h3>
+                {toc.length > 0 ? (
+                  <nav className="toc-nav">
+                    <ul className="space-y-2">
+                      {toc.map((item) => (
+                        <li
+                          key={item.id}
+                          className={`
+                            ${item.level === 1 ? "pl-0" : item.level === 2 ? "pl-3" : "pl-6"}
+                            ${activeHeading === item.id 
+                              ? "text-yellow-300 font-medium rounded" 
+                              : "text-gray-400 hover:text-gray-200"}
+                            transition-all duration-300  cursor-pointer py-1 px-2 text-base
+                          `}
+                          onClick={() => scrollToHeading(item.id)}
+                        >
+                          {item.text}
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                ) : (
+                  <p className="text-gray-400 text-sm">No sections available</p>
+                )}
+              </div>
+            </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

@@ -8,19 +8,19 @@ import AboutPage from "./pages/about/index";
 import InnovationPage from "./pages/innovation/index2";
 import ContactPage from "./pages/contact/index";
 import { HelmetProvider } from "react-helmet-async";
-
 import IdeaPage from "./components/idea";
 import Team from './pages/team/index';
 import Footer from './components/Footer';
+import BlogsGrid from "./pages/PoojanSir/blogs-grid";
 
 
 function App() {
   return (
     <HelmetProvider>
-    <Router>
-      <AppContent />
+      <Router>
+        <AppContent />
       </Router>
-      </HelmetProvider>
+    </HelmetProvider>
   );
 }
 
@@ -39,6 +39,8 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogPost />} />
+        <Route path="/blogs/grid" element={<BlogsGrid />} />
+        
       </Routes>
       <Footer />
     </>

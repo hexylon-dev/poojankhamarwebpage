@@ -1,12 +1,12 @@
 "use client"
-import { useNavigate, useLocation } from "react-router-dom" // Changed to React Router
+import { useNavigate, useLocation } from "react-router-dom"
+import { useState, useEffect } from "react"
 import { Home, Disc, Flame, FileText, Target, Phone, Linkedin, Instagram } from "lucide-react"
 import PoojanSir from "../../assets/Group 51 (9).png"
 import pic from "../../assets/Link.png"
 import "../../styles/ShimmerButton.css"
 import "../../styles/animations.css"
 
-// Add the missing cn utility function
 const cn = (...classes) => {
   return classes.filter(Boolean).join(" ")
 }
@@ -16,51 +16,64 @@ const navItems = [
   { icon: Disc, path: "/about-poojan-khamar", label: "About" },
   { icon: Flame, path: "/innovations", label: "Innovations" },
   { icon: FileText, path: "/idea", label: "Idea" },
-  { icon: Target, path: "/idea", label: "Target" }, // You might want to update this path
+  { icon: Target, path: "/idea", label: "Target" },
   { icon: Phone, path: "/contact", label: "Contact" },
 ]
 
 const Page1 = () => {
-  // Add React Router hooks
   const navigate = useNavigate()
   const location = useLocation()
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Calculate blur intensity based on scroll position
+  const blurIntensity = Math.min(scrollY * 0.10, 8)
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Animated gradient background with moving effect */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black animate-gradient">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,0,0.1),transparent_50%)] animate-pulse"></div>
-        </div> */}
-
-      {/* Enhanced grid background with dynamic glow */}
-      <div className="absolute inset-0 grid grid-cols-[repeat(30,1fr)] grid-rows-[repeat(30,1fr)] z-0">
-        {Array.from({ length: 31 }).map((_, i) => (
-          <div
-            key={`v-${i}`}
-            className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/30 to-transparent"
-            style={{
-              top: `${(i / 30) * 100}%`,
-              boxShadow: "0 0 10px rgba(255,255,51,0.1)",
-            }}
-          />
-        ))}
-        {Array.from({ length: 31 }).map((_, i) => (
-          <div
-            key={`h-${i}`}
-            className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent"
-            style={{
-              left: `${(i / 30) * 100}%`,
-              boxShadow: "0 0 10px rgba(255,255,51,0.1)",
-            }}
-          />
-        ))}
+    <div className="min-h-screen bg-black relative overflow-auto">
+      {/* Dynamic blur background */}
+      <div
+        className="fixed inset-0 z-0 transition-all duration-300 ease-out "
+        style={{ backdropFilter: `blur(${blurIntensity}px)` }}
+      >
+        {/* Grid background */}
+        <div className="fixed inset-0 grid grid-cols-[repeat(30,1fr)] grid-rows-[repeat(30,1fr)] z-0 opacity-5">
+          {Array.from({ length: 31 }).map((_, i) => (
+            <div
+              key={`v-${i}`}
+              className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ffff33]/30 to-transparent"
+              style={{
+                top: `${(i / 30) * 100}%`,
+                boxShadow: "0 0 10px rgba(255,255,51,0.1)",
+              }}
+            />
+          ))}
+          {Array.from({ length: 31 }).map((_, i) => (
+            <div
+              key={`h-${i}`}
+              className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent"
+              style={{
+                left: `${(i / 30) * 100}%`,
+                boxShadow: "0 0 10px rgba(255,255,51,0.1)",
+              }}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Main content with 3D perspective */}
+      {/* Main content */}
       <div className="relative z-10 container mx-auto px-6 py-32 perspective-1000">
-        {/* Top navigation with enhanced effects */}
+        {/* Top navigation */}
         <div className="flex justify-between items-center mb-40">
-          {/* Profile picture with hover effect */}
+          {/* Profile picture */}
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#ffff33] to-yellow-500 overflow-hidden hover-scale relative group cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/50 to-yellow-500/50 blur-xl group-hover:blur-2xl transition-all duration-300"></div>
             <img
@@ -71,7 +84,7 @@ const Page1 = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
 
-          {/* Navigation icons with glass morphism effect - FIXED SECTION */}
+          {/* Navigation icons */}
           <div className="flex items-center gap-4 bg-[#ffff33] backdrop-blur-xl rounded-full px-8 py-4 border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
             {navItems.map((item, index) => {
               const Icon = item.icon
@@ -94,7 +107,7 @@ const Page1 = () => {
             })}
           </div>
 
-          {/* CTA Button with advanced hover effects */}
+          {/* CTA Button */}
           <button className="bg-[#ffff33] text-black font-medium px-8 py-3.5 rounded-full hover:from-[#ffff33] hover:to-yellow-600 transition-all hover:scale-105 font-['Orbitron'] relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)]">
             <span className="relative z-10">Explore My Journey</span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -102,9 +115,9 @@ const Page1 = () => {
           </button>
         </div>
 
-        {/* Main content area with enhanced animations */}
+        {/* Main content area */}
         <div className="flex flex-col md:flex-row gap-16 items-center mt-20">
-          {/* Left side - Text content with advanced typography and animations */}
+          {/* Text content */}
           <div className="w-full md:w-1/2 space-y-8">
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight font-['Orbitron']">
               <span className="inline-block animate-fade-in-up">Bold Ideas.</span>{" "}
@@ -147,7 +160,7 @@ const Page1 = () => {
             </button>
           </div>
 
-          {/* Right side - Image with hover effects */}
+          {/* Image */}
           <div className="w-full md:w-1/2 relative floating group">
             <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/20 to-transparent rounded-lg blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,51,0.2),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -160,7 +173,7 @@ const Page1 = () => {
         </div>
       </div>
 
-      {/* Social links with advanced hover effects */}
+      {/* Social links */}
       <div className="fixed right-[4%] bottom-32 flex flex-col items-center gap-6 z-20">
         <a
           href="https://www.linkedin.com/in/poojan-khamar-30a560126/"
@@ -176,8 +189,8 @@ const Page1 = () => {
         </a>
       </div>
 
-      {/* Follow me text with enhanced gradient and glow */}
-      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 font-['Orbitron'] ">
+      {/* Follow me text */}
+      <div className="fixed right-[5%] top-1/2 -translate-y-1/2 rotate-90 origin-right text-transparent bg-clip-text bg-gradient-to-b from-[#ffff33] to-yellow-300 tracking-widest text-2xl z-20 font-['Orbitron']">
         FOLLOW ME ON
       </div>
     </div>

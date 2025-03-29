@@ -67,7 +67,7 @@ const ReadyShapeFuture = () => {
                 viewport={{ once: true }}
                 className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8 lg:mb-0"
               >
-                  {/* <div className="text-center">
+                {/* <div className="text-center">
                     <div className="text-[#ffff33] text-2xl sm:text-3xl font-bold mb-1">3+</div>
                     <div className="text-gray-400 text-sm sm:text-base">Years Experience</div>
                   </div>
@@ -113,14 +113,14 @@ const ReadyShapeFuture = () => {
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   </motion.button>
-                  
-                  <button onClick={() => window.open('https://calendly.com/your-username', '_blank')} 
-                          className="w-full border border-[#ffff33]/30 text-[#ffff33] rounded-xl px-8 py-4 font-semibold text-base sm:text-lg
+
+                  <button onClick={() => window.open('https://calendly.com/your-username', '_blank')}
+                    className="w-full border border-[#ffff33]/30 text-[#ffff33] rounded-xl px-8 py-4 font-semibold text-base sm:text-lg
                                    transition-all duration-300 hover:bg-[#ffff33]/10">
                     Schedule a Call
                   </button>
                 </div>
-                
+
                 <div className="mt-8 text-center">
                   <p className="text-gray-400 text-sm mb-2">Typical response time</p>
                   <p className="text-white font-medium">Within 24 hours</p>
@@ -144,3 +144,4 @@ const ReadyShapeFuture = () => {
 
 export default ReadyShapeFuture
 
+\end{code}`**/a2`

@@ -31,7 +31,7 @@ export default function About() {
 
   const isLargeScreen = windowWidth >= 1024
 
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white font-sans">
@@ -49,15 +49,14 @@ export default function About() {
       <div className="w-full max-w-7xl mx-auto px-4 py-16">
         {/* Header Section */}
         <div className="mt-32">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#ffff33] mb-8 leading-tight animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#ffff33] mb-8 leading-tight animate-fade-in text-center">
             About Poojan Khamar – The Bold Innovator
           </h1>
           <div className="w-24 h-1 bg-[#ffff33] mx-auto mb-8"></div>
         </div>
 
-        {/* Bio Section */}
         <div className="mb-24 text-md md:text-lg max-w-3xl mx-auto">
-          <p className="mb-8 leading-relaxed text-gray-400">
+          <p className="mb-8 leading-relaxed text-gray-400 text-center sm:text-left">
             I'm <span className="font-bold text-[#ffff33]">Poojan Khamar</span>,
             a relentless innovator, creative leader, and futurist who believes
             in building beyond boundaries. Every success, every failure, every
@@ -65,16 +64,18 @@ export default function About() {
             fearless, and focused on transformation.
           </p>
 
-          <button
-            className={`bg-[#ffff33] text-black font-semibold py-4 px-8 rounded-full border-none cursor-pointer 
-              transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/30
-              ${isButtonHovered ? "bg-yellow-300" : ""}`}
-            onMouseEnter={() => setIsButtonHovered(true)}
-            onMouseLeave={() => setIsButtonHovered(false)}
-            onClick={() => navigate("/contact")}
-          >
-            Contact Me Directly
-          </button>
+          <div className="flex justify-center sm:justify-start">
+            <button
+              className={`bg-[#ffff33] text-black font-semibold py-4 px-8 rounded-full border-none cursor-pointer 
+        transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/30
+        ${isButtonHovered ? "bg-yellow-300" : ""}`}
+              onMouseEnter={() => setIsButtonHovered(true)}
+              onMouseLeave={() => setIsButtonHovered(false)}
+              onClick={() => navigate("/contact")}
+            >
+              Contact Me Directly
+            </button>
+          </div>
         </div>
 
         {/* Bold Beginning Section with Sticky Image */}

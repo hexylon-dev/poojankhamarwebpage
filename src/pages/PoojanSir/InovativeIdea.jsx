@@ -44,7 +44,7 @@ const ReadyShapeFuture = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full max-w-6xl aspect-[2/1] rounded-[2rem] overflow-hidden interactive-bg"
+        className="relative w-full max-w-6xl aspect-[2/1] rounded-[4rem] overflow-hidden interactive-bg"
       >
         {/* Dynamic gradient background */}
         <div
