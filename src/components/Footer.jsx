@@ -90,7 +90,7 @@ const FooterWithTransition = () => {
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
               onClick={() => handleNavigation("/ideas-sharing")}
             >
-              Ideas
+              Ideas Sharing
             </div>
             <div
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
