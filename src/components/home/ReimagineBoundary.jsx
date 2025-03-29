@@ -2,6 +2,26 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowUpRight } from 'lucide-react';
 
+// Helper functions for mobile view
+const getMobileColSpanClass = (cols) => {
+  switch (cols) {
+    case 1: return 'col-span-1';
+    case 2: return 'col-span-2';
+    case 3: return 'col-span-3';
+    case 4: return 'col-span-4';
+    default: return 'col-span-4';
+  }
+};
+
+const getMobileRowSpanClass = (rows) => {
+  switch (rows) {
+    case 1: return 'row-span-1';
+    case 2: return 'row-span-2';
+    case 3: return 'row-span-3';
+    default: return 'row-span-2';
+  }
+};
+
 const ReimagineBoundary = () => {
   const navigate = useNavigate();
   const [blogs, setBlogs] = useState([
@@ -30,7 +50,7 @@ const ReimagineBoundary = () => {
       textColor: 'text-white',
       size: {
         mobile: { cols: 4, rows: 2 },
-        desktop: { cols: 1, rows: 2, position: 'col-start-1 ' }
+        desktop: { cols: 1, rows: 2, position: 'col-start-1' }
       }
     },
     {
@@ -58,7 +78,11 @@ const ReimagineBoundary = () => {
       textColor: 'text-white',
       size: {
         mobile: { cols: 4, rows: 3 },
-        desktop: { cols: 3, rows: 5, position: 'col-start-3 row-start-1' }
+        desktop: {
+          cols: 2,
+          rows: 6,
+          position: 'col-start-3 row-start-1 row-end-6'  // Full height
+        }
       }
     }
   ]);
@@ -67,20 +91,20 @@ const ReimagineBoundary = () => {
     <div className="relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Mobile Layout */}
-        <div className="md:hidden grid grid-cols-4 gap-4 p-4">
+        <div className="md:hidden grid grid-cols-4 auto-rows-min gap-4 p-4">
           {blogs.map((blog) => (
             <div
               key={blog.id}
               className={`
-                col-span-${blog.size.mobile.cols} 
-                row-span-${blog.size.mobile.rows} 
+                ${getMobileColSpanClass(blog.size.mobile.cols)} 
+                ${getMobileRowSpanClass(blog.size.mobile.rows)}
                 ${blog.color} 
                 p-4 
                 rounded-lg 
                 shadow-md 
                 relative 
                 overflow-hidden
-                h-64  // Fixed height for mobile
+                min-h-[200px]
               `}
             >
               {/* Background Image */}
@@ -96,21 +120,25 @@ const ReimagineBoundary = () => {
               {/* Overlay */}
               <div className={`absolute inset-0 ${blog.overlayOpacity}`}></div>
 
-              <div className="relative z-10">
-                <h2 className={`text-xl font-bold ${blog.textColor}`}>{blog.title}</h2>
+              <div className="relative z-10 h-full flex flex-col justify-between">
+                <div>
+                  <h2 className={`text-lg font-bold ${blog.textColor}`}>{blog.title}</h2>
+                  <p className={`mt-1 text-xs ${blog.textColor}`}>{blog.description}</p>
+                </div>
 
-                <button className="mt-2 bg-yellow-400 text-black px-3 py-1 rounded-lg font-semibold flex items-center gap-2">
-                  Read Now →
+                <button
+                  className="mt-2 bg-yellow-400 text-black px-3 py-1 rounded-lg font-semibold flex items-center gap-1 self-start"
+                  onClick={() => navigate("/blogs")}
+                >
+                  Read Now <ArrowUpRight className="w-3 h-3" />
                 </button>
-
-                <p className={`mt-2 text-xs ${blog.textColor}`}>{blog.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid  gap-4 p-4 h-screen">
+        <div className="hidden md:grid md:grid-cols-4 md:grid-rows-5 gap-4 p-4 h-[80vh]">
           {blogs.map((blog) => (
             <div
               key={blog.id}
@@ -119,12 +147,12 @@ const ReimagineBoundary = () => {
                 col-span-${blog.size.desktop.cols} 
                 row-span-${blog.size.desktop.rows} 
                 ${blog.color} 
-                p-4 
+                p-6 
                 rounded-lg 
                 shadow-md 
-                h-full 
                 relative 
                 overflow-hidden
+                transition-all duration-300 hover:shadow-lg
               `}
             >
               {/* Background Image */}
@@ -140,23 +168,23 @@ const ReimagineBoundary = () => {
               {/* Overlay */}
               <div className={`absolute inset-0 ${blog.overlayOpacity}`}></div>
 
-              <div className="relative z-10">
-                <div className={`flex justify-between items-center text-2xl md:text-3xl font-bold ${blog.textColor}`}>
-                  <span>{blog.title}</span>
-                  <span className="flex items-center justify-center rounded-full p-1 w-8 h-8 border border-yellow-400">
-                    <ArrowUpRight
+              <div className="relative z-10 h-full flex flex-col justify-between">
+                <div>
+                  <div className={`flex justify-between items-center text-2xl md:text-3xl font-bold ${blog.textColor}`}>
+                    <span>{blog.title}</span>
+                    <span
+                      className="flex items-center justify-center rounded-full p-1 w-8 h-8 border border-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors"
                       onClick={() => navigate("/blogs")}
-                      className="text-yellow-400 w-5 h-5 cursor-pointer"
-                    />
-                  </span>
+                    >
+                      <ArrowUpRight className="text-yellow-400 hover:text-black w-5 h-5 cursor-pointer" />
+                    </span>
+                  </div>
+
+                  <p className={`mt-4 text-sm md:text-base ${blog.textColor}`}>{blog.description}</p>
                 </div>
 
-
-                <p className={`mt-4 text-sm md:text-base ${blog.textColor}`}>{blog.description}</p>
-
-                <div className="mt-6 w-16 h-1 bg-white rounded"></div>
+                <div className="w-16 h-1 bg-white rounded"></div>
               </div>
-
             </div>
           ))}
         </div>
