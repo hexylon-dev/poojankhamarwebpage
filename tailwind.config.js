@@ -11,6 +11,8 @@ module.exports = {
         'float-reverse': 'float-reverse 7s ease-in-out infinite',
         'spin-slow': 'spin 8s linear infinite',
         'gradient-x': 'gradient-x 15s ease infinite',
+        'marquee-left': 'marqueeLeft 30s linear infinite',
+        'marquee-right': 'marqueeRight 30s linear infinite',
       },
       screens: {
         '4xl': '2400px',
@@ -41,6 +43,14 @@ module.exports = {
             'background-size': '200% 200%',
             'background-position': 'right center'
           }
+        },
+        marqueeLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }, // Move only half the length
+        },
+        marqueeRight: {
+          '0%': { transform: 'translateX(-50%)' }, 
+          '100%': { transform: 'translateX(0)' },
         },
       },
       colors: {
