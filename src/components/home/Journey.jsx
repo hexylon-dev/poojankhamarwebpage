@@ -20,7 +20,7 @@ const JourneyPage = () => {
   return (
     <div ref={containerRef} id="journey" className="min-h-screen bg-black text-white py-8 md:py-16 px-4 md:px-16 relative overflow-hidden">
       {/* Enhanced background elements */}
-      <div className="fixed inset-0 z-0">
+      <div className=" inset-0 z-0">
         <motion.div style={{ y: backgroundY }} className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] rounded-full bg-yellow-300/[0.02] blur-[100px]" />
         <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-yellow-300/[0.03] blur-[80px]" />
       </div>
