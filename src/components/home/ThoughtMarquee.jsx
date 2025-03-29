@@ -10,7 +10,7 @@ import Rishit from "../../assets/poojan/Rishit_Khadawala.jpg";
 import Sneha from "../../assets/poojan/Sneha.jpg";
 import Rutvik from "../../assets/poojan/Rutvik.png";
 import Gopi from "../../assets/poojan/Gopi.jpg";
-import ParthCyber from "../../assets/poojan/Path cyber (2).jpg";
+import ParthCyber from "../../assets/poojan/Parth cyber.jpg";
 import Syrin from "../../assets/poojan/Syrin.jpg";
 import Dhruvi from "../../assets/poojan/Dhruvi.jpg";
 import Poojan from "../../assets/poojan/poojan.png";
@@ -22,6 +22,7 @@ import Harsh from "../../assets/poojan/Harsh.jpg";
 import Parth from "../../assets/poojan/Parth.jpg";
 import Honey from "../../assets/poojan/Honey .jpg";
 import Jignesh from "../../assets/poojan/Jignesh sir.png";
+import nakul from '../../assets/poojan/nakul.jpeg'
 import Rushik from "../../assets/poojan/Rushik sir.png";
 import Nrupansh from "../../assets/poojan/Nrupansh sir.jpg";
 
@@ -77,7 +78,7 @@ const thoughts = [
   },
   {
     name: "Rutvik Prajapati",
-    username: "@knowledge",
+    username: "@r__kprajapati45",
     body: "Simplicity is the soul of efficiency",
     img: Rutvik,
   },
@@ -124,10 +125,10 @@ const thoughts = [
     img: Parth,
   },
   {
-    name: "Nakul Patel",
+    name: "Nakul Nandola",
     username: "@knowledge",
     body: "The universe doesn't whisper—it echoes. Every choice you make reverberates into eternity, shaping worlds you'll never see",
-    img: Gopi,
+    img: nakul,
   },
   {
     name: "Syrin Macwan",
@@ -147,6 +148,7 @@ const thoughts = [
     body: "Consistency is only key to beat failure...",
     img: Harsh,
   },
+
   {
     name: "Honey Patel",
     username: "@knowledge",

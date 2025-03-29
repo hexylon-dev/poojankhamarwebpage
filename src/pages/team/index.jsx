@@ -9,7 +9,7 @@ import Rishit from '../../assets/poojan/Rishit_Khadawala.jpg'
 import Sneha from '../../assets/poojan/Sneha.jpg'
 import Rutvik from '../../assets/poojan/Rutvik.png'
 import Gopi from '../../assets/poojan/Gopi.jpg'
-import ParthCyber from '../../assets/poojan/Path cyber (2).jpg'
+import ParthCyber from '../../assets/poojan/Parth cyber.jpg'
 import Harsh from '../../assets/poojan/Harsh.jpg'
 import Syrin from '../../assets/poojan/Syrin.jpg'
 import Parth from '../../assets/poojan/Parth.jpg'
@@ -22,164 +22,160 @@ import Nrupansh from '../../assets/poojan/Nrupansh sir.jpg'
 import Princy from '../../assets/poojan/Princy.png'
 import Keval from '../../assets/poojan/kewal.jpg'
 import Sid from '../../assets/poojan/Siddhart.jpg'
+import nakul from '../../assets/poojan/nakul.jpeg'
 import Honey from '../../assets/poojan/Honey .jpg'
 // import Nakul from '../../assets/poojan'
 function App() {
   const departments = [
     {
-        icon: <Users className="w-8 h-8" />, 
-        title: "Co-Directors",
-        subtitle: "The Leadership Backbone",
-        description: "Vision without execution is nothing. And execution is our game. Alongside me, my co-directors play a crucial role in defining strategy, making high-stakes decisions, and leading innovation.",
-        members: [
-          {
-            name: "Poojan Khamar",
-            role: "Co-Director",
-            image: Poojan
-          },
-          {
-              name: "Jignesh Patel",
-              role: "Co-Director",
-              image: Jignesh
-            },
-            {
-              name: "Rushik Bhatt",
-              role: "Co-Director",
-              image: Rushik
-            },
-            {
-              name: "Nrupansh Dalwadi",
-              role: "Co-Director",
-              image: Nrupansh
-            },
-        ]
-      },
-      {
-        icon: <Palette className="w-8 h-8" />, 
-        title: "Creative Team",
-        subtitle: "The Visionary Creators",
-        description: "Our creative team transforms concepts into compelling designs that resonate with users. We blend aesthetics with functionality to create impactful experiences.",
-        members: [
-          {
-            name: "Princy Bhalu",
-            role: "Team Leader",
-            image: Princy
-          },
-            {
-              name: "Keval Maru",
-              role: "Team Leader",
-              image: Keval
-            },
-            {
-              name: "Sidhharth Ramnani",
-              role: "Team Leader",
-              image: Sid
-            }
-        ]
-      },
-      {
-        icon: <Palette className="w-8 h-8" />, 
-        title: "Design Team",
-        subtitle: "The Creative Architects",
-        description: "Design isn't just about how things look—it's about how they work. We bring ideas to life with precision and impact.",
-        members: [
-          {
-            name: "Dhaval Makani",
-            role: "Lead Designer",
-            image: Dhaval
-          },
-          {
-            name: "Dinky Sahu",
-            role: "UI/UX Designer",
-            image: Dinky
-          }
-        ]
-      },
+      icon: <Users className="w-8 h-8" />,
+      title: "Co-Directors",
+      subtitle: "The Leadership Backbone",
+      description: "Vision without execution is nothing. And execution is our game. Alongside me, my co-directors play a crucial role in defining strategy, making high-stakes decisions, and leading innovation.",
+      members: [
+        {
+          name: "Poojan Khamar",
+          role: "Co-Director",
+          image: Poojan
+        },
+        {
+          name: "Jignesh Patel",
+          role: "Co-Director",
+          image: Jignesh
+        },
+        {
+          name: "Rushik Bhatt",
+          role: "Co-Director",
+          image: Rushik
+        },
+        {
+          name: "Nrupansh Dalwadi",
+          role: "Co-Director",
+          image: Nrupansh
+        },
+      ]
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Creative Team",
+      subtitle: "The Visionary Creators",
+      description: "Our creative team transforms concepts into compelling designs that resonate with users. We blend aesthetics with functionality to create impactful experiences.",
+      members: [
+        {
+          name: "Princy Bhalu",
+          role: "Team Leader",
+          image: Princy
+        },
+        {
+          name: "Keval Maru",
+          role: "Team Leader",
+          image: Keval
+        },
+        {
+          name: "Sidhharth Ramnani",
+          role: "Team Leader",
+          image: Sid
+        }
+      ]
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Design Team",
+      subtitle: "The Creative Architects",
+      description: "Design isn't just about how things look—it's about how they work. We bring ideas to life with precision and impact.",
+      members: [
+        {
+          name: "Dhaval Makani",
+          role: "Lead Designer",
+          image: Dhaval
+        },
+        {
+          name: "Dinky Sahu",
+          role: "UI/UX Designer",
+          image: Dinky
+        }
+      ]
+    },
 
     {
-        icon: <Code className="w-8 h-8" />, 
-        title: "Development Team",
-        subtitle: "The Code Warriors",
-        description: "Every great innovation starts with a solid foundation of code. From AI platforms to custom solutions, our full-stack developers are the architects of the digital future.",
-        members: [
-          {
-            name: "Vivek Dafda",
-            role: "Frontend Developer",
-            image: Vivek
-          },
-          {
-            name: "Parth Champaneri",
-            role: "Frontend Developer",
-            image: ParthDev
-          },
-          {
-            name: "Umesh Taviya",
-            role: "Frontend Developer",
-            image: Umesh
-          },
-          {
-            name: "Rishit Khadawala",
-            role: "Backend Developer",
-            image: Rishit
-          },
-          {
-            name: "Sneha Khaniya",
-            role: "Backend Developer",
-            image: Sneha
-          },
-          {
-            name: "Rutvik Prajapati",
-            role: "Frontend Developer",
-            image: Rutvik
-          },
-        ]
-      },
+      icon: <Code className="w-8 h-8" />,
+      title: "Development Team",
+      subtitle: "The Code Warriors",
+      description: "Every great innovation starts with a solid foundation of code. From AI platforms to custom solutions, our full-stack developers are the architects of the digital future.",
+      members: [
+        {
+          name: "Vivek Dafda",
+          role: "Frontend Developer",
+          image: Vivek
+        },
+        {
+          name: "Parth Champaneri",
+          role: "Frontend Developer",
+          image: ParthDev
+        },
+        {
+          name: "Umesh Taviya",
+          role: "Frontend Developer",
+          image: Umesh
+        },
+        {
+          name: "Rishit Khadawala",
+          role: "Backend Developer",
+          image: Rishit
+        },
+        {
+          name: "Sneha Khaniya",
+          role: "Backend Developer",
+          image: Sneha
+        },
+        {
+          name: "Rutvik Prajapati",
+          role: "Frontend Developer",
+          image: Rutvik
+        },
+      ]
+    },
     {
-      icon: <Brain className="w-8 h-8" />, 
+      icon: <Brain className="w-8 h-8" />,
       title: "AI/ML Team",
       subtitle: "The Intelligence Engineers",
       description: "We don't just build AI—we teach it to think. Our engineers are pioneering the future of AI, crafting models that understand human behavior, predict trends, and revolutionize industries.",
       members: [
         {
-            name: "Gopi Kotadiya",
-            role: "AI/ML Engineer",
-            image: Gopi
-          },
-          {
-            name: "Parth Prajapati",
-            role: "AI/ML Engineer",
-            image: ParthCyber
-          },
-          {
-            name: "Harsh Maniya",
-            role: "AI/ML Engineer",
-            image: Harsh
-          },
-          {
-            name: "Nakul Nandola",
-            role: "AI/ML Engineer",
-            image: Gopi
-          },
-          {
-            name: "Syrin macwan",
-            role: "AI/ML Engineer",
-            image: Syrin
-          },
-          {
-            name: "Parth Modi",
-            role: "AI/ML Engineer",
-            image: Parth
-          },
-          {
-            name: "Dhruvi Senjaliya",
-            role: "AI/ML Engineer",
-            image: Dhruvi
-          },
-          {
-            name: "Honey Patel",
-            role: "AI/ML Engineer",
-            image: Honey
-          },
+          name: "Gopi Kotadiya",
+          role: "AI/ML Engineer",
+          image: Gopi
+        },
+        {
+          name: "Parth Prajapati",
+          role: "AI/ML Engineer",
+          image: ParthCyber
+        },
+        {
+          name: "Harsh Maniya",
+          role: "AI/ML Engineer",
+          image: Harsh
+        },
+        {
+          name: "Nakul Nandola",
+          role: "AI/ML Engineer",
+          image: nakul
+        },
+        {
+          name: "Syrin macwan",
+          role: "AI/ML Engineer",
+          image: Syrin
+        },
+        {
+          name: "Parth Modi",
+          role: "AI/ML Engineer",
+          image: Parth
+        },
+        {
+          name: "Dhruvi Senjaliya",
+          role: "AI/ML Engineer",
+          image: Dhruvi
+        },
       ]
     },
 
@@ -189,7 +185,7 @@ function App() {
     <div className="min-h-screen bg-black relative overflow-hidden pt-10">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-[#ffff33]/5 opacity-50"></div>
-      
+
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#ffff33] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
@@ -213,8 +209,8 @@ function App() {
 
         <div className="space-y-24">
           {departments.map((dept, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-black/60 backdrop-blur-lg border-2 border-[#ffff33] rounded-2xl shadow-xl overflow-hidden hover:shadow-[#ffff33]/40 transition-all duration-500 transform hover:-translate-y-2"
             >
               <div className="p-8">
@@ -230,8 +226,8 @@ function App() {
                 <p className="text-gray-300 text-lg mb-12 leading-relaxed max-w-4xl">{dept.description}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
                   {dept.members.map((member, memberIndex) => (
-                    <div 
-                      key={memberIndex} 
+                    <div
+                      key={memberIndex}
                       className="group relative flex flex-col items-center"
                       style={{ animation: `fadeIn 0.6s ease-out ${memberIndex * 0.1}s both` }}
                     >
