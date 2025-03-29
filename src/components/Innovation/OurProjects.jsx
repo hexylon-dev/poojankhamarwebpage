@@ -32,9 +32,9 @@ function OurProjects({ title, description, features }) {
         </div>
 
         <div className="relative">
-          <h3 className="text-white text-2xl sm:text-3xl font-semibold mb-6 transform transition-all duration-300">
+          {/* <p className="text-white text-1xl sm:text-3xl  mb-6 transform transition-all duration-300">
             {description}
-          </h3>
+          </p> */}
           <div className="absolute -left-4 top-1/2 w-1 h-0 bg-[#ffff33] transition-all duration-300"
             style={{ height: isHovered ? '100%' : '0%' }}
           ></div>
