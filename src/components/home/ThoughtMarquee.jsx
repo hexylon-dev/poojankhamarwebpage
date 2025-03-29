@@ -47,6 +47,12 @@ const thoughts = [
     img: Jignesh,
   },
   {
+    name: "Rushik Patel",
+    username: "@Rushik",
+    body: "Honour Experience is Yielding our Legancy Over Noisy Analytics",
+    img: Rushik,
+  },
+  {
     name: "Vivek Dafda",
     username: "@vivek_15.10",
     body: "The Only Thing We're Allowed To Do Is Believe That We Won't Regret The Choice We Made.",
