@@ -114,10 +114,10 @@ const ReadyShapeFuture = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   </motion.button>
 
-                  <button onClick={() => window.open('https://calendly.com/your-username', '_blank')}
+                  <button onClick={() => navigate("/innovation-hub")}
                     className="w-full border border-[#ffff33]/30 text-[#ffff33] rounded-xl px-8 py-4 font-semibold text-base sm:text-lg
                                    transition-all duration-300 hover:bg-[#ffff33]/10">
-                    Schedule a Call
+                    Explore Ideas
                   </button>
                 </div>
 
