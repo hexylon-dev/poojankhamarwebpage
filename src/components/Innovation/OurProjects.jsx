@@ -7,14 +7,14 @@ function OurProjects({ title, description, features }) {
   return (
     <>
       {/* ✅ SEO Meta Tags for Individual Projects */}
-      <Helmet>
+      {/* <Helmet>
         <title>{title} | Innovation & AI-driven Solutions</title>
         <meta
           name="description"
           content={`${title} - ${description}. Discover AI-powered projects with cutting-edge technology to transform industries.`}
         />
         <meta name="keywords" content="innovation, AI projects, automation, technology, future solutions" />
-      </Helmet>
+      </Helmet> */}
 
       <div
         className="mb-32 transform transition-all duration-500 hover:translate-x-2"

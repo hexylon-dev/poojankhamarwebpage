@@ -13,8 +13,8 @@ const navItems = [
     { icon: Home, path: "/", label: "Home" },
     { icon: Info, path: "/about-poojan-khamar", label: "About" },
     { icon: Flame, path: "/innovation-hub", label: "Innovation-hub" },
-    { icon: FileText, path: "/blogs", label: "Blogs" },
-    { icon: Lightbulb, path: "/ideas", label: "Ideas" },
+    { icon: FileText, path: "/Innovation-blog", label: "Blogs" },
+    { icon: Lightbulb, path: "/ideas-sharing", label: "Ideas" },
     { icon: Phone, path: "/contact", label: "Contact" },
     { icon: Component, path: "/creative-team", label: "Team" },
 ];

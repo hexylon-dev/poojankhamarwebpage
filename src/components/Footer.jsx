@@ -76,19 +76,19 @@ const FooterWithTransition = () => {
             </div>
             <div
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
-              onClick={() => handleNavigation("/innovations")}
+              onClick={() => handleNavigation("/innovation-hub")}
             >
-              Innovation
+              Innovation Hub
             </div>
             <div
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
-              onClick={() => handleNavigation("/blogs")}
+              onClick={() => handleNavigation("/Innovation-blog")}
             >
               Blogs
             </div>
             <div
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
-              onClick={() => handleNavigation("/ideas")}
+              onClick={() => handleNavigation("/ideas-sharing")}
             >
               Ideas
             </div>

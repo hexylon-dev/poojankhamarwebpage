@@ -90,7 +90,7 @@ function App() {
 
         <div className="text-center relative">
           <button className="group bg-[#ffff33] text-black px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-yellow-300 transition-all duration-500 flex items-center gap-3 mx-auto relative overflow-hidden"
-          onClick={() => navigate("/ideas")}>
+          onClick={() => navigate("/ideas-sharing")}>
             <span className="relative z-10">Start your innovation journey today</span>
             <ArrowRight className="w-8 h-8 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />

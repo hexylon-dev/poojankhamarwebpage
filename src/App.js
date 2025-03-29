@@ -34,10 +34,10 @@ function AppContent() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about-poojan-khamar" element={<AboutPage />} />
         <Route path="/innovation-hub" element={<InnovationPage />} />
-        <Route path="/ideas" element={<IdeaPage />} />
+        <Route path="/ideas-sharing" element={<IdeaPage />} />
         <Route path="/creative-team" element={<Team />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/Innovation-blog" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogPost />} />
         <Route path="/blogs/grid" element={<BlogsGrid />} />
         

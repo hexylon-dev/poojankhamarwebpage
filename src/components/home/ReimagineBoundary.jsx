@@ -128,7 +128,7 @@ const ReimagineBoundary = () => {
 
                 <button
                   className="mt-2 bg-yellow-400 text-black px-3 py-1 rounded-lg font-semibold flex items-center gap-1 self-start"
-                  onClick={() => navigate("/blogs")}
+                  onClick={() => navigate("/Innovation-blog")}
                 >
                   Read Now <ArrowUpRight className="w-3 h-3" />
                 </button>
@@ -174,7 +174,7 @@ const ReimagineBoundary = () => {
                     <span>{blog.title}</span>
                     <span
                       className="flex items-center justify-center rounded-full p-1 w-8 h-8 border border-yellow-400 hover:bg-yellow-400 hover:text-black transition-colors"
-                      onClick={() => navigate("/blogs")}
+                      onClick={() => navigate("/Innovation-blog")}
                     >
                       <ArrowUpRight className="text-yellow-400 hover:text-black w-5 h-5 cursor-pointer" />
                     </span>
