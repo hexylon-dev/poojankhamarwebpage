@@ -206,6 +206,15 @@ const ThoughtsMarquee = () => {
 
   return (
     <div className="bg-black py-10 flex flex-col gap-6">
+      <div className="w-full max-w-7xl mx-auto px-4 py-8 md:py-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#ffff33] text-center mb-4 md:mb-8 leading-tight">
+          Team Thoughts & Insights
+        </h2>
+        <p className="text-center text-gray-300 max-w-3xl mx-auto">
+          Explore inspiring thoughts from our team. Gain wisdom, motivation, and
+          unique perspectives on innovation, growth, and success.
+        </p>
+      </div>
       {/* First row - Left to Right */}
       <div className="mb-2">
         <Marquee gradient={false} speed={50} direction="left" pauseOnHover>
