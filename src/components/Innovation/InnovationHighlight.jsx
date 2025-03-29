@@ -7,7 +7,6 @@ const InnovationHighlight = () => {
   const navigate = useNavigate();
   const controls = useAnimation();
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
   // Track mouse movement for interactive effects
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -182,7 +181,6 @@ const InnovationHighlight = () => {
                   </span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </motion.button>
-
                 <motion.button
                   whileHover={{ scale: 1.05, x: 5 }}
                   whileTap={{ scale: 0.95 }}
@@ -231,7 +229,6 @@ const InnovationHighlight = () => {
                   {/* Bottom face */}
                   <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateY(70px) rotateX(-90deg)' }}></div>
                 </motion.div>
-
                 {/* Orbiting particles */}
                 {/* {Array.from({ length: 8 }).map((_, i) => (
                   <motion.div

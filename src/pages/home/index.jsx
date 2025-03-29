@@ -9,6 +9,8 @@ import Testimonials from "../../components/home/Testimonials";
 import { motion } from "framer-motion";
 import "../../styles/ShimmerButton.css"
 import "../../styles/animations.css"
+import ThoughtMarquee from "../../components/home/ThoughtMarquee";
+import InovationSection from "../../components/home/InovationSection";
 
 
 function Home() {
@@ -55,11 +57,12 @@ function Home() {
   return (
     <>
       <HeroSection />
-      {/* <JourneyPage /> */}
-      {/* Journey Section */}
       <section id="journey">
         <JourneyPage />
       </section>
+      <div className="bg-black">
+        <InovationSection />
+      </div>
 
       {/* Background Transition for Smooth Flow */}
       {/* <div className="h-32 bg-gradient-to-b from-black to-gray-900"></div> */}
@@ -73,15 +76,7 @@ function Home() {
         </div>
 
         {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,51,0.1),transparent_70%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,255,51,0.05),transparent_70%)]"></div>
-          <motion.div
-            className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] rounded-full bg-yellow-300/[0.02] blur-[100px]"
-          ></motion.div>
-          <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-yellow-300/[0.03] blur-[80px]"></div>
-          <div className="absolute bottom-[10%] left-[20%] w-[30%] h-[30%] rounded-full bg-yellow-300/[0.02] blur-[60px]"></div>
-        </div>
+       
 
         {/* Sticky Components */}
         <div className="relative z-10">
@@ -97,8 +92,10 @@ function Home() {
         </div>
 
         {/* Spacer for Sticky Effect */}
-        <div className="h-[40vh]"></div>
+        <div className="h-[10vh]"></div>
       </section>
+      <ThoughtMarquee />
+    
       {/* <LatestLab /> */}
 
       <ReadyShapeFuture />

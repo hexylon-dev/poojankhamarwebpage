@@ -17,14 +17,12 @@ function Index() {
         <meta name="keywords" content="AI projects, Vidhyarthi AI, LOM AI, industrial automation, personalized learning" />
         <meta name="author" content="Poojan Khamar" />
       </Helmet>
-
       <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white p-8">
         <div className="max-w-6xl mx-auto">
           {/* <h1 className="text-4xl font-bold text-yellow-400 text-center mt-20 mb-8">
             Cutting-Edge AI Innovations
           </h1> */}
           <InnovationHighlight />
-
           <div className="space-y-32">
             <OurProjects
               title="VIDHYARTHI AI"
@@ -35,7 +33,6 @@ function Index() {
                 "Adaptive Study Plans & Progress Tracking",
               ]}
             />
-
             <OurProjects
               title="LOM AI"
               description="Automating Industrial Workflows with Intelligence"
@@ -45,7 +42,6 @@ function Index() {
                 "Intelligent Automation Implementation",
               ]}
             />
-
             <InovativeIdea />
           </div>
         </div>
