@@ -78,7 +78,7 @@ const Page1 = () => {
 
 
       {/* Main content area with enhanced animations */}
-      <div className="flex flex-col md:flex-row items-center mt-20 sm:mt-12 md:mt-52 max-w-8xl mx-auto px-4 md:px-40 sm:pt-5">
+      <div className="flex flex-col md:flex-row items-center mt-20 sm:mt-12 md:mt-40 max-w-8xl mx-auto px-4 md:px-40 sm:pt-5">
 
         {/* Left side - Text content with advanced typography and animations */}
         <div className="w-full md:w-1/2 space-y-1 md:space-y-2">
