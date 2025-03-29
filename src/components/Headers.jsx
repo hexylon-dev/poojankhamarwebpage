@@ -26,6 +26,7 @@ export function Headers() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
     const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1024)
+    const [isScrolled, setIsScrolled] = useState(false)
     const menuRef = useRef(null)
 
     // Navigation handlers
@@ -38,6 +39,20 @@ export function Headers() {
         // navigate("/journey")
         if (isMobile) setIsMenuOpen(false)
     }
+
+    // Handle scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                setIsScrolled(true)
+            } else {
+                setIsScrolled(false)
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     // Handle window resize
     useEffect(() => {
@@ -78,9 +93,8 @@ export function Headers() {
     }
 
     return (
-        <header className="fixed left-1/2 -translate-x-1/2 z-50 w-full  py-2">
+        <header className={`fixed left-1/2 -translate-x-1/2 z-50 w-full py-2 transition-all duration-300 ${isScrolled ? 'backdrop-blur-md bg-black/30' : ''}`}>
             <div className="max-w-[720px] mx-auto">
-
                 <div className="flex items-center justify-between px-4">
                     {/* Profile picture on the left - now clickable */}
                     <div
@@ -114,9 +128,8 @@ export function Headers() {
 
                     {/* Navigation menu in center with background - visible on tablet and desktop */}
                     {!isMobile && (
-
                         <nav className="mx-4 flex-1 max-w-2xl flex items-center justify-center">
-                            <div className="flex items-center gap-1 sm:gap-2 bg-[#ffff33] backdrop-blur-xl rounded-full px-2  py-2  border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
+                            <div className="flex items-center gap-1 sm:gap-2 bg-[#ffff33] backdrop-blur-xl rounded-full px-2 py-2 border border-[#ffff33]/20 shadow-[0_0_20px_rgba(255,255,51,0.1)]">
                                 {navItems.map((item, index) => {
                                     const Icon = item.icon
                                     const isActive = pathname === item.path
@@ -183,7 +196,7 @@ export function Headers() {
                             <X className="w-5 h-5" />
                         </button>
 
-                        <div className="flex flex-col items-start space-y-4 pt-16 bg-black pb-12 ">
+                        <div className="flex flex-col items-start space-y-4 pt-16 bg-black pb-12">
                             {navItems.map((item, index) => {
                                 const Icon = item.icon
                                 const isActive = pathname === item.path
@@ -205,22 +218,16 @@ export function Headers() {
                                 )
                             })}
 
-                            {/* Mobile version of the explore button */}
-                            {/* <a href="#journey"> */}
                             <button
-                                // onClick={handleExploreClick}
                                 className="w-full flex items-center justify-center bg-[#ffff33] text-black p-3 rounded-lg hover:bg-[#ffff44] transition-all hover:scale-105 font-bold relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,51,0.3)] mt-2"
                             >
                                 <span className="relative z-10 text-base">Explore My Journey</span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffff33]/0 via-[#ffff33]/30 to-[#ffff33]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                             </button>
-                            {/* </a> */}
                         </div>
                     </div>
                 </div>
-            )
-            }
-        </header >
-
+            )}
+        </header>
     )
 }

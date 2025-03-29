@@ -117,17 +117,17 @@ const Page1 = () => {
             – where creativity meets courage, and every idea is designed to shape tomorrow.
           </p>
           {/* <a href="#journey"> */}
-            <button
-              onClick={(e) => navigate("/about-poojan-khamar")}
-              className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4 z-50"
-              style={{ animationDelay: "1s" }}
-            >
-              <span className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
-              <span className="relative text-sm md:text-base">
-                Explore My Evolution
-                <span className="absolute-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
-              </span>
-            </button>
+          <button
+            onClick={(e) => navigate("/about-poojan-khamar")}
+            className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4 z-50"
+            style={{ animationDelay: "1s" }}
+          >
+            <span className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>
+            <span className="relative text-sm md:text-base">
+              Explore My Evolution
+              <span className="absolute-bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ffff33] to-yellow-500 group-hover:w-full transition-all duration-300"></span>
+            </span>
+          </button>
           {/* </a> */}
         </div>
 
@@ -144,16 +144,20 @@ const Page1 = () => {
       </div>
 
       {/* Social links with advanced hover effects */}
-      <div className="fixed right-[4%] bottom-32  flex-col items-center gap-6 z-20 md:flex hidden">
+      <div className="bottom-8 flex-col items-center gap-4 z-20 md:flex hidden tracking-widest absolute right-[5%] top-[75%]">
         <a
           href="https://www.linkedin.com/in/poojan-khamar-30a560126/"
-          className="p-4 bg-[#ffff33] rounded-full hover:bg-yellow-400 transition-all duration-300 social-icon group shadow-[0_0_15px_rgba(255,255,51,0.3)]"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-3 bg-[#ffff33] rounded-full hover:bg-yellow-400 transition-all duration-300 social-icon group shadow-[0_0_15px_rgba(255,255,51,0.3)] hover:shadow-[0_0_20px_rgba(255,255,51,0.5)]"
         >
           <Linkedin className="w-5 h-5 text-black group-hover:scale-110 transition-transform duration-300" />
         </a>
         <a
           href="https://www.instagram.com/poojan_555/"
-          className="p-4 bg-[#ffff33] rounded-full hover:bg-yellow-400 transition-all duration-300 social-icon group shadow-[0_0_15px_rgba(255,255,51,0.3)]"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-3 bg-[#ffff33] rounded-full hover:bg-yellow-400 transition-all duration-300 social-icon group shadow-[0_0_15px_rgba(255,255,51,0.3)] hover:shadow-[0_0_20px_rgba(255,255,51,0.5)]"
         >
           <Instagram className="w-5 h-5 text-black group-hover:scale-110 transition-transform duration-300" />
         </a>
