@@ -41,7 +41,7 @@ const InnovationHighlight = () => {
         <meta name="author" content="Poojan Khamar" />
       </Helmet>
 
-      <div className="relative min-h-screen bg-[#0a0a0a] overflow-hidden">
+      <div className="relative p-10 bg-[#0a0a0a] overflow-hidden">
         {/* Futuristic background elements */}
         <div
         // className="absolute inset-0 opacity-40"
@@ -112,7 +112,7 @@ const InnovationHighlight = () => {
 
                 <h1 className="font-bold text-5xl md:text-7xl mt-10 relative inline-block group ">
                   <span className="relative text-white z-10">
-                    <span className="text-[#ffff33]">Innovation</span>
+                    <span className="text-[#ffff33]">Innovation Hub</span>
                     {/* <span className="relative">
                       <motion.span 
                         className="absolute top-0 left-0 text-[#ffff33] opacity-0 filter blur-[2px]"
@@ -146,19 +146,17 @@ const InnovationHighlight = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  that <span className="text-[#fff]">Reimagines</span> Reality
+                  A Powerhouse for Game  Changing Ideas
                 </motion.h2>
               </div>
 
               <motion.p
-                className="text-gray-300 text-xl md:text-2xl leading-relaxed mt-8 max-w-2xl"
+                className="text-zinc-400 text-xl md:text-2xl leading-relaxed mt-8 max-w-2xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Innovation isn't just about new ideas; it's about fearless execution.
-                I believe in creating solutions that challenge the norm, disrupt
-                industries, and Redefine the way we think.
+                Turn your vision into reality! Share your innovative ideas, collaborate with like-minded creators, and be part of the next big breakthrough. Join our idea-sharing platform to shape future technology, inspire creativity, and drive meaningful change.
               </motion.p>
 
               <motion.div
@@ -256,9 +254,57 @@ const InnovationHighlight = () => {
               </div>
             </motion.div>
           </div>
-
+          
+          {/* Statistics Section - Added as requested */}
+          <motion.div 
+            className="mt-24 md:mt-32"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { value: "250+", label: "Ideas", description: "Innovative concepts explored" },
+                { value: "75%", label: "Implementation Success", description: "Ideas transformed into reality" },
+                { value: "50+", label: "Visionary Minds", description: "Creative collaborators" }
+              ].map((stat, index) => (
+                <motion.div 
+                  key={`stat-${index}`}
+                  className="relative border border-[#ffff33]/20 bg-black/30 backdrop-blur-md p-6 group overflow-hidden"
+                  whileHover={{ 
+                    y: -5,
+                    borderColor: "rgba(255, 255, 51, 0.5)",
+                    boxShadow: "0 10px 30px -10px rgba(255, 255, 51, 0.2)"
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div 
+                    className="absolute top-0 left-0 w-0 h-1 bg-[#ffff33]"
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 1.5, delay: 1.5 + (index * 0.2) }}
+                  />
+                  
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 1.8 + (index * 0.2), duration: 0.6 }}
+                  >
+                    <h3 className="text-[#ffff33] text-4xl md:text-5xl font-bold mb-2">{stat.value}</h3>
+                    <div className="text-white text-xl font-medium mb-1">{stat.label}</div>
+                    <p className="text-zinc-400">{stat.description}</p>
+                  </motion.div>
+                  
+                  <div className="absolute bottom-0 right-0 w-16 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 right-0 w-16 h-1 bg-[#ffff33]/30"></div>
+                    <div className="absolute bottom-0 right-0 w-1 h-16 bg-[#ffff33]/30"></div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          
           {/* Innovation pillars - 3 card layout with tech-inspired styling */}
-          <motion.div
+          {/* <motion.div
             className="mt-80 grid grid-cols-1 md:grid-cols-3 gap-6"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -300,7 +346,7 @@ const InnovationHighlight = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </>
