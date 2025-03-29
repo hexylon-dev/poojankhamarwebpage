@@ -19,8 +19,8 @@ function Index() {
         <meta name="keywords" content="AI projects, Vidhyarthi AI, LOM AI, industrial automation, personalized learning" />
         <meta name="author" content="Poojan Khamar" />
       </Helmet>
-      <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white p-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen bg-black  via-zinc-900 to-black text-white p-8">
+        <div className="max-w-7xl  mx-auto">
           {/* <h1 className="text-4xl font-bold text-yellow-400 text-center mt-20 mb-8">
             Cutting-Edge AI Innovations
           </h1> */}

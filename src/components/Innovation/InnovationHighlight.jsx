@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { Helmet } from "react-helmet";  // ✅ SEO Meta Tags ke liye
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet"; // ✅ SEO Meta Tags ke liye
 
 const InnovationHighlight = () => {
   const navigate = useNavigate();
@@ -12,19 +12,19 @@ const InnovationHighlight = () => {
     const handleMouseMove = (e) => {
       setCursorPosition({
         x: e.clientX / window.innerWidth,
-        y: e.clientY / window.innerHeight
+        y: e.clientY / window.innerHeight,
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   useEffect(() => {
     controls.start({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 }
+      transition: { duration: 0.8 },
     });
   }, [controls]);
 
@@ -32,23 +32,55 @@ const InnovationHighlight = () => {
     <>
       {/* ✅ SEO Meta Tags for This Section */}
       <Helmet>
-        <title>Innovations | Disrupting Industries with AI & Automation</title>
+        <title>
+          Innovation Hub | Transforming Industries with AI & Automation
+        </title>
         <meta
           name="description"
-          content="Explore groundbreaking innovations that challenge norms, disrupt industries, and redefine the future. AI, automation, and fearless execution drive our vision."
+          content="Discover cutting-edge innovations powered by AI, automation, and fearless execution. Explore game-changing ideas that disrupt industries and shape the future."
         />
-        <meta name="keywords" content="innovation, AI solutions, automation, disruptive technology, bold thinking" />
-        <meta name="author" content="Poojan Khamar" />
+        <meta
+          name="keywords"
+          content="innovation hub, AI innovation, automation, disruptive technology, future technology, visionary ideas, AI solutions"
+        />
+        <meta name="author" content="Hexylon" />
+        <meta
+          property="og:title"
+          content="Innovation Hub | Transforming Industries with AI & Automation"
+        />
+        <meta
+          property="og:description"
+          content="Join the movement of disruptive thinkers and innovators. Explore AI-driven solutions, automation advancements, and game-changing ideas."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://poojankhamar.in/innovation" />
+        <meta
+          property="og:image"
+          content="https://poojankhamar.in/images/innovation-thumbnail.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Innovation Hub | Transforming Industries with AI & Automation"
+        />
+        <meta
+          name="twitter:description"
+          content="Revolutionizing industries with AI and automation. Be part of the future of innovation."
+        />
+        <meta
+          name="twitter:image"
+          content="https://poojankhamar.in/images/innovation-thumbnail.jpg"
+        />
       </Helmet>
 
-      <div className="relative p-10 bg-[#0a0a0a] overflow-hidden">
+      <div className="relative p-10 bg-black overflow-hidden">
         {/* Futuristic background elements */}
         <div
         // className="absolute inset-0 opacity-40"
         // style={{
         //   backgroundImage: `radial-gradient(
-        //     circle at ${cursorPosition.x * 100}% ${cursorPosition.y * 100}%, 
-        //     rgba(255, 255, 51, 0.15), 
+        //     circle at ${cursorPosition.x * 100}% ${cursorPosition.y * 100}%,
+        //     rgba(255, 255, 51, 0.15),
         //     transparent 25%
         //   )`
         // }}
@@ -146,7 +178,7 @@ const InnovationHighlight = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  A Powerhouse for Game  Changing Ideas
+                  A Powerhouse for Game Changing Ideas
                 </motion.h2>
               </div>
 
@@ -156,7 +188,10 @@ const InnovationHighlight = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Turn your vision into reality! Share your innovative ideas, collaborate with like-minded creators, and be part of the next big breakthrough. Join our idea-sharing platform to shape future technology, inspire creativity, and drive meaningful change.
+                Turn your vision into reality! Share your innovative ideas,
+                collaborate with like-minded creators, and be part of the next
+                big breakthrough. Join our idea-sharing platform to shape future
+                technology, inspire creativity, and drive meaningful change.
               </motion.p>
 
               <motion.div
@@ -173,8 +208,17 @@ const InnovationHighlight = () => {
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Contact Me
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </span>
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
@@ -203,29 +247,47 @@ const InnovationHighlight = () => {
                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56"
                   animate={{
                     rotateX: [0, 360],
-                    rotateY: [0, 360]
+                    rotateY: [0, 360],
                   }}
                   transition={{
                     duration: 20,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                   }}
                   style={{
                     transformStyle: "preserve-3d",
                   }}
                 >
                   {/* Front face */}
-                  <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateZ(70px)' }}></div>
+                  <div
+                    className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50"
+                    style={{ transform: "translateZ(70px)" }}
+                  ></div>
                   {/* Back face */}
-                  <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateZ(-70px) rotateY(180deg)' }}></div>
+                  <div
+                    className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50"
+                    style={{ transform: "translateZ(-70px) rotateY(180deg)" }}
+                  ></div>
                   {/* Right face */}
-                  <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateX(70px) rotateY(90deg)' }}></div>
+                  <div
+                    className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50"
+                    style={{ transform: "translateX(70px) rotateY(90deg)" }}
+                  ></div>
                   {/* Left face */}
-                  <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateX(-70px) rotateY(-90deg)' }}></div>
+                  <div
+                    className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50"
+                    style={{ transform: "translateX(-70px) rotateY(-90deg)" }}
+                  ></div>
                   {/* Top face */}
-                  <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateY(-70px) rotateX(90deg)' }}></div>
+                  <div
+                    className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50"
+                    style={{ transform: "translateY(-70px) rotateX(90deg)" }}
+                  ></div>
                   {/* Bottom face */}
-                  <div className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50" style={{ transform: 'translateY(70px) rotateX(-90deg)' }}></div>
+                  <div
+                    className="absolute inset-0 bg-[#ffff33]/10 border border-[#ffff33]/50"
+                    style={{ transform: "translateY(70px) rotateX(-90deg)" }}
+                  ></div>
                 </motion.div>
                 {/* Orbiting particles */}
                 {/* {Array.from({ length: 8 }).map((_, i) => (
@@ -254,9 +316,9 @@ const InnovationHighlight = () => {
               </div>
             </motion.div>
           </div>
-          
+
           {/* Statistics Section - Added as requested */}
-          <motion.div 
+          <motion.div
             className="mt-24 md:mt-32"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -264,36 +326,52 @@ const InnovationHighlight = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { value: "250+", label: "Ideas", description: "Innovative concepts explored" },
-                { value: "75%", label: "Implementation Success", description: "Ideas transformed into reality" },
-                { value: "50+", label: "Visionary Minds", description: "Creative collaborators" }
+                {
+                  value: "250+",
+                  label: "Ideas",
+                  description: "Innovative concepts explored",
+                },
+                {
+                  value: "75%",
+                  label: "Implementation Success",
+                  description: "Ideas transformed into reality",
+                },
+                {
+                  value: "50+",
+                  label: "Visionary Minds",
+                  description: "Creative collaborators",
+                },
               ].map((stat, index) => (
-                <motion.div 
+                <motion.div
                   key={`stat-${index}`}
                   className="relative border border-[#ffff33]/20 bg-black/30 backdrop-blur-md p-6 group overflow-hidden"
-                  whileHover={{ 
+                  whileHover={{
                     y: -5,
                     borderColor: "rgba(255, 255, 51, 0.5)",
-                    boxShadow: "0 10px 30px -10px rgba(255, 255, 51, 0.2)"
+                    boxShadow: "0 10px 30px -10px rgba(255, 255, 51, 0.2)",
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="absolute top-0 left-0 w-0 h-1 bg-[#ffff33]"
                     animate={{ width: "100%" }}
-                    transition={{ duration: 1.5, delay: 1.5 + (index * 0.2) }}
+                    transition={{ duration: 1.5, delay: 1.5 + index * 0.2 }}
                   />
-                  
+
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 1.8 + (index * 0.2), duration: 0.6 }}
+                    transition={{ delay: 1.8 + index * 0.2, duration: 0.6 }}
                   >
-                    <h3 className="text-[#ffff33] text-4xl md:text-5xl font-bold mb-2">{stat.value}</h3>
-                    <div className="text-white text-xl font-medium mb-1">{stat.label}</div>
+                    <h3 className="text-[#ffff33] text-4xl md:text-5xl font-bold mb-2">
+                      {stat.value}
+                    </h3>
+                    <div className="text-white text-xl font-medium mb-1">
+                      {stat.label}
+                    </div>
                     <p className="text-zinc-400">{stat.description}</p>
                   </motion.div>
-                  
+
                   <div className="absolute bottom-0 right-0 w-16 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 right-0 w-16 h-1 bg-[#ffff33]/30"></div>
                     <div className="absolute bottom-0 right-0 w-1 h-16 bg-[#ffff33]/30"></div>
@@ -302,7 +380,7 @@ const InnovationHighlight = () => {
               ))}
             </div>
           </motion.div>
-          
+
           {/* Innovation pillars - 3 card layout with tech-inspired styling */}
           {/* <motion.div
             className="mt-80 grid grid-cols-1 md:grid-cols-3 gap-6"

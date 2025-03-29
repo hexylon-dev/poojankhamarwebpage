@@ -68,7 +68,7 @@ function Index() {
         <meta name="description" content="Have a creative idea or collaboration in mind? Let's make it happen! Share your thoughts, and let's build something innovative together." />
         <meta name="keywords" content="collaboration, project, contact, ideas, innovation, creative projects" />
         <meta name="author" content="Your Name" />
-        <link rel="canonical" href="https://yourwebsite.com/contact" />
+        <link rel="canonical" href="https://poojankhamar.in/contact" />
       </Helmet>
 
       {/* 🔹 Decorative Elements */}

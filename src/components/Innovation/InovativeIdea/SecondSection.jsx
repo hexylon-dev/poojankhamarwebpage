@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Lightbulb, Globe2, Rocket, Eye, Sparkles, ArrowRight, Hexagon , ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function HexagonBackground() {
   return (
@@ -57,6 +58,8 @@ function TimelineItem({ icon: Icon, title, description, index }) {
 }
 
 function App() {
+  const navigate = useNavigate();
+
   const features = [
     { icon: Sparkles, title: "Showcase Your Creativity", description: "Put your unique ideas in front of a community that values innovation and futuristic thinking." },
     { icon: Globe2, title: "Be Part of a Global Network", description: "Engage with like-minded visionaries and explore fresh perspectives to refine and enhance your ideas." },
@@ -86,7 +89,8 @@ function App() {
         </div>
 
         <div className="text-center relative">
-          <button className="group bg-[#ffff33] text-black px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-yellow-300 transition-all duration-500 flex items-center gap-3 mx-auto relative overflow-hidden">
+          <button className="group bg-[#ffff33] text-black px-12 py-6 rounded-2xl text-2xl font-bold hover:bg-yellow-300 transition-all duration-500 flex items-center gap-3 mx-auto relative overflow-hidden"
+          onClick={() => navigate("/ideas")}>
             <span className="relative z-10">Start your innovation journey today</span>
             <ArrowRight className="w-8 h-8 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
