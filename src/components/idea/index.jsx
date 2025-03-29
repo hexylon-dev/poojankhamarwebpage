@@ -1,10 +1,13 @@
+
 "use client"
 
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { ChevronRight, Lock, Zap, Users, Target, HardHat, Lightbulb, BrainCircuit } from "lucide-react"
+import Header from "./idea-comp"
 
 function InnovationHub() {
+ 
   const [formData, setFormData] = useState({
     name: "",
     subject: "",
@@ -80,20 +83,6 @@ function InnovationHub() {
     }
   }
 
-  // Hero section icons with animation
-  const HeroIcons = () => (
-    <div className="absolute inset-0 pointer-events-none">
-      <div className={`absolute top-20 left-10 transform transition-all duration-1000 ${heroAnimation.icons ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-        <HardHat className="w-12 h-12 text-[#ffff33]/50 animate-bounce" />
-      </div>
-      <div className={`absolute top-40 right-20 transform transition-all duration-1000 delay-300 ${heroAnimation.icons ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-        <Lightbulb className="w-12 h-12 text-[#ffff33]/50 animate-pulse" />
-      </div>
-      <div className={`absolute bottom-40 left-1/3 transform transition-all duration-1000 delay-500 ${heroAnimation.icons ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <BrainCircuit className="w-12 h-12 text-[#ffff33]/50 animate-spin" />
-      </div>
-    </div>
-  )
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white relative overflow-hidden">
@@ -104,220 +93,99 @@ function InnovationHub() {
       </div>
 
       {/* Main Content */}
-      <div className="relative">
-        <div className="max-w-5xl mx-auto px-4 py-16 mt-12">
-          {/* Enhanced Hero Section */}
-          <div
-            className={`mb-24 relative transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          >
-            {/* Animated Hero Icons */}
-            {/* <HeroIcons /> */}
+      <div className="relative w-full">
+        <div className="w-full">
+          <div className={`mb-24 relative transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+            
+            <Header/>
 
-            {/* Header */}
-            <div className="text-center mb-16 relative z-10">
-              <h1
-                className={`text-5xl md:text-7xl font-bold mb-6 transition-all duration-1000 transform mt-16 
-                  ${heroAnimation.title ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-              >
-                <span className="bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent ">
-                  Innovator's Playbook – <br /> Bold Ideas, Real Impact
-                </span>
-              </h1>
-
-              <h2
-                className={`inline-block px-6 py-2 rounded-full bg-[#ffff33]/10 border border-[#ffff33]/20 text-[#ffff33] font-medium mb-6 transition-all duration-1000 delay-300 transform 
-                  ${heroAnimation.subtitle ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-              >
-                Innovation Hub
-              </h2>
-
-              <div
-                className={`max-w-3xl mx-auto transition-all duration-1000 delay-500 transform 
-                  ${heroAnimation.description ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-              >
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Ideas shape the future, but only when they're{" "}
-                  <span className="italic">heard, valued, and nurtured</span>. At{" "}
-                  <span className="font-bold text-[#ffff33]">Innovation Hub</span>, we provide a{" "}
-                  <span className="italic">safe and transparent platform</span> where your ideas{" "}
-                  <span className="italic">remain yours</span> while gaining the visibility they deserve.
-                </p>
-              </div>
-            </div>
-
-            {/* Main Features - Stacked Cards */}
-            <div className="space-y-8 mb-12">
-              {/* First Card */}
-              <div className="bg-zinc-900/60 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800 hover:border-[#ffff33]/20 transition-all">
-                <div className="grid gap-8">
-                  <div className="flex items-start">
-                    <div className="bg-[#ffff33]/10 p-3 rounded-xl mr-4 shrink-0">
-                      <Zap className="w-8 h-8 text-[#ffff33]" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#ffff33] mb-2">Your Idea. Your Ownership.</h3>
-                      <p className="text-gray-300">
-                        Every idea you share stays <span className="italic">100% yours</span>. We ensure{" "}
-                        <span className="font-bold">strict confidentiality</span> and protect your intellectual
-                        property.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-[#ffff33]/10 p-3 rounded-xl mr-4 shrink-0">
-                      <Users className="w-8 h-8 text-[#ffff33]" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#ffff33] mb-2">A Trusted Network</h3>
-                      <p className="text-gray-300">
-                        Your idea isn't just seen; it's valued. Our platform connects you with{" "}
-                        <span className="italic">like-minded innovators</span> who can help shape, refine, and enhance
-                        your vision.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-[#ffff33]/10 p-3 rounded-xl mr-4 shrink-0">
-                      <Target className="w-8 h-8 text-[#ffff33]" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#ffff33] mb-2">Attract Opportunities</h3>
-                      <p className="text-gray-300">
-                        Game-changing ideas deserve the right exposure. When you submit your concept, it can{" "}
-                        <span className="italic">
-                          gain traction among industry experts, collaborators, and future partners
-                        </span>
-                        .
-                      </p>
-                    </div>
-                  </div>
+            {/* Main Features Grid */}
+            <div className="w-full flex items-center justify-center  gap-8 mb-12 mt-12">
+            
+              {/* Animated Security Card */}
+              <div className="relative bg-zinc-900/60 backdrop-blur-sm rounded-2xl p-6 border border-zinc-800 hover:border-[#ffff33]/20 transition-all duration-500 hover:shadow-2xl hover:shadow-[#ffff33]/10 hover:-translate-y-2 group">
+                {/* Animated background layer */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ffff33]/5 via-transparent to-[#ffff33]/5 animate-gradient-pan" />
                 </div>
-              </div>
 
-              {/* Second Card */}
-              <div className="bg-zinc-900/60 backdrop-blur-sm rounded-2xl p-8 border border-zinc-800 hover:border-[#ffff33]/20 transition-all">
-                <h3 className="text-2xl font-bold text-[#ffff33] mb-6 flex items-center">
-                  <Lock className="w-6 h-6 mr-2" />  Your Innovation, Your Control
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  We understand the importance of <span className="italic">idea security</span>. That's why we have a{" "}
-                  <span className="font-bold">transparent system</span> where you decide{" "}
-                  <span className="italic">who can engage with your idea and how</span>.
+                <div className="flex items-center mb-6 overflow-hidden">
+                  <Lock className="w-6 h-6 mr-2 text-[#ffff33] animate-icon-pop" />
+                  <h3 className="text-2xl font-bold text-[#ffff33] translate-y-6 opacity-0 animate-text-reveal">
+                    Your Innovation, Your Control
+                  </h3>
+                </div>
+
+                <p className="text-gray-300 mb-6 opacity-0 translate-y-6 animate-text-reveal [animation-delay:100ms]">
+                  We understand the importance of idea security. Our transparent system lets you decide who engages with your idea.
                 </p>
 
                 <div className="space-y-6 mb-6">
-                  <div className="flex items-start">
-                    <div className="text-[#ffff33] mr-3 font-bold">🔹</div>
-                    <div>
-                      <h4 className="font-semibold text-white">Confidentiality Assured</h4>
-                      <p className="text-gray-300">We do not claim ownership of any idea submitted.</p>
+                  {[
+                    ["Confidentiality Assured", "We do not claim ownership of any idea submitted"],
+                    ["Community-Driven Validation", "Get real feedback from trusted innovators, not just anyone"],
+                    ["Path to Recognition & Success", "The more you share, the closer you get to turning your vision into reality"]
+                  ].map(([title, text], index) => (
+                    <div 
+                      key={title} 
+                      className="flex items-start opacity-0 translate-x-8 animate-slide-in"
+                      style={{ animationDelay: `${200 + index * 100}ms` }}
+                    >
+                      <div className="text-[#ffff33] mr-3 pt-1">
+                        <div className="w-2 h-2 bg-current rounded-full animate-bullet-pop" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1">{title}</h4>
+                        <p className="text-gray-300 leading-relaxed">{text}</p>
+                      </div>
                     </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="text-[#ffff33] mr-3 font-bold">🔹</div>
-                    <div>
-                      <h4 className="font-semibold text-white">Community-Driven Validation</h4>
-                      <p className="text-gray-300">
-                        Get real feedback from <span className="italic">trusted innovators, not just anyone</span>.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="text-[#ffff33] mr-3 font-bold">🔹</div>
-                    <div>
-                      <h4 className="font-semibold text-white">Path to Recognition & Success</h4>
-                      <p className="text-gray-300">
-                        The more you share, the closer you get to{" "}
-                        <span className="italic">turning your vision into reality</span>.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="bg-[#ffff33]/10 rounded-xl p-4 border border-[#ffff33]/20">
-                  <p className="text-center font-semibold text-white">
-                    📢{" "}
-                    <span className="italic">
-                      Have a bold idea? Share it with confidence, and let's build the future together!
-                    </span>
+                <div className="bg-[#ffff33]/10 rounded-xl p-4 border border-[#ffff33]/20 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#ffff33]/10 to-transparent -skew-x-12 animate-shine" />
+                  <p className="relative text-center font-semibold text-white italic opacity-0 animate-fade-in [animation-delay:600ms]">
+                    Have a bold idea? Share it with confidence, and let's build the future together!
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Contribution Section */}
-            <div
-              className={`mb-24 transition-all duration-1000 delay-300 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            >
-              <div className="text-center space-y-6 mb-16">
-                <h2 className="text-5xl font-bold bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
+            {/* Contribution Section (existing code remains the same) */}
+            <div className={`w-full transition-all duration-1000 delay-300 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+              <div className="text-center space-y-6 mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#ffff33] to-yellow-400 bg-clip-text text-transparent">
                   Share Your Vision
                 </h2>
-                <p className="text-2xl text-gray-300">Have a bold idea that could reshape the future? Let's hear it.</p>
+                <p className="text-xl md:text-2xl text-gray-300">Have a bold idea that could reshape the future? Let's hear it.</p>
               </div>
 
               <div className="max-w-4xl mx-auto">
-                <div
-                  className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-zinc-800 
-                  hover:border-[#ffff33]/30 transition-all duration-500 shadow-2xl hover:shadow-[#ffff33]/10
-                  transform hover:-translate-y-1"
-                >
-                  <form
-                    onSubmit={handleSubmit}
-                    className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 md:p-10 border-zinc-800 hover:border-[#ffff33]/30 transition-all shadow-xl"
-                  >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-lg font-medium text-gray-200">Your Name</label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Enter your name"
-                          className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-lg font-medium text-gray-200">Subject</label>
-                        <input
-                          type="text"
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleChange}
-                          placeholder="Enter subject"
-                          className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-lg font-medium text-gray-200">Email</label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="name@example.com"
-                          className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-lg font-medium text-gray-200">Phone Number</label>
-                        <input
-                          type="tel"
-                          name="phone_number"
-                          value={formData.phone_number}
-                          onChange={handleChange}
-                          placeholder="Enter your phone number"
-                          className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
-                        />
-                      </div>
+                <div className="bg-zinc-900/40 backdrop-blur-xl rounded-3xl p-6 border border-zinc-800 hover:border-[#ffff33]/30 transition-all">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {[
+                        ["name", "Your Name", "text", "Enter your name"],
+                        ["subject", "Subject", "text", "Enter subject"],
+                        ["email", "Email", "email", "name@example.com"],
+                        ["phone_number", "Phone Number", "tel", "Enter your phone number"]
+                      ].map(([name, label, type, placeholder]) => (
+                        <div key={name}>
+                          <label className="block text-base font-medium text-gray-200">{label}</label>
+                          <input
+                            type={type}
+                            name={name}
+                            value={formData[name]}
+                            onChange={handleChange}
+                            placeholder={placeholder}
+                            className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none"
+                          />
+                        </div>
+                      ))}
                     </div>
-                    <div className="mt-6">
-                      <label className="block text-lg font-medium text-gray-200">Brief Description</label>
+
+                    <div>
+                      <label className="block text-base font-medium text-gray-200">Brief Description</label>
                       <textarea
                         name="description"
                         value={formData.description}
@@ -327,9 +195,10 @@ function InnovationHub() {
                         className="w-full bg-zinc-800/50 rounded-lg p-3 text-white border border-zinc-700 focus:border-[#ffff33] focus:outline-none resize-none"
                       ></textarea>
                     </div>
+
                     <button
                       type="submit"
-                      className="w-full bg-[#ffff33] text-black py-3 rounded-lg font-semibold text-lg mt-6 hover:bg-yellow-400 transition-all"
+                      className="w-full bg-[#ffff33] text-black py-3 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-all"
                     >
                       Share Your Idea
                     </button>
@@ -338,10 +207,86 @@ function InnovationHub() {
               </div>
             </div>
           </div>
-        </div>
+
+
+
+          </div>
       </div>
+
+      {/* Global Animations */}
+      <style jsx global>{`
+        @keyframes gradient-pan {
+          from { background-position: 0% center; }
+          to { background-position: -200% center; }
+        }
+
+        @keyframes text-reveal {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slide-in {
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes icon-pop {
+          0% { transform: scale(0) rotate(-30deg); }
+          80% { transform: scale(1.1) rotate(5deg); }
+          100% { transform: scale(1) rotate(0); }
+        }
+
+        @keyframes bullet-pop {
+          0% { transform: scale(0); }
+          90% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
+
+        @keyframes shine {
+          from { left: -100%; }
+          to { left: 100%; }
+        }
+
+        .animate-gradient-pan {
+          animation: gradient-pan 3s linear infinite;
+          background-size: 200%;
+        }
+
+        .animate-text-reveal {
+          animation: text-reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-slide-in {
+          animation: slide-in 0.5s ease-out forwards;
+        }
+
+        .animate-icon-pop {
+          animation: icon-pop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-bullet-pop {
+          animation: bullet-pop 0.4s ease-out forwards;
+        }
+
+        .animate-shine {
+          animation: shine 1.5s ease-in-out infinite;
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.4s ease-out forwards;
+        }
+
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
     </div>
   )
 }
 
-export default InnovationHub
+export default InnovationHub;
