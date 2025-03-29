@@ -58,8 +58,8 @@ function Index() {
               ]}
             />
           </div>
-          <CTA />
           <Carousel />
+          <CTA />
         </div>
       </div>
     </>
