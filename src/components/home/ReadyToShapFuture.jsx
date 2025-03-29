@@ -91,7 +91,7 @@ const ReadyShapeFuture = () => {
               className="w-full lg:w-auto"
             >
               <div className="bg-white/[0.05] backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/10">
-                <h3 className="text-[#ffff33] text-xl sm:text-2xl font-semibold mb-6">Start Your Project</h3>
+                <h3 className="text-[#ffff33] text-xl sm:text-2xl font-semibold mb-6">Share Your Idea</h3>
                 <div className="space-y-4">
                   <motion.button
                     onClick={() => navigate("/contact")}
@@ -121,10 +121,10 @@ const ReadyShapeFuture = () => {
                   </button>
                 </div>
 
-                <div className="mt-8 text-center">
+                {/* <div className="mt-8 text-center">
                   <p className="text-gray-400 text-sm mb-2">Typical response time</p>
                   <p className="text-white font-medium">Within 24 hours</p>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </div>

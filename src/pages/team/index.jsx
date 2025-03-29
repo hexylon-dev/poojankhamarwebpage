@@ -22,6 +22,7 @@ import Nrupansh from '../../assets/poojan/Nrupansh sir.jpg'
 import Princy from '../../assets/poojan/Princy.png'
 import Keval from '../../assets/poojan/kewal.jpg'
 import Sid from '../../assets/poojan/Siddhart.jpg'
+import Honey from '../../assets/poojan/Honey .jpg'
 // import Nakul from '../../assets/poojan'
 function App() {
   const departments = [
@@ -173,6 +174,11 @@ function App() {
             name: "Dhruvi Senjaliya",
             role: "AI/ML Engineer",
             image: Dhruvi
+          },
+          {
+            name: "Honey Patel",
+            role: "AI/ML Engineer",
+            image: Honey
           },
       ]
     },
