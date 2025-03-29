@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef , useMemo } from 'react';
 import { FiZap as Zap, FiUsers as Users, FiTarget as Target } from 'react-icons/fi';
 
 const AnimatedHeader = () => {
@@ -76,15 +76,15 @@ const AnimatedHeader = () => {
             opacity: 0.8
           }}
         />
-        
-        <div 
+        {/* boxes */}
+        {/* <div 
           className="absolute inset-0 perspective-1000"
           style={{
             transform: `perspective(1000px) rotateX(${5 + mousePos.y * 0.01}deg) rotateY(${-5 - mousePos.x * 0.01}deg)`
           }}
         >
           <div className="grid grid-cols-10 gap-4 p-8 absolute inset-0 transform translate-z-0">
-            {Array.from({ length: 100 }).map((_, i) => {
+            {Array.from({ length: 10 }).map((_, i) => {
               const row = Math.floor(i / 10);
               const col = i % 10;
               const distance = Math.sqrt(
@@ -112,7 +112,8 @@ const AnimatedHeader = () => {
               );
             })}
           </div>
-        </div>
+        </div> */}
+        {/* <Grid3DEffect /> */}
         
         <div className="absolute inset-0">
           {Array.from({ length: 20 }).map((_, i) => {
@@ -301,3 +302,73 @@ const AnimatedHeader = () => {
 };
 
 export default AnimatedHeader;
+
+
+
+const Grid3DEffect = () => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  
+  // Track mouse position
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({
+        x: e.clientX,
+        y: e.clientY
+      });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Pre-calculate grid elements to improve performance
+  const gridElements = useMemo(() => {
+    return Array.from({ length: 10 }).map((_, i) => {
+      const row = Math.floor(i / 10);
+      const col = i % 10;
+      return { row, col, id: i };
+    });
+  }, []);
+
+  return (
+    <div 
+      className="absolute inset-0 perspective-1000"
+      style={{
+        transform: `perspective(1000px) rotateX(${5 + mousePos.y * 0.005}deg) rotateY(${-5 - mousePos.x * 0.005}deg)`
+      }}
+    >
+      <div className="grid grid-cols-10 gap-4 p-8 absolute inset-0 transform translate-z-0">
+        {gridElements.map(({ row, col, id }) => {
+          // Optimize calculations
+          const normalizedX = (col / 10) * (typeof window !== 'undefined' ? window.innerWidth : 1000);
+          const normalizedY = (row / 10) * (typeof window !== 'undefined' ? window.innerHeight : 800);
+          
+          const distance = Math.sqrt(
+            Math.pow(normalizedX - mousePos.x, 2) + 
+            Math.pow(normalizedY - mousePos.y, 2)
+          ) * 0.5;
+          
+          const waveIntensity = Math.max(0, 1 - distance / 150);
+          const phase = Date.now() * 0.01 - distance * 0.05;
+          const waveHeight = Math.sin(phase) * 10 * waveIntensity;
+          const baseElevation = 20 - distance * 0.03;
+          const elevation = Math.max(0, baseElevation + waveHeight);
+          
+          return (
+            <div
+              key={id}
+              className="bg-gradient-to-br from-yellow-500/5 to-yellow-700/5 border border-yellow-500/10 rounded-md backdrop-blur-sm"
+              style={{
+                height: '100%',
+                transform: `translateZ(${elevation}px) scale(${1 + elevation * 0.005})`,
+                transition: 'transform 0.15s ease-out',
+                opacity: 0.1 + (elevation * 0.02)
+              }}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+

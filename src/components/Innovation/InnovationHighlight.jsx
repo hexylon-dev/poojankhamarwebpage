@@ -145,14 +145,14 @@ const InnovationHighlight = () => {
                 >
                   Contact Me
                 </motion.button>
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 sm:px-8 sm:py-3 border border-[#ffff33] text-[#ffff33] font-bold bg-transparent rounded-sm text-sm sm:text-base"
                   onClick={() => navigate("/projects")}
                 >
                   Explore Work
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </motion.div>
 
