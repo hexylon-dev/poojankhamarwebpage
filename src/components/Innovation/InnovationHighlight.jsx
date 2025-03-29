@@ -73,7 +73,7 @@ const InnovationHighlight = () => {
         />
       </Helmet>
 
-      <div className="relative p-10 bg-black overflow-hidden">
+      <div className="relative p-4 sm:p-6 md:p-10 bg-black overflow-hidden">
         {/* Futuristic background elements */}
         <div
         // className="absolute inset-0 opacity-40"
@@ -125,11 +125,11 @@ const InnovationHighlight = () => {
         </div>
 
         {/* Main content with asymmetric layout */}
-        <div className="relative z-10 container mx-auto px-4 py-32">
-          <div className="flex flex-col md:flex-row items-start">
+        <div className="relative z-10 container mx-auto px-4 py-16 md:py-32">
+          <div className="flex flex-col lg:flex-row items-start">
             {/* Left column: Main content - 60% on desktop */}
             <motion.div
-              className="w-full md:w-3/5 pr-0 md:pr-12"
+              className="w-full lg:w-3/5 lg:pr-12"
               initial={{ opacity: 0, y: 30 }}
               animate={controls}
             >
@@ -142,38 +142,14 @@ const InnovationHighlight = () => {
                   transition={{ duration: 1, delay: 0.5 }}
                 />
 
-                <h1 className="font-bold text-5xl md:text-7xl mt-10 relative inline-block group ">
-                  <span className="relative text-white z-10">
+                <h1 className="font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mt-8 md:mt-10 text-center lg:text-left">
+                  <span className="text-white">
                     <span className="text-[#ffff33]">Innovation Hub</span>
-                    {/* <span className="relative">
-                      <motion.span 
-                        className="absolute top-0 left-0 text-[#ffff33] opacity-0 filter blur-[2px]"
-                        animate={{
-                          opacity: [0, 1, 0],
-                          x: [0, -4, 0],
-                          y: [0, 2, 0]
-                        }}
-                        transition={{
-                          duration: 0.2,
-                          repeat: Infinity,
-                          repeatType: "mirror",
-                          repeatDelay: 5
-                        }}
-                      >
-                        vation
-                      </motion.span>
-                    </span> */}
                   </span>
-                  {/* <motion.span
-                    className="absolute left-0 bottom-0 w-full h-[3px] bg-[#ffff33]"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
-                  /> */}
                 </h1>
 
                 <motion.h2
-                  className="text-4xl md:text-6xl font-bold text-white mt-2"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mt-2 text-center lg:text-left"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -183,19 +159,18 @@ const InnovationHighlight = () => {
               </div>
 
               <motion.p
-                className="text-zinc-400 text-xl md:text-2xl leading-relaxed mt-8 max-w-2xl"
+                className="text-zinc-400 text-base sm:text-lg md:text-xl leading-relaxed mt-6 md:mt-8 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 Turn your vision into reality! Share your innovative ideas,
                 collaborate with like-minded creators, and be part of the next
-                big breakthrough. Join our idea-sharing platform to shape future
-                technology, inspire creativity, and drive meaningful change.
+                big breakthrough.
               </motion.p>
 
               <motion.div
-                className="mt-12 flex flex-wrap gap-6"
+                className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -203,30 +178,15 @@ const InnovationHighlight = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="relative overflow-hidden group px-8 py-3 bg-[#ffff33] text-black font-bold rounded-sm"
+                  className="px-6 py-3 sm:px-8 sm:py-3 bg-[#ffff33] text-black font-bold rounded-sm text-sm sm:text-base"
                   onClick={() => navigate("/contact")}
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Contact Me
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                  Contact Me
                 </motion.button>
                 <motion.button
-                  whileHover={{ scale: 1.05, x: 5 }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 border border-[#ffff33] text-[#ffff33] font-bold bg-transparent rounded-sm"
+                  className="px-6 py-3 sm:px-8 sm:py-3 border border-[#ffff33] text-[#ffff33] font-bold bg-transparent rounded-sm text-sm sm:text-base"
                   onClick={() => navigate("/projects")}
                 >
                   Explore Work
@@ -236,15 +196,14 @@ const InnovationHighlight = () => {
 
             {/* Right column: 3D visualization - 40% on desktop */}
             <motion.div
-              className="w-full md:w-2/5 mt-16 md:mt-0"
+              className="w-full lg:w-2/5 mt-12 sm:mt-16 lg:mt-0"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <div className="relative h-[400px] perspective-[1000px]">
-                {/* 3D Cube effect */}
+              <div className="relative h-[300px] sm:h-[350px] md:h-[400px] perspective-[1000px]">
                 <motion.div
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56"
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56"
                   animate={{
                     rotateX: [0, 360],
                     rotateY: [0, 360],
@@ -319,12 +278,12 @@ const InnovationHighlight = () => {
 
           {/* Statistics Section - Added as requested */}
           <motion.div
-            className="mt-24 md:mt-32"
+            className="mt-16 md:mt-24 lg:mt-32"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {[
                 {
                   value: "250+",
@@ -344,13 +303,11 @@ const InnovationHighlight = () => {
               ].map((stat, index) => (
                 <motion.div
                   key={`stat-${index}`}
-                  className="relative border border-[#ffff33]/20 bg-black/30 backdrop-blur-md p-6 group overflow-hidden"
+                  className="relative border border-[#ffff33]/20 bg-black/30 backdrop-blur-md p-4 sm:p-6 group overflow-hidden"
                   whileHover={{
                     y: -5,
                     borderColor: "rgba(255, 255, 51, 0.5)",
-                    boxShadow: "0 10px 30px -10px rgba(255, 255, 51, 0.2)",
                   }}
-                  transition={{ duration: 0.3 }}
                 >
                   <motion.div
                     className="absolute top-0 left-0 w-0 h-1 bg-[#ffff33]"
@@ -363,10 +320,10 @@ const InnovationHighlight = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1.8 + index * 0.2, duration: 0.6 }}
                   >
-                    <h3 className="text-[#ffff33] text-4xl md:text-5xl font-bold mb-2">
+                    <h3 className="text-[#ffff33] text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
                       {stat.value}
                     </h3>
-                    <div className="text-white text-xl font-medium mb-1">
+                    <div className="text-white text-lg sm:text-xl font-medium mb-1">
                       {stat.label}
                     </div>
                     <p className="text-zinc-400">{stat.description}</p>
