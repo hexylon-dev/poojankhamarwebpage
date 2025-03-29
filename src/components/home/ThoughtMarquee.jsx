@@ -1,158 +1,234 @@
 import React from "react";
+import Marquee from "react-fast-marquee";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Helmet } from "react-helmet";
+import Dhaval from "../../assets/poojan/dhaval.png";
+import Dinky from "../../assets/poojan/Dinky Photo.jpg";
+import Vivek from "../../assets/poojan/WhatsApp Image 2025-02-26 at 8.03.41 PM (1) 1.png";
+import ParthDev from "../../assets/poojan/Parth dev.png";
+import Rishit from "../../assets/poojan/Rishit_Khadawala.jpg";
+import Sneha from "../../assets/poojan/Sneha.jpg";
+import Rutvik from "../../assets/poojan/Rutvik.png";
+import Gopi from "../../assets/poojan/Gopi.jpg";
+import ParthCyber from "../../assets/poojan/Path cyber (2).jpg";
+import Syrin from "../../assets/poojan/Syrin.jpg";
+import Dhruvi from "../../assets/poojan/Dhruvi.jpg";
+import Poojan from "../../assets/poojan/poojan.png";
+import Princy from "../../assets/poojan/Princy.png";
+import Keval from "../../assets/poojan/kewal.jpg";
+import Sid from "../../assets/poojan/Siddhart.jpg";
+import Umesh from "../../assets/poojan/Umesh.jpg";
+import Harsh from "../../assets/poojan/Harsh.jpg";
+import Parth from "../../assets/poojan/Parth.jpg";
+import Honey from "../../assets/poojan/Honey .jpg";
+import Jignesh from "../../assets/poojan/Jignesh sir.png";
+import Rushik from "../../assets/poojan/Rushik sir.png";
+import Nrupansh from "../../assets/poojan/Nrupansh sir.jpg";
 
+const thoughts = [
+  {
+    name: "Rishit Khadawala",
+    username: "@knowledge",
+    body: "Life is like a river—keep flowing, adapt to obstacles, and find your way",
+    img: Rishit,
+  },
 
-const ThoughtMarquee = () => {
-  const thoughts = [
-    {
-      name: "Creative Spark",
-      username: "@inspiration",
-      body: "The best way to predict the future is to create it. What will you build today?",
-      img: "https://avatar.vercel.sh/creative",
-    },
-    {
-      name: "Problem Solver",
-      username: "@solution",
-      body: "Every problem is a gift - without problems we wouldn't grow. What's challenging you?",
-      img: "https://avatar.vercel.sh/solver",
-    },
-    {
-      name: "Mind Explorer",
-      username: "@curiosity",
-      body: "The mind is like a parachute - it only works when it's open. Stay curious!",
-      img: "https://avatar.vercel.sh/explorer",
-    },
-    {
-      name: "Dream Weaver",
-      username: "@imagination",
-      body: "Reality is just a shared dream. What if you could reshape it?",
-      img: "https://avatar.vercel.sh/dreamer",
-    },
-    {
-      name: "Wisdom Keeper",
-      username: "@knowledge",
-      body: "The only true wisdom is in knowing you know nothing. Stay humble, keep learning.",
-      img: "https://avatar.vercel.sh/wisdom",
-    },
-    {
-      name: "Change Maker",
-      username: "@impact",
-      body: "Small actions repeated consistently lead to massive transformations. What's your daily practice?",
-      img: "https://avatar.vercel.sh/changer",
-    },
-    {
-      name: "Idea Generator",
-      username: "@innovation",
-      body: "Ideas are like seeds - some will grow, others won't, but you need to plant many to get a harvest.",
-      img: "https://avatar.vercel.sh/idea",
-    },
-    {
-      name: "Perspective Shifter",
-      username: "@awareness",
-      body: "The map is not the territory. How might you be seeing only part of the picture?",
-      img: "https://avatar.vercel.sh/perspective",
-    },
-  ];
+  {
+    name: "Poojan Khamar",
+    username: "@poojan_555",
+    body: "Believe in yourself. Fail, learn, repeat. Build confidence through effort—success will follow as a natural result",
+    img: Poojan,
+  },
+  {
+    name: "Jignesh Patel",
+    username: "@knowledge",
+    body: "Temptation to quit is very high when you about to succeed",
+    img: Jignesh,
+  },
+  {
+    name: "Vivek Dafda",
+    username: "@vivek_15.10",
+    body: "The Only Thing We're Allowed To Do Is Believe That We Won't Regret The Choice We Made.",
+    img: Vivek,
+  },
+  {
+    name: "Parth Champaneri",
+    username: "@parthsoni11",
+    body: "Success is like WiFi—sometimes you just need to move a little to get a better connection",
+    img: ParthDev,
+  },
+  {
+    name: "Umesh Taviya",
+    username: "@knowledge",
+    body: "Every error occurrs for a reason",
+    img: Umesh,
+  },
+  {
+    name: "Dhaval Makani",
+    username: "@imagination",
+    body: "Life is like UI design—clarity, balance, and simplicity make the experience truly seamless.",
+    img: Dhaval,
+  },
+  {
+    name: "Sneha Khaniya",
+    username: "@knowledge",
+    body: "Life is all about Our Mind. Shift your perspective, and you shift your world—limitations exist only in perception.",
+    img: Sneha,
+  },
+  {
+    name: "Rutvik Prajapati",
+    username: "@knowledge",
+    body: "Simplicity is the soul of efficiency",
+    img: Rutvik,
+  },
+  {
+    name: "Dinky Shahu",
+    username: "@knowledge",
+    body: "The basic design is functional, but the great design speaks",
+    img: Dinky,
+  },
+  {
+    name: "Princy Bhalu",
+    username: "@knowledge",
+    body: "Everything you want is already yours. You just have to believe it and align with it",
+    img: Princy,
+  },
+  {
+    name: "Keval Maru",
+    username: "@knowledge",
+    body: "Opportunities don't appear; they're built by those who execute, not just think.",
+    img: Keval,
+  },
+  {
+    name: "Gopi Kotadiya",
+    username: "@knowledge",
+    body: "Develop passion for learning,if you do you will never stop to grow",
+    img: Gopi,
+  },
+  {
+    name: "Sidharth Ramnani",
+    username: "@knowledge",
+    body: "Work hard, study well, and eat and sleep plenty. That is the Turtle Hermit way to learn! ",
+    img: Sid,
+  },
+  {
+    name: "Dhruvi Senjaliya",
+    username: "@knowledge",
+    body: "Life is a complex algorithm, and every experience is a valuable dataset that shapes who we become.",
+    img: Dhruvi,
+  },
+  {
+    name: "Parth Gandhi",
+    username: "@knowledge",
+    body: "End each day with no regrets, knowing you've grown, learned, or achieved something new.",
+    img: Parth,
+  },
+  {
+    name: "Nakul Patel",
+    username: "@knowledge",
+    body: "The universe doesn't whisper—it echoes. Every choice you make reverberates into eternity, shaping worlds you'll never see",
+    img: Gopi,
+  },
+  {
+    name: "Syrin Macwan",
+    username: "@knowledge",
+    body: "Be a learner, life will never fail you.",
+    img: Syrin,
+  },
+  {
+    name: "Parth Prajapati",
+    username: "@knowledge",
+    body: "Today Is Hard, Tomorrow Is Much Harder, The Day After Tomorrow Is Nice, Most People Die Tomorrow Evening",
+    img: ParthCyber,
+  },
+  {
+    name: "Harsh Maviya",
+    username: "@knowledge",
+    body: "Consistency is only key to beat failure...",
+    img: Harsh,
+  },
+  {
+    name: "Honey Patel",
+    username: "@knowledge",
+    body: "Secure the code, train the mind, craft the interface, and build the future—where cybersecurity, AI/ML, frontend, backend, and design unite.",
+    img: Honey,
+  },
+];
 
-  const firstRow = thoughts.slice(0, thoughts.length / 2);
-  const secondRow = thoughts.slice(thoughts.length / 2);
-
-  const MarqueeRow = ({ thoughts, direction }) => {
-    // Duplicate thoughts multiple times to ensure continuous movement
-    const repeatCount = 4;
-    const repeatedThoughts = Array(repeatCount).fill(thoughts).flat();
-    console.log(repeatedThoughts, "repeatedThoughts");
-
-    return (
-      <div
-        className={`
-        flex 
-        ${
-          direction === "right"
-            ? "animate-marquee-right"
-            : "animate-marquee-left"
-        } 
-        space-x-4 
-        py-4
+const ThoughtCard = ({ thought, index }) => {
+  return (
+    <div
+      key={index}
+      className={`
+        flex-shrink-0 
+        w-96  
+        p-6  
+        rounded-xl
+        shadow-lg 
+        bg-[#1a1a1a] 
+        border-2 
+        border-[#333] 
+        hover:border-[#ffff33] 
+        transition-all 
+        duration-300
+        h-52
       `}
-      >
-        {repeatedThoughts.map((thought, index) => (
-          <div
-            key={index}
-            className={`
-              flex-shrink-0 
-              w-72 
-              p-4 
-              rounded-lg 
-              shadow-lg 
-              bg-[#1a1a1a] 
-              border 
-              border-[#333] 
-              hover:border-[#ffff33] 
-              transition-all 
-              duration-300
-              h-40
-            `}
-          >
-            <div className="flex items-center mb-2">
-              <img
-                src={thought.img}
-                alt={thought.name}
-                className="w-10 h-10 rounded-full mr-3 border-2 border-[#ffff33]"
-              />
-              <div>
-                <h3 className="font-semibold text-sm text-[#ffff33]">
-                  {thought.name}
-                </h3>
-                <p className="text-base text-gray-400">{thought.username}</p>
-              </div>
-            </div>
-            <p className="text-sm text-gray-300">{thought.body}</p>
-          </div>
-        ))}
+    >
+      <div className="flex items-center mb-4">
+        {" "}
+        {/* Increased margin-bottom */}
+        <img
+          src={thought.img}
+          alt={thought.name}
+          className="w-14 h-14 rounded-full mr-4 border-2 border-[#ffff33]" // Larger image
+        />
+        <div>
+          <h3 className="font-semibold text-lg text-[#ffff33]">
+            {" "}
+            {/* Increased text size */}
+            {thought.name}
+          </h3>
+          <p className="text-lg text-gray-400">{thought.username}</p>{" "}
+          {/* Increased text size */}
+        </div>
       </div>
-    );
-  };
+      <p className="text-base text-gray-300">{thought.body}</p>{" "}
+      {/* Increased text size */}
+    </div>
+  );
+};
+
+const ThoughtsMarquee = () => {
+  // Split the thoughts array into two halves
+  const halfLength = Math.ceil(thoughts.length / 2);
+  const firstRowThoughts = thoughts.slice(0, halfLength);
+  const secondRowThoughts = thoughts.slice(halfLength);
 
   return (
-    <div className="bg-black overflow-hidden py-8">
-      
-      <Helmet>
-        <title>Thoughts & Inspirations | Poojan Khamar</title>
-        <meta
-          name="description"
-          content="Explore a collection of thought-provoking insights and inspirations on creativity, innovation, and leadership."
-        />
-        <meta name="keywords" content="innovation, creativity, leadership, inspiration, motivation, problem-solving, ideas" />
-        <meta name="author" content="Poojan Khamar" />
-        <meta property="og:title" content="Thoughts & Inspirations | Poojan Khamar" />
-        <meta property="og:description" content="Discover a stream of innovative and insightful thoughts on leadership and creativity." />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/thoughts" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Thoughts & Inspirations | Poojan Khamar" />
-        <meta name="twitter:description" content="Explore a collection of thought-provoking insights and inspirations on creativity and leadership." />
-        <meta name="twitter:image" content="https://yourdomain.com/twitter-image.jpg" />
-      </Helmet>
-
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#ffff33] via-yellow-200 to-yellow-300 mb-8 md:mb-16 tracking-tight text-center"
-      >
-        Thoughts
-      </motion.h1>
-      <div className="mb-4">
-        <MarqueeRow thoughts={firstRow} direction="left" />
+    <div className="bg-black py-10 flex flex-col gap-6">
+      {/* First row - Left to Right */}
+      <div className="mb-2">
+        <Marquee gradient={false} speed={50} direction="left" pauseOnHover>
+          {firstRowThoughts.map((thought, index) => (
+            <div key={index} className="mx-4">
+              <ThoughtCard thought={thought} index={index} />
+            </div>
+          ))}
+        </Marquee>
       </div>
+
+      {/* Second row - Right to Left */}
       <div>
-        <MarqueeRow thoughts={secondRow} direction="right" />
+        <Marquee gradient={false} speed={40} direction="right" pauseOnHover>
+          {secondRowThoughts.map((thought, index) => (
+            <div key={index} className="mx-4">
+              <ThoughtCard thought={thought} index={index + halfLength} />
+            </div>
+          ))}
+        </Marquee>
       </div>
     </div>
   );
 };
 
-export default ThoughtMarquee;
+export default ThoughtsMarquee;
