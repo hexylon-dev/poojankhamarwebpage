@@ -159,7 +159,7 @@ export default function TagSlider() {
         </div>
       </div>
       
-      <div className="relative w-full max-w-7xl mx-auto overflow-hidden rounded-xl bg-gradient-to-br from-black via-zinc-900 to-black border-2 border-yellow-300 shadow-[0_0_25px_rgba(250,204,21,0.3)]">
+      <div className="relative w-full max-w-7xl mx-auto overflow-hidden rounded-xl bg-gradient-to-br from-black via-zinc-900 to-black border-2  border-[#ffff33] shadow-[0_0_25px_rgba(250,204,21,0.3)]">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-yellow-300 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
@@ -217,7 +217,7 @@ export default function TagSlider() {
             {/* Navigation buttons with enhanced styling */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
               aria-label="Previous slide"
               disabled={isTransitioning}
             >
@@ -226,7 +226,7 @@ export default function TagSlider() {
 
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
               aria-label="Next slide"
               disabled={isTransitioning}
             >
