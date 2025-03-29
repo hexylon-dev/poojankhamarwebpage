@@ -76,52 +76,12 @@ const InnovationHighlight = () => {
       <div className="relative p-4 sm:p-6 md:p-10 bg-black overflow-hidden">
         {/* Futuristic background elements */}
         <div
-        // className="absolute inset-0 opacity-40"
-        // style={{
-        //   backgroundImage: `radial-gradient(
-        //     circle at ${cursorPosition.x * 100}% ${cursorPosition.y * 100}%,
-        //     rgba(255, 255, 51, 0.15),
-        //     transparent 25%
-        //   )`
-        // }}
+
         />
 
         {/* Diagonal dividing lines */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* <motion.div
-            className="absolute h-[200%] w-1 bg-gradient-to-b from-transparent via-[#ffff33]/60 to-transparent"
-            style={{
-              left: '20%',
-              top: '-50%',
-              transform: 'rotate(15deg)'
-            }}
-            animate={{
-              y: [0, 100],
-              opacity: [0.2, 0.5, 0.2]
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 10,
-              ease: "linear"
-            }}
-          /> */}
-          {/* <motion.div
-            className="absolute h-[200%] w-[2px] bg-gradient-to-b from-transparent via-[#ffff33]/30 to-transparent"
-            style={{
-              left: '70%',
-              top: '-50%',
-              transform: 'rotate(-20deg)'
-            }}
-            animate={{
-              y: [0, 100],
-              opacity: [0.1, 0.3, 0.1]
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 15,
-              ease: "linear"
-            }}
-          /> */}
+
         </div>
 
         {/* Main content with asymmetric layout */}
@@ -145,7 +105,9 @@ const InnovationHighlight = () => {
                 <h1 className="font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mt-8 md:mt-10 text-center lg:text-left">
                   <span className="text-white">
                     <span className="text-[#ffff33]">Innovation Hub</span>
+
                   </span>
+
                 </h1>
 
                 <motion.h2
@@ -248,30 +210,7 @@ const InnovationHighlight = () => {
                     style={{ transform: "translateY(70px) rotateX(-90deg)" }}
                   ></div>
                 </motion.div>
-                {/* Orbiting particles */}
-                {/* {Array.from({ length: 8 }).map((_, i) => (
-                  <motion.div
-                    key={`particle-${i}`}
-                    className="absolute left-1/2 top-1/2 w-2 h-2 rounded-full bg-[#ffff33]"
-                    animate={{
-                      x: [
-                        Math.cos(i * Math.PI / 4) * 120,
-                        Math.cos((i * Math.PI / 4) + (2 * Math.PI)) * 120
-                      ],
-                      y: [
-                        Math.sin(i * Math.PI / 4) * 120,
-                        Math.sin((i * Math.PI / 4) + (2 * Math.PI)) * 120
-                      ],
-                      scale: [1, 1.5, 1]
-                    }}
-                    transition={{
-                      duration: 10,
-                      repeat: Infinity,
-                      ease: "linear",
-                      times: [0, 0.5, 1]
-                    }}
-                  />
-                ))} */}
+
               </div>
             </motion.div>
           </div>
@@ -338,50 +277,7 @@ const InnovationHighlight = () => {
             </div>
           </motion.div>
 
-          {/* Innovation pillars - 3 card layout with tech-inspired styling */}
-          {/* <motion.div
-            className="mt-80 grid grid-cols-1 md:grid-cols-3 gap-6"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-          >
-            {[
-              {
-                title: "Disruptive Thinking",
-                description: "Breaking conventional boundaries to create revolutionary solutions.",
-                icon: "⚡"
-              },
-              {
-                title: "Cutting-Edge Tech",
-                description: "Leveraging the latest technologies to build tomorrow's innovations.",
-                icon: "🔬"
-              },
-              {
-                title: "Fearless Execution",
-                description: "Turning visionary concepts into tangible, impactful realities.",
-                icon: "🚀"
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={`pillar-${i}`}
-                className="relative overflow-hidden bg-black/40 backdrop-blur-sm border border-[#ffff33]/20 px-6 py-8"
-                whileHover={{
-                  y: -10,
-                  borderColor: "rgba(255, 255, 51, 0.6)",
-                  boxShadow: "0 10px 30px -10px rgba(255, 255, 51, 0.3)"
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-3xl mb-4">{item.icon}</div>
-                <h3 className="text-[#ffff33] text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
-                <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-                  <div className="absolute top-0 right-0 w-16 h-1 bg-[#ffff33]/50"></div>
-                  <div className="absolute top-0 right-0 w-1 h-16 bg-[#ffff33]/50"></div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div> */}
+
         </div>
       </div>
     </>

@@ -95,7 +95,7 @@ export default function ContentCarousel() {
   }, [isAutoPlaying, nextSlide])
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto overflow-hidden rounded-xl bg-gradient-to-br from-black via-zinc-900 to-black border-2 border-yellow-300 shadow-[0_0_25px_rgba(250,204,21,0.3)]">
+    <div className="relative w-full mx-auto overflow-hidden rounded-xl bg-gradient-to-br from-black via-zinc-900 to-black border border-yellow-300 shadow-[0_0_25px_rgba(250,204,21,0.3)] max-w-[95vw] md:max-w-7xl">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-yellow-300 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
@@ -110,35 +110,34 @@ export default function ContentCarousel() {
         ></div>
       </div>
 
-      <div className="relative min-h-[350px] md:min-h-[300px] pl-4">
-        <div className="relative h-full w-full p-8 md:p-12">
+      <div className="relative min-h-[300px] sm:min-h-[350px] md:min-h-[300px]">
+        <div className="relative h-full w-full p-4 sm:p-8 md:p-12">
           {contentItems.map((item, index) => (
             <div
               key={index}
-              className={`absolute top-0 left-0 w-full h-full p-8 md:p-12 transition-all duration-700 ease-in-out ${
-                index === currentIndex
+              className={`absolute top-0 left-0 w-full h-full p-4 sm:p-8 md:p-12 transition-all duration-700 ease-in-out ${index === currentIndex
                   ? "opacity-100 z-10 translate-x-0"
                   : index < currentIndex
                     ? "opacity-0 -translate-x-full z-0"
                     : "opacity-0 translate-x-full z-0"
-              }`}
+                }`}
             >
-              <div className="h-full flex flex-col justify-start pt-8 md:pt-10">
-                <div className="flex items-center mb-3">
-                  <span className="text-xs font-bold text-yellow-300 uppercase tracking-widest mr-2 bg-yellow-300/10 px-3 py-1 rounded-full">
+              <div className="h-full flex flex-col justify-start pt-6 sm:pt-8 md:pt-10">
+                <div className="flex items-center mb-2 sm:mb-3">
+                  <span className="text-xs font-bold text-yellow-300 uppercase tracking-widest mr-2 bg-yellow-300/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full">
                     {`${index + 1 < 10 ? "0" : ""}${index + 1} / ${contentItems.length < 10 ? "0" : ""}${contentItems.length}`}
                   </span>
                   <div className="h-[1px] flex-grow bg-gradient-to-r from-yellow-300/80 to-transparent"></div>
                 </div>
 
-                <h2 className="text-2xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 tracking-tight">
+                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 tracking-tight">
                   {item.title}
-                  <span className="inline-block ml-2 align-middle">
-                    <Sparkles className="h-5 w-5 text-yellow-300 inline-block animate-pulse" />
+                  <span className="inline-block ml-1 sm:ml-2 align-middle">
+                    <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-300 inline-block animate-pulse" />
                   </span>
                 </h2>
 
-                <p className="text-sm md:text-base text-zinc-200 leading-relaxed backdrop-blur-sm bg-black/20 p-4 rounded-lg border-l-2 border-yellow-300/50 shadow-lg">
+                <p className="text-xs sm:text-sm md:text-base text-zinc-200 leading-relaxed sm:leading-relaxed backdrop-blur-sm bg-black/20 p-2 sm:p-4 rounded-lg border-l-2 border-yellow-300/50 shadow-lg">
                   {item.description}
                 </p>
               </div>
@@ -146,58 +145,56 @@ export default function ContentCarousel() {
           ))}
         </div>
 
-        {/* Navigation buttons with enhanced styling */}
+        {/* Navigation buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
           aria-label="Previous slide"
           disabled={isTransitioning}
         >
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black p-2 sm:p-3 rounded-full transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_15px_rgba(250,204,21,0.3)] hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]"
           aria-label="Next slide"
           disabled={isTransitioning}
         >
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
 
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_10px_rgba(250,204,21,0.2)] hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] flex items-center gap-1"
+          className="absolute top-2 sm:top-4 right-2 sm:right-4 z-20 bg-black/50 hover:bg-yellow-300 text-yellow-300 hover:text-black px-2 py-1 sm:px-4 sm:py-2 rounded-full text-xs font-medium transition-all duration-300 backdrop-blur-md border border-yellow-300/50 hover:border-yellow-300 shadow-[0_0_10px_rgba(250,204,21,0.2)] hover:shadow-[0_0_15px_rgba(250,204,21,0.4)] flex items-center gap-1"
         >
           {isAutoPlaying ? (
             <>
-              <Pause className="h-3 w-3" /> Pause
+              <Pause className="h-3 w-3" /> <span className="hidden sm:inline">Pause</span>
             </>
           ) : (
             <>
-              <Play className="h-3 w-3" /> Play
+              <Play className="h-3 w-3" /> <span className="hidden sm:inline">Play</span>
             </>
           )}
         </button>
       </div>
 
-      {/* Enhanced pagination indicators */}
-      <div className="flex justify-center gap-3 py-5 border-t border-yellow-300/30 bg-black/40 backdrop-blur-sm">
+      {/* Pagination indicators */}
+      <div className="flex justify-center gap-2 sm:gap-3 py-3 sm:py-5 border-t border-yellow-300/30 bg-black/40 backdrop-blur-sm">
         {contentItems.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`relative transition-all duration-300 ${
-              index === currentIndex ? "scale-100" : "scale-75 opacity-70 hover:opacity-100 hover:scale-90"
-            }`}
+            className={`relative transition-all duration-300 ${index === currentIndex ? "scale-100" : "scale-75 opacity-70 hover:opacity-100 hover:scale-90"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           >
             <span
-              className={`block w-3 h-3 rounded-full ${
-                index === currentIndex
+              className={`block w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentIndex
                   ? "bg-yellow-300 shadow-[0_0_10px_rgba(250,204,21,0.7)]"
                   : "bg-zinc-700 hover:bg-zinc-500"
-              }`}
+                }`}
             ></span>
             {index === currentIndex && (
               <span className="absolute inset-0 rounded-full animate-ping bg-yellow-300 opacity-75"></span>
@@ -208,4 +205,3 @@ export default function ContentCarousel() {
     </div>
   )
 }
-
