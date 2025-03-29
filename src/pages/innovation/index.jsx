@@ -6,6 +6,7 @@ import InovativeIdea from "../../components/Innovation/InovativeIdea/InovativeId
 import ThirdSection from "../../components/Innovation/InovativeIdea/ThirdSection";
 import SecondSection from "../../components/Innovation/InovativeIdea/SecondSection"
 import CTA from "../../components/Innovation/InovativeIdea/CTA";
+import Carousel from "../../components/Innovation/InovativeIdea/carousel"
 function Index() {
   return (
     <>
@@ -19,8 +20,8 @@ function Index() {
         <meta name="keywords" content="AI projects, Vidhyarthi AI, LOM AI, industrial automation, personalized learning" />
         <meta name="author" content="Poojan Khamar" />
       </Helmet>
-      <div className="min-h-screen bg-black  via-zinc-900 to-black text-white p-8">
-        <div className="max-w-7xl  mx-auto">
+      <div className="min-h-screen bg-black text-white p-8">
+        <div className="max-w-7xl mx-auto">
           {/* <h1 className="text-4xl font-bold text-yellow-400 text-center mt-20 mb-8">
             Cutting-Edge AI Innovations
           </h1> */}
@@ -58,6 +59,7 @@ function Index() {
             />
           </div>
           <CTA />
+          <Carousel />
         </div>
       </div>
     </>
