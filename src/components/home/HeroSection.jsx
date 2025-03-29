@@ -119,7 +119,7 @@ const Page1 = () => {
           {/* <a href="#journey"> */}
           <button
             onClick={(e) => navigate("/about-poojan-khamar")}
-            className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4 z-50"
+            className="shimmer-button flex items-center gap-2 md:gap-4 hover-scale group animate-fade-in-up mt-2 md:mt-4"
             style={{ animationDelay: "1s" }}
           >
             <span className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-[#ffff33] to-yellow-500 rounded-full pulse"></span>

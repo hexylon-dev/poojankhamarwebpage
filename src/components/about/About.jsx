@@ -73,7 +73,7 @@ export default function About() {
               onMouseLeave={() => setIsButtonHovered(false)}
               onClick={() => navigate("/contact")}
             >
-              Contact Me Directly
+              Explore journey
             </button>
           </div>
         </div>

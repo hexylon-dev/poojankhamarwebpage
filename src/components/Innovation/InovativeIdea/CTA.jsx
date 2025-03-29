@@ -23,7 +23,7 @@ const CTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <button
-              onClick={() => navigate('/ideas')}
+              onClick={() => navigate('/ideas-sharing')}
               className="bg-[#ffff33] text-black font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
             >
               <span>Get Started Now</span>

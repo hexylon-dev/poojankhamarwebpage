@@ -112,7 +112,7 @@ export function Headers() {
 
                     {/* Hamburger menu button for mobile - shows X when menu is open */}
                     <button
-                        className="md:hidden p-2 rounded-full bg-[#ffff33] text-black hover:bg-[#ffff44] transition-all duration-300 hover:scale-105 "
+                        className="md:hidden p-2 rounded-full bg-[#ffff33] text-black hover:bg-[#ffff44] transition-all duration-300 hover:scale-105  "
                         onClick={toggleMenu}
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     >
@@ -185,7 +185,7 @@ export function Headers() {
                     {/* Menu content sliding from right */}
                     <div
                         ref={menuRef}
-                        className={`absolute top-0 right-0 h-full w-3/4 max-w-xs bg-black/90 backdrop-blur-md p-4 transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+                        className={`absolute top-0 right-0 h-full w-3/4 max-w-xs bg-black/90 backdrop-blur-md p-4 transition-transform duration-300 z-50 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                     >
                         {/* Close button inside the menu */}
                         <button
@@ -196,7 +196,7 @@ export function Headers() {
                             <X className="w-5 h-5" />
                         </button>
 
-                        <div className="flex flex-col items-start space-y-4 pt-16 bg-black pb-12">
+                        <div className="flex flex-col items-start space-y-4 pt-16 bg-black pb-5">
                             {navItems.map((item, index) => {
                                 const Icon = item.icon
                                 const isActive = pathname === item.path
