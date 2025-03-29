@@ -63,16 +63,7 @@ function OurProjects({ title, description, features }) {
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
-          <button className="group relative bg-[#ffff33] text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold 
-            transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#ffff33]/30"
-          >
-            <span className="relative z-10">Explore Project</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] 
-              opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            ></div>
-          </button>
-        </div>
+
       </div>
     </>
   );
