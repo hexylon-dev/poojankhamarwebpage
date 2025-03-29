@@ -1,29 +1,29 @@
 import React from 'react';
 import { Brain, Code, Megaphone, Palette, Users } from 'lucide-react';
-import Dhaval from '../../assets/poojan/dhaval.png'
-import Dinky from '../../assets/poojan/Dinky Photo.jpg'
-import Vivek from '../../assets/poojan/WhatsApp Image 2025-02-26 at 8.03.41 PM (1) 1.png'
-import ParthDev from '../../assets/poojan/Parth dev.png'
-import Umesh from '../../assets/poojan/Umesh.jpg'
-import Rishit from '../../assets/poojan/Rishit_Khadawala.jpg'
-import Sneha from '../../assets/poojan/Sneha.jpg'
-import Rutvik from '../../assets/poojan/Rutvik.png'
-import Gopi from '../../assets/poojan/Gopi.jpg'
-import ParthCyber from '../../assets/poojan/Parth cyber.jpg'
-import Harsh from '../../assets/poojan/Harsh.jpg'
-import Syrin from '../../assets/poojan/Syrin.jpg'
-import Parth from '../../assets/poojan/Parth.jpg'
-import Dhruvi from '../../assets/poojan/Dhruvi.jpg'
-import Poojan from '../../assets/poojan/poojan.png'
-import Jignesh from '../../assets/poojan/Jignesh sir.png'
-import Rushik from '../../assets/poojan/Rushik sir.png'
-import Uday from '../../assets/poojan/Uday-C-Patel lom.jpg'
-import Nrupansh from '../../assets/poojan/Nrupansh sir.jpg'
-import Princy from '../../assets/poojan/Princy.png'
-import Keval from '../../assets/poojan/kewal.jpg'
-import Sid from '../../assets/poojan/Siddhart.jpg'
-import nakul from '../../assets/poojan/nakul.jpeg'
-import Honey from '../../assets/poojan/Honey .jpg'
+import Dhaval from '../../assets/poojan/dhaval.webp'
+import Dinky from '../../assets/poojan/Dinky Photo.webp'
+import Vivek from '../../assets/poojan/vivek.webp'
+import ParthDev from '../../assets/poojan/Parth dev.webp'
+import Umesh from '../../assets/poojan/Umesh.webp'
+import Rishit from '../../assets/poojan/Rishit_Khadawala.webp'
+import Sneha from '../../assets/poojan/Sneha.webp'
+import Rutvik from '../../assets/poojan/Rutvik.webp'
+import Gopi from '../../assets/poojan/Gopi.webp'
+import ParthCyber from '../../assets/poojan/Parth cyber.webp'
+import Harsh from '../../assets/poojan/Harsh.webp'
+import Syrin from '../../assets/poojan/Syrin.webp'
+import Parth from '../../assets/poojan/Parth.webp'
+import Dhruvi from '../../assets/poojan/Dhruvi.webp'
+import Poojan from '../../assets/poojan/poojan.webp'
+import Jignesh from '../../assets/poojan/Jignesh sir.webp'
+import Rushik from '../../assets/poojan/Rushik sir.webp'
+// import Uday from '../../assets/poojan/Uday-C-Patel lom.jpg'
+import Nrupansh from '../../assets/poojan/Nrupansh sir.webp'
+import Princy from '../../assets/poojan/Princy.webp'
+import Keval from '../../assets/poojan/kewal.webp'
+import Sid from '../../assets/poojan/Siddhart.webp'
+import nakul from '../../assets/poojan/nakul.webp'
+import Honey from '../../assets/poojan/Honey .webp'
 // import Nakul from '../../assets/poojan'
 function App() {
   const departments = [
@@ -72,7 +72,7 @@ function App() {
           image: Keval
         },
         {
-          name: "Sidhharth Ramnani",
+          name: "Siddharth Ramnani",
           role: "Team Leader",
           image: Sid
         }
@@ -90,7 +90,7 @@ function App() {
           image: Dhaval
         },
         {
-          name: "Dinky Sahu",
+          name: "Dinky Shahu",
           role: "UI/UX Designer",
           image: Dinky
         }
@@ -162,12 +162,12 @@ function App() {
           image: nakul
         },
         {
-          name: "Syrin macwan",
+          name: "Syrin Macwan",
           role: "AI/ML Engineer",
           image: Syrin
         },
         {
-          name: "Parth Modi",
+          name: "Parth Gandhi",
           role: "AI/ML Engineer",
           image: Parth
         },
