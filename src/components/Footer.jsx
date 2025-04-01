@@ -100,7 +100,7 @@ const FooterWithTransition = () => {
             </div>
             <div
               className="text-white hover:text-gray-400 cursor-pointer transition-colors text-center w-full md:w-auto"
-              onClick={() => handleNavigation("/team")}
+              onClick={() => handleNavigation("/creative-team")}
             >
               Team
             </div>
