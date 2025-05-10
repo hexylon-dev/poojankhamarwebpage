@@ -90,7 +90,7 @@ function Collabrate() {
         <div className={`space-y-12 mb-20 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="text-center">
             <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#ffff33] via-yellow-400 to-[#ffff33] bg-clip-text text-transparent
-              leading-tight tracking-tight mb-8 mt-20"
+              leading-tight tracking-tight mb-8 mt-30"
             >
               Let's Collaborate.<br />Connect. Create.
             </h1>
